@@ -1,6 +1,6 @@
 ﻿namespace TollBoothManagementSystem
 {
-    partial class Form2
+    partial class Dashboard
     {
         /// <summary>
         /// Required designer variable.
@@ -51,7 +51,7 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(64, 101);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(89, 16);
+            this.label1.Size = new System.Drawing.Size(92, 17);
             this.label1.TabIndex = 0;
             this.label1.Text = "Vehicle Class";
             // 
@@ -60,7 +60,7 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(64, 144);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(103, 16);
+            this.label2.Size = new System.Drawing.Size(110, 17);
             this.label2.TabIndex = 1;
             this.label2.Text = "Registration No.";
             // 
@@ -69,7 +69,7 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(64, 199);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(31, 16);
+            this.label3.Size = new System.Drawing.Size(33, 17);
             this.label3.TabIndex = 2;
             this.label3.Text = "Trip";
             // 
@@ -78,13 +78,14 @@
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(64, 237);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(53, 16);
+            this.label4.Size = new System.Drawing.Size(59, 17);
             this.label4.TabIndex = 3;
             this.label4.Text = "Fare (₹)";
             this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // comboBox1
             // 
+            this.comboBox1.Enabled = false;
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Location = new System.Drawing.Point(193, 101);
             this.comboBox1.Name = "comboBox1";
@@ -110,7 +111,7 @@
             this.CbFine.AutoSize = true;
             this.CbFine.Location = new System.Drawing.Point(193, 276);
             this.CbFine.Name = "CbFine";
-            this.CbFine.Size = new System.Drawing.Size(125, 20);
+            this.CbFine.Size = new System.Drawing.Size(138, 21);
             this.CbFine.TabIndex = 10;
             this.CbFine.Text = "Fine      (Fare x2)";
             this.CbFine.UseVisualStyleBackColor = true;
@@ -120,7 +121,7 @@
             this.CbSingle.AutoSize = true;
             this.CbSingle.Location = new System.Drawing.Point(193, 199);
             this.CbSingle.Name = "CbSingle";
-            this.CbSingle.Size = new System.Drawing.Size(67, 20);
+            this.CbSingle.Size = new System.Drawing.Size(69, 21);
             this.CbSingle.TabIndex = 11;
             this.CbSingle.Text = "Single";
             this.CbSingle.UseVisualStyleBackColor = true;
@@ -130,7 +131,7 @@
             this.CbDouble.AutoSize = true;
             this.CbDouble.Location = new System.Drawing.Point(289, 199);
             this.CbDouble.Name = "CbDouble";
-            this.CbDouble.Size = new System.Drawing.Size(73, 20);
+            this.CbDouble.Size = new System.Drawing.Size(75, 21);
             this.CbDouble.TabIndex = 12;
             this.CbDouble.Text = "Double";
             this.CbDouble.UseVisualStyleBackColor = true;
@@ -140,7 +141,7 @@
             this.checkBox1.AutoSize = true;
             this.checkBox1.Location = new System.Drawing.Point(335, 276);
             this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(133, 20);
+            this.checkBox1.Size = new System.Drawing.Size(138, 21);
             this.checkBox1.TabIndex = 13;
             this.checkBox1.Text = "Vehicle Overload";
             this.checkBox1.UseVisualStyleBackColor = true;
@@ -150,7 +151,7 @@
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(64, 360);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(112, 16);
+            this.label5.Size = new System.Drawing.Size(118, 17);
             this.label5.TabIndex = 14;
             this.label5.Text = "Mode of Payment";
             // 
@@ -167,7 +168,7 @@
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(64, 309);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(86, 16);
+            this.label6.Size = new System.Drawing.Size(92, 17);
             this.label6.TabIndex = 16;
             this.label6.Text = "Total Amount";
             // 
@@ -190,7 +191,7 @@
             this.listBox1.Size = new System.Drawing.Size(199, 308);
             this.listBox1.TabIndex = 18;
             // 
-            // Form2
+            // Dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -211,7 +212,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Name = "Form2";
+            this.Name = "Dashboard";
             this.Text = "Form2";
             this.ResumeLayout(false);
             this.PerformLayout();

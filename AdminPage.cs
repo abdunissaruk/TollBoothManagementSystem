@@ -10,18 +10,16 @@ using System.Windows.Forms;
 
 namespace TollBoothManagementSystem
 {
-    public partial class Form2 : Form
+    public partial class AdminPage : Form
     {
-        public Form2()
+        public AdminPage()
         {
             InitializeComponent();
         }
 
-        private void label4_Click(object sender, EventArgs e)
+        private void AdminPage_Load(object sender, EventArgs e)
         {
 
         }
-
-        
     }
 }

@@ -51,7 +51,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(172, 141);
+            this.label2.Location = new System.Drawing.Point(190, 143);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(55, 20);
             this.label2.TabIndex = 1;
@@ -69,7 +69,7 @@
             // 
             // txtLog
             // 
-            this.txtLog.Location = new System.Drawing.Point(338, 173);
+            this.txtLog.Location = new System.Drawing.Point(338, 141);
             this.txtLog.Name = "txtLog";
             this.txtLog.Size = new System.Drawing.Size(161, 22);
             this.txtLog.TabIndex = 3;
