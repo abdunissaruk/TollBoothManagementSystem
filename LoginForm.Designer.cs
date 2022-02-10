@@ -1,6 +1,6 @@
 ﻿namespace TollBoothManagementSystem
 {
-    partial class Form1
+    partial class frmLoginPage
     {
         /// <summary>
         /// Required designer variable.
@@ -42,7 +42,7 @@
             this.label1.Font = new System.Drawing.Font("Monotype Corsiva", 28.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(288, 39);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(211, 56);
+            this.label1.Size = new System.Drawing.Size(216, 57);
             this.label1.TabIndex = 0;
             this.label1.Text = "Toll Booth";
             this.label1.Click += new System.EventHandler(this.label1_Click);
@@ -91,7 +91,7 @@
             this.btnSubmit.Text = "Submit";
             this.btnSubmit.UseVisualStyleBackColor = true;
             // 
-            // Form1
+            // frmLoginPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -102,8 +102,8 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Name = "Form1";
-            this.Text = "Form1";
+            this.Name = "frmLoginPage";
+            this.Text = "Login";
             this.ResumeLayout(false);
             this.PerformLayout();
 
