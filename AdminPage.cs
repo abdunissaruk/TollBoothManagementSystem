@@ -17,9 +17,6 @@ namespace TollBoothManagementSystem
             InitializeComponent();
         }
 
-        private void AdminPage_Load(object sender, EventArgs e)
-        {
-
-        }
+        
     }
 }

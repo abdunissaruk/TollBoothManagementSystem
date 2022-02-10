@@ -10,17 +10,13 @@ using System.Windows.Forms;
 
 namespace TollBoothManagementSystem
 {
-    public partial class Dashboard : Form
+    public partial class frmDashboard : Form
     {
-        public Dashboard()
+        public frmDashboard()
         {
             InitializeComponent();
         }
 
-        private void label4_Click(object sender, EventArgs e)
-        {
-
-        }
 
         
     }

@@ -10,18 +10,11 @@ using System.Windows.Forms;
 
 namespace TollBoothManagementSystem
 {
-    public partial class frmLoginPage : Form
+    public partial class EmployeeDetailsPage : Form
     {
-        public frmLoginPage()
+        public EmployeeDetailsPage()
         {
             InitializeComponent();
-        }
-
-        
-        private void btnSubmit_Click(object sender, EventArgs e)
-        {
-            new frmDashboard().Show();
-            Hide();
         }
     }
 }

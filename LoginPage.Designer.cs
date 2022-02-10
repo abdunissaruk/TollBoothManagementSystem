@@ -45,7 +45,6 @@
             this.label1.Size = new System.Drawing.Size(216, 57);
             this.label1.TabIndex = 0;
             this.label1.Text = "Toll Booth";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // label2
             // 
@@ -90,12 +89,13 @@
             this.btnSubmit.TabIndex = 5;
             this.btnSubmit.Text = "Submit";
             this.btnSubmit.UseVisualStyleBackColor = true;
+            this.btnSubmit.Click += new System.EventHandler(this.btnSubmit_Click);
             // 
             // frmLoginPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(761, 450);
             this.Controls.Add(this.btnSubmit);
             this.Controls.Add(this.txtPass);
             this.Controls.Add(this.txtLog);
