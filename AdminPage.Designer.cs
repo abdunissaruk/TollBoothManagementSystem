@@ -1,6 +1,6 @@
 ﻿namespace TollBoothManagementSystem
 {
-    partial class AdminPage
+    partial class frmAdminPage
     {
         /// <summary>
         /// Required designer variable.
@@ -89,13 +89,13 @@
             // logoutToolStripMenuItem
             // 
             this.logoutToolStripMenuItem.Name = "logoutToolStripMenuItem";
-            this.logoutToolStripMenuItem.Size = new System.Drawing.Size(139, 26);
+            this.logoutToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.logoutToolStripMenuItem.Text = "Logout";
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(139, 26);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.exitToolStripMenuItem.Text = "Exit";
             // 
             // editToolStripMenuItem
@@ -109,7 +109,7 @@
             // addEmployeeToolStripMenuItem
             // 
             this.addEmployeeToolStripMenuItem.Name = "addEmployeeToolStripMenuItem";
-            this.addEmployeeToolStripMenuItem.Size = new System.Drawing.Size(208, 26);
+            this.addEmployeeToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.addEmployeeToolStripMenuItem.Text = "Employee Details";
             // 
             // viewToolStripMenuItem
@@ -127,7 +127,7 @@
             this.weeklyToolStripMenuItem,
             this.monthlyToolStripMenuItem});
             this.reportToolStripMenuItem.Name = "reportToolStripMenuItem";
-            this.reportToolStripMenuItem.Size = new System.Drawing.Size(137, 26);
+            this.reportToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.reportToolStripMenuItem.Text = "Report";
             // 
             // dialyToolStripMenuItem
@@ -305,7 +305,7 @@
             this.label4.TabIndex = 6;
             this.label4.Text = "To     :";
             // 
-            // AdminPage
+            // frmAdminPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -317,7 +317,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
-            this.Name = "AdminPage";
+            this.Name = "frmAdminPage";
             this.Text = "AdminPage";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
