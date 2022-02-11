@@ -40,30 +40,30 @@
             this.weeklyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.monthlyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblWelcome = new System.Windows.Forms.Label();
             this.lblAdminNameDisplay = new System.Windows.Forms.Label();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.TxtRegi = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.lblRegNo = new System.Windows.Forms.Label();
+            this.dataGridViewAdminPage = new System.Windows.Forms.DataGridView();
+            this.pnlReportView = new System.Windows.Forms.Panel();
             this.label6 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.button4 = new System.Windows.Forms.Button();
+            this.lblToDate = new System.Windows.Forms.Label();
+            this.lblFromDate = new System.Windows.Forms.Label();
+            this.dateTimePickerTo = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePickerFrom = new System.Windows.Forms.DateTimePicker();
+            this.btnMonthlyReportView = new System.Windows.Forms.Button();
+            this.btnWeeklyReportView = new System.Windows.Forms.Button();
+            this.btnDialyReportView = new System.Windows.Forms.Button();
+            this.pnlVehicleSearch = new System.Windows.Forms.Panel();
+            this.btnVehicleSearch = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewAdminPage)).BeginInit();
+            this.pnlReportView.SuspendLayout();
+            this.pnlVehicleSearch.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -112,7 +112,7 @@
             // addEmployeeToolStripMenuItem
             // 
             this.addEmployeeToolStripMenuItem.Name = "addEmployeeToolStripMenuItem";
-            this.addEmployeeToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.addEmployeeToolStripMenuItem.Size = new System.Drawing.Size(208, 26);
             this.addEmployeeToolStripMenuItem.Text = "Employee Details";
             // 
             // viewToolStripMenuItem
@@ -130,25 +130,25 @@
             this.weeklyToolStripMenuItem,
             this.monthlyToolStripMenuItem});
             this.reportToolStripMenuItem.Name = "reportToolStripMenuItem";
-            this.reportToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.reportToolStripMenuItem.Size = new System.Drawing.Size(171, 26);
             this.reportToolStripMenuItem.Text = "Print Report";
             // 
             // dialyToolStripMenuItem
             // 
             this.dialyToolStripMenuItem.Name = "dialyToolStripMenuItem";
-            this.dialyToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.dialyToolStripMenuItem.Size = new System.Drawing.Size(146, 26);
             this.dialyToolStripMenuItem.Text = "Dialy";
             // 
             // weeklyToolStripMenuItem
             // 
             this.weeklyToolStripMenuItem.Name = "weeklyToolStripMenuItem";
-            this.weeklyToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.weeklyToolStripMenuItem.Size = new System.Drawing.Size(146, 26);
             this.weeklyToolStripMenuItem.Text = "Weekly";
             // 
             // monthlyToolStripMenuItem
             // 
             this.monthlyToolStripMenuItem.Name = "monthlyToolStripMenuItem";
-            this.monthlyToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.monthlyToolStripMenuItem.Size = new System.Drawing.Size(146, 26);
             this.monthlyToolStripMenuItem.Text = "Monthly";
             // 
             // helpToolStripMenuItem
@@ -157,14 +157,14 @@
             this.helpToolStripMenuItem.Size = new System.Drawing.Size(55, 24);
             this.helpToolStripMenuItem.Text = "Help";
             // 
-            // label1
+            // lblWelcome
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(575, 11);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(66, 17);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Welcome";
+            this.lblWelcome.AutoSize = true;
+            this.lblWelcome.Location = new System.Drawing.Point(575, 11);
+            this.lblWelcome.Name = "lblWelcome";
+            this.lblWelcome.Size = new System.Drawing.Size(66, 17);
+            this.lblWelcome.TabIndex = 1;
+            this.lblWelcome.Text = "Welcome";
             // 
             // lblAdminNameDisplay
             // 
@@ -204,40 +204,40 @@
             this.TxtRegi.Size = new System.Drawing.Size(37, 22);
             this.TxtRegi.TabIndex = 23;
             // 
-            // label2
+            // lblRegNo
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(19, 43);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(110, 17);
-            this.label2.TabIndex = 22;
-            this.label2.Text = "Registration No.";
+            this.lblRegNo.AutoSize = true;
+            this.lblRegNo.Location = new System.Drawing.Point(19, 43);
+            this.lblRegNo.Name = "lblRegNo";
+            this.lblRegNo.Size = new System.Drawing.Size(110, 17);
+            this.lblRegNo.TabIndex = 22;
+            this.lblRegNo.Text = "Registration No.";
             // 
-            // dataGridView1
+            // dataGridViewAdminPage
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(15, 215);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(773, 261);
-            this.dataGridView1.TabIndex = 27;
+            this.dataGridViewAdminPage.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewAdminPage.Location = new System.Drawing.Point(15, 215);
+            this.dataGridViewAdminPage.Name = "dataGridViewAdminPage";
+            this.dataGridViewAdminPage.RowHeadersWidth = 51;
+            this.dataGridViewAdminPage.RowTemplate.Height = 24;
+            this.dataGridViewAdminPage.Size = new System.Drawing.Size(773, 261);
+            this.dataGridViewAdminPage.TabIndex = 27;
             // 
-            // panel1
+            // pnlReportView
             // 
-            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.label6);
-            this.panel1.Controls.Add(this.label4);
-            this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.dateTimePicker2);
-            this.panel1.Controls.Add(this.dateTimePicker1);
-            this.panel1.Controls.Add(this.button3);
-            this.panel1.Controls.Add(this.button2);
-            this.panel1.Controls.Add(this.button1);
-            this.panel1.Location = new System.Drawing.Point(406, 40);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(382, 169);
-            this.panel1.TabIndex = 28;
+            this.pnlReportView.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlReportView.Controls.Add(this.label6);
+            this.pnlReportView.Controls.Add(this.lblToDate);
+            this.pnlReportView.Controls.Add(this.lblFromDate);
+            this.pnlReportView.Controls.Add(this.dateTimePickerTo);
+            this.pnlReportView.Controls.Add(this.dateTimePickerFrom);
+            this.pnlReportView.Controls.Add(this.btnMonthlyReportView);
+            this.pnlReportView.Controls.Add(this.btnWeeklyReportView);
+            this.pnlReportView.Controls.Add(this.btnDialyReportView);
+            this.pnlReportView.Location = new System.Drawing.Point(406, 40);
+            this.pnlReportView.Name = "pnlReportView";
+            this.pnlReportView.Size = new System.Drawing.Size(382, 169);
+            this.pnlReportView.TabIndex = 28;
             // 
             // label6
             // 
@@ -249,88 +249,88 @@
             this.label6.TabIndex = 28;
             this.label6.Text = "Report";
             // 
-            // label4
+            // lblToDate
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(22, 136);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(49, 17);
-            this.label4.TabIndex = 6;
-            this.label4.Text = "To     :";
+            this.lblToDate.AutoSize = true;
+            this.lblToDate.Location = new System.Drawing.Point(22, 136);
+            this.lblToDate.Name = "lblToDate";
+            this.lblToDate.Size = new System.Drawing.Size(49, 17);
+            this.lblToDate.TabIndex = 6;
+            this.lblToDate.Text = "To     :";
             // 
-            // label3
+            // lblFromDate
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(22, 108);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(48, 17);
-            this.label3.TabIndex = 5;
-            this.label3.Text = "From :";
+            this.lblFromDate.AutoSize = true;
+            this.lblFromDate.Location = new System.Drawing.Point(22, 108);
+            this.lblFromDate.Name = "lblFromDate";
+            this.lblFromDate.Size = new System.Drawing.Size(48, 17);
+            this.lblFromDate.TabIndex = 5;
+            this.lblFromDate.Text = "From :";
             // 
-            // dateTimePicker2
+            // dateTimePickerTo
             // 
-            this.dateTimePicker2.Location = new System.Drawing.Point(171, 131);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(200, 22);
-            this.dateTimePicker2.TabIndex = 4;
+            this.dateTimePickerTo.Location = new System.Drawing.Point(171, 131);
+            this.dateTimePickerTo.Name = "dateTimePickerTo";
+            this.dateTimePickerTo.Size = new System.Drawing.Size(200, 22);
+            this.dateTimePickerTo.TabIndex = 4;
             // 
-            // dateTimePicker1
+            // dateTimePickerFrom
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(171, 103);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 22);
-            this.dateTimePicker1.TabIndex = 3;
+            this.dateTimePickerFrom.Location = new System.Drawing.Point(171, 103);
+            this.dateTimePickerFrom.Name = "dateTimePickerFrom";
+            this.dateTimePickerFrom.Size = new System.Drawing.Size(200, 22);
+            this.dateTimePickerFrom.TabIndex = 3;
             // 
-            // button3
+            // btnMonthlyReportView
             // 
-            this.button3.Location = new System.Drawing.Point(274, 43);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(97, 54);
-            this.button3.TabIndex = 2;
-            this.button3.Text = "Month";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btnMonthlyReportView.Location = new System.Drawing.Point(274, 43);
+            this.btnMonthlyReportView.Name = "btnMonthlyReportView";
+            this.btnMonthlyReportView.Size = new System.Drawing.Size(97, 54);
+            this.btnMonthlyReportView.TabIndex = 2;
+            this.btnMonthlyReportView.Text = "Month";
+            this.btnMonthlyReportView.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // btnWeeklyReportView
             // 
-            this.button2.Location = new System.Drawing.Point(149, 43);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(97, 54);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "Week";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnWeeklyReportView.Location = new System.Drawing.Point(149, 43);
+            this.btnWeeklyReportView.Name = "btnWeeklyReportView";
+            this.btnWeeklyReportView.Size = new System.Drawing.Size(97, 54);
+            this.btnWeeklyReportView.TabIndex = 1;
+            this.btnWeeklyReportView.Text = "Week";
+            this.btnWeeklyReportView.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // btnDialyReportView
             // 
-            this.button1.Location = new System.Drawing.Point(25, 43);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(97, 54);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Day";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnDialyReportView.Location = new System.Drawing.Point(25, 43);
+            this.btnDialyReportView.Name = "btnDialyReportView";
+            this.btnDialyReportView.Size = new System.Drawing.Size(97, 54);
+            this.btnDialyReportView.TabIndex = 0;
+            this.btnDialyReportView.Text = "Day";
+            this.btnDialyReportView.UseVisualStyleBackColor = true;
             // 
-            // panel2
+            // pnlVehicleSearch
             // 
-            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel2.Controls.Add(this.button4);
-            this.panel2.Controls.Add(this.label5);
-            this.panel2.Controls.Add(this.label2);
-            this.panel2.Controls.Add(this.TxtRegi);
-            this.panel2.Controls.Add(this.textBox2);
-            this.panel2.Controls.Add(this.comboBox2);
-            this.panel2.Controls.Add(this.textBox1);
-            this.panel2.Location = new System.Drawing.Point(15, 40);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(385, 169);
-            this.panel2.TabIndex = 29;
+            this.pnlVehicleSearch.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlVehicleSearch.Controls.Add(this.btnVehicleSearch);
+            this.pnlVehicleSearch.Controls.Add(this.label5);
+            this.pnlVehicleSearch.Controls.Add(this.lblRegNo);
+            this.pnlVehicleSearch.Controls.Add(this.TxtRegi);
+            this.pnlVehicleSearch.Controls.Add(this.textBox2);
+            this.pnlVehicleSearch.Controls.Add(this.comboBox2);
+            this.pnlVehicleSearch.Controls.Add(this.textBox1);
+            this.pnlVehicleSearch.Location = new System.Drawing.Point(15, 40);
+            this.pnlVehicleSearch.Name = "pnlVehicleSearch";
+            this.pnlVehicleSearch.Size = new System.Drawing.Size(385, 169);
+            this.pnlVehicleSearch.TabIndex = 29;
             // 
-            // button4
+            // btnVehicleSearch
             // 
-            this.button4.Location = new System.Drawing.Point(247, 99);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(97, 54);
-            this.button4.TabIndex = 28;
-            this.button4.Text = "Search";
-            this.button4.UseVisualStyleBackColor = true;
+            this.btnVehicleSearch.Location = new System.Drawing.Point(247, 99);
+            this.btnVehicleSearch.Name = "btnVehicleSearch";
+            this.btnVehicleSearch.Size = new System.Drawing.Size(97, 54);
+            this.btnVehicleSearch.TabIndex = 28;
+            this.btnVehicleSearch.Text = "Search";
+            this.btnVehicleSearch.UseVisualStyleBackColor = true;
             // 
             // label5
             // 
@@ -347,22 +347,22 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 485);
-            this.Controls.Add(this.panel2);
-            this.Controls.Add(this.panel1);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.pnlVehicleSearch);
+            this.Controls.Add(this.pnlReportView);
+            this.Controls.Add(this.dataGridViewAdminPage);
             this.Controls.Add(this.lblAdminNameDisplay);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lblWelcome);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "frmAdminPage";
             this.Text = "AdminPage";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewAdminPage)).EndInit();
+            this.pnlReportView.ResumeLayout(false);
+            this.pnlReportView.PerformLayout();
+            this.pnlVehicleSearch.ResumeLayout(false);
+            this.pnlVehicleSearch.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -382,25 +382,25 @@
         private System.Windows.Forms.ToolStripMenuItem addEmployeeToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem logoutToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblWelcome;
         private System.Windows.Forms.Label lblAdminNameDisplay;
         private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.TextBox TxtRegi;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lblRegNo;
+        private System.Windows.Forms.DataGridView dataGridViewAdminPage;
+        private System.Windows.Forms.Panel pnlReportView;
+        private System.Windows.Forms.DateTimePicker dateTimePickerTo;
+        private System.Windows.Forms.DateTimePicker dateTimePickerFrom;
+        private System.Windows.Forms.Button btnMonthlyReportView;
+        private System.Windows.Forms.Button btnWeeklyReportView;
+        private System.Windows.Forms.Button btnDialyReportView;
+        private System.Windows.Forms.Panel pnlVehicleSearch;
+        private System.Windows.Forms.Label lblToDate;
+        private System.Windows.Forms.Label lblFromDate;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button btnVehicleSearch;
     }
 }
