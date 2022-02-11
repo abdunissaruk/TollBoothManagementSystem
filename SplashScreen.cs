@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace TollBoothManagementSystem
 {
-    public partial class LaunchScreen : Form
+    public partial class SplashScreen : Form
     {
-        public LaunchScreen()
+        public SplashScreen()
         {
             InitializeComponent();
         }

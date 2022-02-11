@@ -1,6 +1,6 @@
 ﻿namespace TollBoothManagementSystem
 {
-    partial class LaunchScreen
+    partial class SplashScreen
     {
         /// <summary>
         /// Required designer variable.
