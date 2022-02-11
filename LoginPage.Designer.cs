@@ -34,13 +34,15 @@
             this.txtLog = new System.Windows.Forms.TextBox();
             this.txtPass = new System.Windows.Forms.TextBox();
             this.btnSubmit = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Monotype Corsiva", 28.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(288, 39);
+            this.label1.Location = new System.Drawing.Point(139, 37);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(216, 57);
             this.label1.TabIndex = 0;
@@ -50,7 +52,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(190, 143);
+            this.label2.Location = new System.Drawing.Point(41, 141);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(55, 20);
             this.label2.TabIndex = 1;
@@ -60,7 +62,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(190, 231);
+            this.label3.Location = new System.Drawing.Point(41, 229);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(91, 20);
             this.label3.TabIndex = 2;
@@ -68,14 +70,14 @@
             // 
             // txtLog
             // 
-            this.txtLog.Location = new System.Drawing.Point(338, 141);
+            this.txtLog.Location = new System.Drawing.Point(189, 139);
             this.txtLog.Name = "txtLog";
             this.txtLog.Size = new System.Drawing.Size(161, 22);
             this.txtLog.TabIndex = 3;
             // 
             // txtPass
             // 
-            this.txtPass.Location = new System.Drawing.Point(338, 229);
+            this.txtPass.Location = new System.Drawing.Point(189, 227);
             this.txtPass.Name = "txtPass";
             this.txtPass.Size = new System.Drawing.Size(161, 22);
             this.txtPass.TabIndex = 4;
@@ -83,7 +85,7 @@
             // btnSubmit
             // 
             this.btnSubmit.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSubmit.Location = new System.Drawing.Point(377, 308);
+            this.btnSubmit.Location = new System.Drawing.Point(228, 306);
             this.btnSubmit.Name = "btnSubmit";
             this.btnSubmit.Size = new System.Drawing.Size(95, 37);
             this.btnSubmit.TabIndex = 5;
@@ -91,11 +93,22 @@
             this.btnSubmit.UseVisualStyleBackColor = true;
             this.btnSubmit.Click += new System.EventHandler(this.btnSubmit_Click);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBox1.Image = global::TollBoothManagementSystem.Properties.Resources.WhatsApp_Image_2022_02_11_at_9_56_10_PM;
+            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(800, 485);
+            this.pictureBox1.TabIndex = 6;
+            this.pictureBox1.TabStop = false;
+            // 
             // frmLoginPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(761, 450);
+            this.ClientSize = new System.Drawing.Size(800, 485);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnSubmit);
             this.Controls.Add(this.txtPass);
             this.Controls.Add(this.txtLog);
@@ -103,7 +116,9 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "frmLoginPage";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Login";
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -117,6 +132,7 @@
         private System.Windows.Forms.TextBox txtLog;
         private System.Windows.Forms.TextBox txtPass;
         private System.Windows.Forms.Button btnSubmit;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
 
