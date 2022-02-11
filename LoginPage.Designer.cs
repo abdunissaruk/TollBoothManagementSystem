@@ -107,7 +107,6 @@
             this.Text = "Login";
             this.ResumeLayout(false);
             this.PerformLayout();
-
         }
 
         #endregion
