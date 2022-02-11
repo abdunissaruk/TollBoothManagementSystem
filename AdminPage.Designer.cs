@@ -28,12 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAdminPage));
             this.menuStripAdminPage = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.logoutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.addEmployeeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.viewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dialyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -60,6 +60,7 @@
             this.pnlVehicleSearch = new System.Windows.Forms.Panel();
             this.btnVehicleSearch = new System.Windows.Forms.Button();
             this.lblVehicleSearch = new System.Windows.Forms.Label();
+            this.employeeDetailsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStripAdminPage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDisplay)).BeginInit();
             this.pnlReportView.SuspendLayout();
@@ -92,28 +93,23 @@
             // logoutToolStripMenuItem
             // 
             this.logoutToolStripMenuItem.Name = "logoutToolStripMenuItem";
-            this.logoutToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.logoutToolStripMenuItem.Size = new System.Drawing.Size(139, 26);
             this.logoutToolStripMenuItem.Text = "Logout";
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(139, 26);
             this.exitToolStripMenuItem.Text = "Exit";
+            this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
             // editToolStripMenuItem
             // 
             this.editToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.addEmployeeToolStripMenuItem});
+            this.employeeDetailsToolStripMenuItem});
             this.editToolStripMenuItem.Name = "editToolStripMenuItem";
             this.editToolStripMenuItem.Size = new System.Drawing.Size(49, 24);
             this.editToolStripMenuItem.Text = "Edit";
-            // 
-            // addEmployeeToolStripMenuItem
-            // 
-            this.addEmployeeToolStripMenuItem.Name = "addEmployeeToolStripMenuItem";
-            this.addEmployeeToolStripMenuItem.Size = new System.Drawing.Size(208, 26);
-            this.addEmployeeToolStripMenuItem.Text = "Employee Details";
             // 
             // viewToolStripMenuItem
             // 
@@ -342,6 +338,13 @@
             this.lblVehicleSearch.TabIndex = 27;
             this.lblVehicleSearch.Text = "Search Vehicle";
             // 
+            // employeeDetailsToolStripMenuItem
+            // 
+            this.employeeDetailsToolStripMenuItem.Name = "employeeDetailsToolStripMenuItem";
+            this.employeeDetailsToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.employeeDetailsToolStripMenuItem.Text = "Employee Details";
+            this.employeeDetailsToolStripMenuItem.Click += new System.EventHandler(this.employeeDetailsToolStripMenuItem_Click);
+            // 
             // frmAdminPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -353,9 +356,11 @@
             this.Controls.Add(this.lblAdminNameDisplay);
             this.Controls.Add(this.lblWelcome);
             this.Controls.Add(this.menuStripAdminPage);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStripAdminPage;
             this.Name = "frmAdminPage";
-            this.Text = "AdminPage";
+            this.Text = "Admin Dashboard";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.menuStripAdminPage.ResumeLayout(false);
             this.menuStripAdminPage.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDisplay)).EndInit();
@@ -379,7 +384,6 @@
         private System.Windows.Forms.ToolStripMenuItem weeklyToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem monthlyToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem addEmployeeToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem logoutToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
         private System.Windows.Forms.Label lblWelcome;
@@ -402,5 +406,6 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label lblVehicleSearch;
         private System.Windows.Forms.Button btnVehicleSearch;
+        private System.Windows.Forms.ToolStripMenuItem employeeDetailsToolStripMenuItem;
     }
 }

@@ -1,6 +1,6 @@
 ﻿namespace TollBoothManagementSystem
 {
-    partial class EmployeeDetailsPage
+    partial class frmEmployeeDetails
     {
         /// <summary>
         /// Required designer variable.
@@ -28,147 +28,149 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.button4 = new System.Windows.Forms.Button();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.button5 = new System.Windows.Forms.Button();
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.lblEmployeeName = new System.Windows.Forms.Label();
+            this.lblEmployeeEmail = new System.Windows.Forms.Label();
+            this.lblEmployeeMobileNumber = new System.Windows.Forms.Label();
+            this.lblEmployeeId = new System.Windows.Forms.Label();
+            this.lblEmployeePassord = new System.Windows.Forms.Label();
+            this.txtEmployeeName = new System.Windows.Forms.TextBox();
+            this.txtEmployeePassword = new System.Windows.Forms.TextBox();
+            this.txtEmployeeMobileNumber = new System.Windows.Forms.TextBox();
+            this.txtEmployeeEmail = new System.Windows.Forms.TextBox();
+            this.txtEmployeeId = new System.Windows.Forms.TextBox();
+            this.btnSubmit = new System.Windows.Forms.Button();
+            this.checkBoxAdminPrivilege = new System.Windows.Forms.CheckBox();
+            this.btnClear = new System.Windows.Forms.Button();
+            this.menuStripEmployeeDetails = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.newToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.deleteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.menuStrip1.SuspendLayout();
+            this.closeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnSearch = new System.Windows.Forms.Button();
+            this.menuStripEmployeeDetails.SuspendLayout();
             this.SuspendLayout();
             // 
-            // label1
+            // lblEmployeeName
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(21, 108);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(45, 17);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Name";
+            this.lblEmployeeName.AutoSize = true;
+            this.lblEmployeeName.Location = new System.Drawing.Point(21, 108);
+            this.lblEmployeeName.Name = "lblEmployeeName";
+            this.lblEmployeeName.Size = new System.Drawing.Size(45, 17);
+            this.lblEmployeeName.TabIndex = 0;
+            this.lblEmployeeName.Text = "Name";
             // 
-            // label2
+            // lblEmployeeEmail
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(21, 162);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(47, 17);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "E-Mail";
+            this.lblEmployeeEmail.AutoSize = true;
+            this.lblEmployeeEmail.Location = new System.Drawing.Point(21, 162);
+            this.lblEmployeeEmail.Name = "lblEmployeeEmail";
+            this.lblEmployeeEmail.Size = new System.Drawing.Size(47, 17);
+            this.lblEmployeeEmail.TabIndex = 1;
+            this.lblEmployeeEmail.Text = "E-Mail";
             // 
-            // label3
+            // lblEmployeeMobileNumber
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(21, 204);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(58, 17);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "Number";
+            this.lblEmployeeMobileNumber.AutoSize = true;
+            this.lblEmployeeMobileNumber.Location = new System.Drawing.Point(21, 204);
+            this.lblEmployeeMobileNumber.Name = "lblEmployeeMobileNumber";
+            this.lblEmployeeMobileNumber.Size = new System.Drawing.Size(103, 17);
+            this.lblEmployeeMobileNumber.TabIndex = 2;
+            this.lblEmployeeMobileNumber.Text = "Mobile Number";
             // 
-            // label4
+            // lblEmployeeId
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(21, 59);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(87, 17);
-            this.label4.TabIndex = 3;
-            this.label4.Text = "Employee ID";
+            this.lblEmployeeId.AutoSize = true;
+            this.lblEmployeeId.Location = new System.Drawing.Point(21, 59);
+            this.lblEmployeeId.Name = "lblEmployeeId";
+            this.lblEmployeeId.Size = new System.Drawing.Size(87, 17);
+            this.lblEmployeeId.TabIndex = 3;
+            this.lblEmployeeId.Text = "Employee ID";
             // 
-            // label5
+            // lblEmployeePassord
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(23, 250);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(69, 17);
-            this.label5.TabIndex = 4;
-            this.label5.Text = "Password";
+            this.lblEmployeePassord.AutoSize = true;
+            this.lblEmployeePassord.Location = new System.Drawing.Point(23, 250);
+            this.lblEmployeePassord.Name = "lblEmployeePassord";
+            this.lblEmployeePassord.Size = new System.Drawing.Size(69, 17);
+            this.lblEmployeePassord.TabIndex = 4;
+            this.lblEmployeePassord.Text = "Password";
             // 
-            // textBox1
+            // txtEmployeeName
             // 
-            this.textBox1.Location = new System.Drawing.Point(199, 105);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 22);
-            this.textBox1.TabIndex = 5;
+            this.txtEmployeeName.Location = new System.Drawing.Point(199, 105);
+            this.txtEmployeeName.Name = "txtEmployeeName";
+            this.txtEmployeeName.Size = new System.Drawing.Size(100, 22);
+            this.txtEmployeeName.TabIndex = 5;
             // 
-            // textBox2
+            // txtEmployeePassword
             // 
-            this.textBox2.Location = new System.Drawing.Point(199, 250);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 22);
-            this.textBox2.TabIndex = 6;
+            this.txtEmployeePassword.Location = new System.Drawing.Point(199, 250);
+            this.txtEmployeePassword.Name = "txtEmployeePassword";
+            this.txtEmployeePassword.Size = new System.Drawing.Size(100, 22);
+            this.txtEmployeePassword.TabIndex = 6;
             // 
-            // textBox3
+            // txtEmployeeMobileNumber
             // 
-            this.textBox3.Location = new System.Drawing.Point(199, 204);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 22);
-            this.textBox3.TabIndex = 7;
+            this.txtEmployeeMobileNumber.Location = new System.Drawing.Point(199, 204);
+            this.txtEmployeeMobileNumber.Name = "txtEmployeeMobileNumber";
+            this.txtEmployeeMobileNumber.Size = new System.Drawing.Size(100, 22);
+            this.txtEmployeeMobileNumber.TabIndex = 7;
             // 
-            // textBox4
+            // txtEmployeeEmail
             // 
-            this.textBox4.Location = new System.Drawing.Point(199, 157);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(100, 22);
-            this.textBox4.TabIndex = 8;
+            this.txtEmployeeEmail.Location = new System.Drawing.Point(199, 157);
+            this.txtEmployeeEmail.Name = "txtEmployeeEmail";
+            this.txtEmployeeEmail.Size = new System.Drawing.Size(100, 22);
+            this.txtEmployeeEmail.TabIndex = 8;
             // 
-            // textBox5
+            // txtEmployeeId
             // 
-            this.textBox5.Location = new System.Drawing.Point(199, 54);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(100, 22);
-            this.textBox5.TabIndex = 12;
+            this.txtEmployeeId.Location = new System.Drawing.Point(199, 54);
+            this.txtEmployeeId.Name = "txtEmployeeId";
+            this.txtEmployeeId.Size = new System.Drawing.Size(100, 22);
+            this.txtEmployeeId.TabIndex = 12;
             // 
-            // button4
+            // btnSubmit
             // 
-            this.button4.Location = new System.Drawing.Point(199, 336);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 23);
-            this.button4.TabIndex = 13;
-            this.button4.Text = "Submit";
-            this.button4.UseVisualStyleBackColor = true;
+            this.btnSubmit.Location = new System.Drawing.Point(224, 336);
+            this.btnSubmit.Name = "btnSubmit";
+            this.btnSubmit.Size = new System.Drawing.Size(75, 23);
+            this.btnSubmit.TabIndex = 13;
+            this.btnSubmit.Text = "Submit";
+            this.btnSubmit.UseVisualStyleBackColor = true;
+            this.btnSubmit.Click += new System.EventHandler(this.btnSubmit_Click);
             // 
-            // checkBox1
+            // checkBoxAdminPrivilege
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(199, 296);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(127, 21);
-            this.checkBox1.TabIndex = 15;
-            this.checkBox1.Text = "Admin Privilege";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBoxAdminPrivilege.AutoSize = true;
+            this.checkBoxAdminPrivilege.Location = new System.Drawing.Point(199, 296);
+            this.checkBoxAdminPrivilege.Name = "checkBoxAdminPrivilege";
+            this.checkBoxAdminPrivilege.Size = new System.Drawing.Size(127, 21);
+            this.checkBoxAdminPrivilege.TabIndex = 15;
+            this.checkBoxAdminPrivilege.Text = "Admin Privilege";
+            this.checkBoxAdminPrivilege.UseVisualStyleBackColor = true;
             // 
-            // button5
+            // btnClear
             // 
-            this.button5.Location = new System.Drawing.Point(92, 336);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(75, 23);
-            this.button5.TabIndex = 16;
-            this.button5.Text = "Clear";
-            this.button5.UseVisualStyleBackColor = true;
+            this.btnClear.Location = new System.Drawing.Point(33, 336);
+            this.btnClear.Name = "btnClear";
+            this.btnClear.Size = new System.Drawing.Size(75, 23);
+            this.btnClear.TabIndex = 16;
+            this.btnClear.Text = "Clear";
+            this.btnClear.UseVisualStyleBackColor = true;
             // 
-            // menuStrip1
+            // menuStripEmployeeDetails
             // 
-            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.menuStripEmployeeDetails.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.menuStripEmployeeDetails.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fileToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(800, 28);
-            this.menuStrip1.TabIndex = 17;
-            this.menuStrip1.Text = "menuStrip1";
+            this.menuStripEmployeeDetails.Location = new System.Drawing.Point(0, 0);
+            this.menuStripEmployeeDetails.Name = "menuStripEmployeeDetails";
+            this.menuStripEmployeeDetails.Size = new System.Drawing.Size(800, 28);
+            this.menuStripEmployeeDetails.TabIndex = 17;
+            this.menuStripEmployeeDetails.Text = "menuStrip1";
             // 
             // fileToolStripMenuItem
             // 
@@ -177,7 +179,7 @@
             this.editToolStripMenuItem,
             this.deleteToolStripMenuItem,
             this.toolStripSeparator1,
-            this.exitToolStripMenuItem});
+            this.closeToolStripMenuItem});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
             this.fileToolStripMenuItem.Size = new System.Drawing.Size(46, 24);
             this.fileToolStripMenuItem.Text = "File";
@@ -185,56 +187,72 @@
             // newToolStripMenuItem
             // 
             this.newToolStripMenuItem.Name = "newToolStripMenuItem";
-            this.newToolStripMenuItem.Size = new System.Drawing.Size(136, 26);
+            this.newToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.newToolStripMenuItem.Text = "New";
+            this.newToolStripMenuItem.Click += new System.EventHandler(this.newToolStripMenuItem_Click);
             // 
             // editToolStripMenuItem
             // 
             this.editToolStripMenuItem.Name = "editToolStripMenuItem";
-            this.editToolStripMenuItem.Size = new System.Drawing.Size(136, 26);
+            this.editToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.editToolStripMenuItem.Text = "Edit";
+            this.editToolStripMenuItem.Click += new System.EventHandler(this.editToolStripMenuItem_Click);
             // 
             // deleteToolStripMenuItem
             // 
             this.deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
-            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(136, 26);
+            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.deleteToolStripMenuItem.Text = "Delete";
+            this.deleteToolStripMenuItem.Click += new System.EventHandler(this.deleteToolStripMenuItem_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(133, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(221, 6);
             // 
-            // exitToolStripMenuItem
+            // closeToolStripMenuItem
             // 
-            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(136, 26);
-            this.exitToolStripMenuItem.Text = "Close";
+            this.closeToolStripMenuItem.Name = "closeToolStripMenuItem";
+            this.closeToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.closeToolStripMenuItem.Text = "Close";
+            this.closeToolStripMenuItem.Click += new System.EventHandler(this.closeToolStripMenuItem_Click);
             // 
-            // EmployeeDetailsPage
+            // btnSearch
+            // 
+            this.btnSearch.Location = new System.Drawing.Point(132, 336);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(75, 23);
+            this.btnSearch.TabIndex = 18;
+            this.btnSearch.Text = "Search";
+            this.btnSearch.UseVisualStyleBackColor = true;
+            // 
+            // frmEmployeeDetails
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 485);
-            this.Controls.Add(this.button5);
-            this.Controls.Add(this.checkBox1);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.menuStrip1);
-            this.MainMenuStrip = this.menuStrip1;
-            this.Name = "EmployeeDetailsPage";
-            this.Text = "EmployeeDetailsPage";
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
+            this.Controls.Add(this.btnSearch);
+            this.Controls.Add(this.btnClear);
+            this.Controls.Add(this.checkBoxAdminPrivilege);
+            this.Controls.Add(this.btnSubmit);
+            this.Controls.Add(this.txtEmployeeId);
+            this.Controls.Add(this.txtEmployeeEmail);
+            this.Controls.Add(this.txtEmployeeMobileNumber);
+            this.Controls.Add(this.txtEmployeePassword);
+            this.Controls.Add(this.txtEmployeeName);
+            this.Controls.Add(this.lblEmployeePassord);
+            this.Controls.Add(this.lblEmployeeId);
+            this.Controls.Add(this.lblEmployeeMobileNumber);
+            this.Controls.Add(this.lblEmployeeEmail);
+            this.Controls.Add(this.lblEmployeeName);
+            this.Controls.Add(this.menuStripEmployeeDetails);
+            this.MainMenuStrip = this.menuStripEmployeeDetails;
+            this.Name = "frmEmployeeDetails";
+            this.Text = "Employee Details";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.frmEmployeeDetails_Load);
+            this.menuStripEmployeeDetails.ResumeLayout(false);
+            this.menuStripEmployeeDetails.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -242,25 +260,26 @@
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.CheckBox checkBox1;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.Label lblEmployeeName;
+        private System.Windows.Forms.Label lblEmployeeEmail;
+        private System.Windows.Forms.Label lblEmployeeMobileNumber;
+        private System.Windows.Forms.Label lblEmployeeId;
+        private System.Windows.Forms.Label lblEmployeePassord;
+        private System.Windows.Forms.TextBox txtEmployeeName;
+        private System.Windows.Forms.TextBox txtEmployeePassword;
+        private System.Windows.Forms.TextBox txtEmployeeMobileNumber;
+        private System.Windows.Forms.TextBox txtEmployeeEmail;
+        private System.Windows.Forms.TextBox txtEmployeeId;
+        private System.Windows.Forms.Button btnSubmit;
+        private System.Windows.Forms.CheckBox checkBoxAdminPrivilege;
+        private System.Windows.Forms.Button btnClear;
+        private System.Windows.Forms.MenuStrip menuStripEmployeeDetails;
         private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem newToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem editToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem deleteToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
-        private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem closeToolStripMenuItem;
+        private System.Windows.Forms.Button btnSearch;
     }
 }

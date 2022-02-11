@@ -28,57 +28,58 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.txtLog = new System.Windows.Forms.TextBox();
-            this.txtPass = new System.Windows.Forms.TextBox();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmLoginPage));
+            this.lblTollBooth = new System.Windows.Forms.Label();
+            this.lblLoginId = new System.Windows.Forms.Label();
+            this.lblPassword = new System.Windows.Forms.Label();
+            this.txtLoginId = new System.Windows.Forms.TextBox();
+            this.txtPassword = new System.Windows.Forms.TextBox();
             this.btnSubmit = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // label1
+            // lblTollBooth
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Monotype Corsiva", 28.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(139, 37);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(216, 57);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Toll Booth";
+            this.lblTollBooth.AutoSize = true;
+            this.lblTollBooth.Font = new System.Drawing.Font("Monotype Corsiva", 28.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTollBooth.Location = new System.Drawing.Point(139, 37);
+            this.lblTollBooth.Name = "lblTollBooth";
+            this.lblTollBooth.Size = new System.Drawing.Size(216, 57);
+            this.lblTollBooth.TabIndex = 0;
+            this.lblTollBooth.Text = "Toll Booth";
             // 
-            // label2
+            // lblLoginId
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(41, 141);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(55, 20);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Login";
+            this.lblLoginId.AutoSize = true;
+            this.lblLoginId.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLoginId.Location = new System.Drawing.Point(41, 141);
+            this.lblLoginId.Name = "lblLoginId";
+            this.lblLoginId.Size = new System.Drawing.Size(55, 20);
+            this.lblLoginId.TabIndex = 1;
+            this.lblLoginId.Text = "Login";
             // 
-            // label3
+            // lblPassword
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(41, 229);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(91, 20);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "Password";
+            this.lblPassword.AutoSize = true;
+            this.lblPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPassword.Location = new System.Drawing.Point(41, 229);
+            this.lblPassword.Name = "lblPassword";
+            this.lblPassword.Size = new System.Drawing.Size(91, 20);
+            this.lblPassword.TabIndex = 2;
+            this.lblPassword.Text = "Password";
             // 
-            // txtLog
+            // txtLoginId
             // 
-            this.txtLog.Location = new System.Drawing.Point(189, 139);
-            this.txtLog.Name = "txtLog";
-            this.txtLog.Size = new System.Drawing.Size(161, 22);
-            this.txtLog.TabIndex = 3;
+            this.txtLoginId.Location = new System.Drawing.Point(189, 139);
+            this.txtLoginId.Name = "txtLoginId";
+            this.txtLoginId.Size = new System.Drawing.Size(161, 22);
+            this.txtLoginId.TabIndex = 3;
             // 
-            // txtPass
+            // txtPassword
             // 
-            this.txtPass.Location = new System.Drawing.Point(189, 227);
-            this.txtPass.Name = "txtPass";
-            this.txtPass.Size = new System.Drawing.Size(161, 22);
-            this.txtPass.TabIndex = 4;
+            this.txtPassword.Location = new System.Drawing.Point(189, 227);
+            this.txtPassword.Name = "txtPassword";
+            this.txtPassword.Size = new System.Drawing.Size(161, 22);
+            this.txtPassword.TabIndex = 4;
             // 
             // btnSubmit
             // 
@@ -97,25 +98,29 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 485);
             this.Controls.Add(this.btnSubmit);
-            this.Controls.Add(this.txtPass);
-            this.Controls.Add(this.txtLog);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.txtPassword);
+            this.Controls.Add(this.txtLoginId);
+            this.Controls.Add(this.lblPassword);
+            this.Controls.Add(this.lblLoginId);
+            this.Controls.Add(this.lblTollBooth);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmLoginPage";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Login";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.frmLoginPage_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
+
         }
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox txtLog;
-        private System.Windows.Forms.TextBox txtPass;
+        private System.Windows.Forms.Label lblTollBooth;
+        private System.Windows.Forms.Label lblLoginId;
+        private System.Windows.Forms.Label lblPassword;
+        private System.Windows.Forms.TextBox txtLoginId;
+        private System.Windows.Forms.TextBox txtPassword;
         private System.Windows.Forms.Button btnSubmit;
     }
 }

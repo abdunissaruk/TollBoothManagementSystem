@@ -23,5 +23,22 @@ namespace TollBoothManagementSystem
             new frmDashboard().Show();
             Hide();
         }
+
+        private void frmLoginPage_Load(object sender, EventArgs e)
+        {
+            if (txtLoginId.Text == "admin@toll.com" &&
+               txtPassword.Text == "admin")
+            {
+                new frmAdminPage().Show();
+                Hide();
+            }
+            else if (txtLoginId.Text == "staff@toll.com" &&
+                     txtPassword.Text == "staff")
+            {
+                new frmDashboard().Show();
+                Hide();
+            }
+
+        }
     }
 }

@@ -17,6 +17,17 @@ namespace TollBoothManagementSystem
             InitializeComponent();
         }
 
-      
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        
+
+        private void employeeDetailsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new frmEmployeeDetails().Show();
+            Hide();
+        }
     }
 }
