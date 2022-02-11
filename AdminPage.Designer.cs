@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.menuStripAdminPage = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.logoutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -42,12 +42,12 @@
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.lblWelcome = new System.Windows.Forms.Label();
             this.lblAdminNameDisplay = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.TxtRegi = new System.Windows.Forms.TextBox();
+            this.cbStateOrTerritory = new System.Windows.Forms.ComboBox();
+            this.txtLetters = new System.Windows.Forms.TextBox();
+            this.txtRegionalTransportAuthority = new System.Windows.Forms.TextBox();
+            this.txtDigits = new System.Windows.Forms.TextBox();
             this.lblRegNo = new System.Windows.Forms.Label();
-            this.dataGridViewAdminPage = new System.Windows.Forms.DataGridView();
+            this.dataGridViewDisplay = new System.Windows.Forms.DataGridView();
             this.pnlReportView = new System.Windows.Forms.Panel();
             this.label6 = new System.Windows.Forms.Label();
             this.lblToDate = new System.Windows.Forms.Label();
@@ -59,26 +59,26 @@
             this.btnDialyReportView = new System.Windows.Forms.Button();
             this.pnlVehicleSearch = new System.Windows.Forms.Panel();
             this.btnVehicleSearch = new System.Windows.Forms.Button();
-            this.label5 = new System.Windows.Forms.Label();
-            this.menuStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewAdminPage)).BeginInit();
+            this.lblVehicleSearch = new System.Windows.Forms.Label();
+            this.menuStripAdminPage.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDisplay)).BeginInit();
             this.pnlReportView.SuspendLayout();
             this.pnlVehicleSearch.SuspendLayout();
             this.SuspendLayout();
             // 
-            // menuStrip1
+            // menuStripAdminPage
             // 
-            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.menuStripAdminPage.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.menuStripAdminPage.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fileToolStripMenuItem,
             this.editToolStripMenuItem,
             this.viewToolStripMenuItem,
             this.helpToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(800, 28);
-            this.menuStrip1.TabIndex = 0;
-            this.menuStrip1.Text = "menuStrip1";
+            this.menuStripAdminPage.Location = new System.Drawing.Point(0, 0);
+            this.menuStripAdminPage.Name = "menuStripAdminPage";
+            this.menuStripAdminPage.Size = new System.Drawing.Size(800, 28);
+            this.menuStripAdminPage.TabIndex = 0;
+            this.menuStripAdminPage.Text = "menuStrip1";
             // 
             // fileToolStripMenuItem
             // 
@@ -175,34 +175,34 @@
             this.lblAdminNameDisplay.TabIndex = 2;
             this.lblAdminNameDisplay.Text = "Admin name";
             // 
-            // comboBox2
+            // cbStateOrTerritory
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(148, 43);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(41, 24);
-            this.comboBox2.TabIndex = 26;
+            this.cbStateOrTerritory.FormattingEnabled = true;
+            this.cbStateOrTerritory.Location = new System.Drawing.Point(148, 43);
+            this.cbStateOrTerritory.Name = "cbStateOrTerritory";
+            this.cbStateOrTerritory.Size = new System.Drawing.Size(41, 24);
+            this.cbStateOrTerritory.TabIndex = 26;
             // 
-            // textBox2
+            // txtLetters
             // 
-            this.textBox2.Location = new System.Drawing.Point(250, 45);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(37, 22);
-            this.textBox2.TabIndex = 25;
+            this.txtLetters.Location = new System.Drawing.Point(250, 45);
+            this.txtLetters.Name = "txtLetters";
+            this.txtLetters.Size = new System.Drawing.Size(37, 22);
+            this.txtLetters.TabIndex = 25;
             // 
-            // textBox1
+            // txtRegionalTransportAuthority
             // 
-            this.textBox1.Location = new System.Drawing.Point(206, 45);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(37, 22);
-            this.textBox1.TabIndex = 24;
+            this.txtRegionalTransportAuthority.Location = new System.Drawing.Point(206, 45);
+            this.txtRegionalTransportAuthority.Name = "txtRegionalTransportAuthority";
+            this.txtRegionalTransportAuthority.Size = new System.Drawing.Size(37, 22);
+            this.txtRegionalTransportAuthority.TabIndex = 24;
             // 
-            // TxtRegi
+            // txtDigits
             // 
-            this.TxtRegi.Location = new System.Drawing.Point(307, 43);
-            this.TxtRegi.Name = "TxtRegi";
-            this.TxtRegi.Size = new System.Drawing.Size(37, 22);
-            this.TxtRegi.TabIndex = 23;
+            this.txtDigits.Location = new System.Drawing.Point(307, 43);
+            this.txtDigits.Name = "txtDigits";
+            this.txtDigits.Size = new System.Drawing.Size(37, 22);
+            this.txtDigits.TabIndex = 23;
             // 
             // lblRegNo
             // 
@@ -213,15 +213,15 @@
             this.lblRegNo.TabIndex = 22;
             this.lblRegNo.Text = "Registration No.";
             // 
-            // dataGridViewAdminPage
+            // dataGridViewDisplay
             // 
-            this.dataGridViewAdminPage.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewAdminPage.Location = new System.Drawing.Point(15, 215);
-            this.dataGridViewAdminPage.Name = "dataGridViewAdminPage";
-            this.dataGridViewAdminPage.RowHeadersWidth = 51;
-            this.dataGridViewAdminPage.RowTemplate.Height = 24;
-            this.dataGridViewAdminPage.Size = new System.Drawing.Size(773, 261);
-            this.dataGridViewAdminPage.TabIndex = 27;
+            this.dataGridViewDisplay.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewDisplay.Location = new System.Drawing.Point(15, 215);
+            this.dataGridViewDisplay.Name = "dataGridViewDisplay";
+            this.dataGridViewDisplay.RowHeadersWidth = 51;
+            this.dataGridViewDisplay.RowTemplate.Height = 24;
+            this.dataGridViewDisplay.Size = new System.Drawing.Size(773, 261);
+            this.dataGridViewDisplay.TabIndex = 27;
             // 
             // pnlReportView
             // 
@@ -312,12 +312,12 @@
             // 
             this.pnlVehicleSearch.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pnlVehicleSearch.Controls.Add(this.btnVehicleSearch);
-            this.pnlVehicleSearch.Controls.Add(this.label5);
+            this.pnlVehicleSearch.Controls.Add(this.lblVehicleSearch);
             this.pnlVehicleSearch.Controls.Add(this.lblRegNo);
-            this.pnlVehicleSearch.Controls.Add(this.TxtRegi);
-            this.pnlVehicleSearch.Controls.Add(this.textBox2);
-            this.pnlVehicleSearch.Controls.Add(this.comboBox2);
-            this.pnlVehicleSearch.Controls.Add(this.textBox1);
+            this.pnlVehicleSearch.Controls.Add(this.txtDigits);
+            this.pnlVehicleSearch.Controls.Add(this.txtLetters);
+            this.pnlVehicleSearch.Controls.Add(this.cbStateOrTerritory);
+            this.pnlVehicleSearch.Controls.Add(this.txtRegionalTransportAuthority);
             this.pnlVehicleSearch.Location = new System.Drawing.Point(15, 40);
             this.pnlVehicleSearch.Name = "pnlVehicleSearch";
             this.pnlVehicleSearch.Size = new System.Drawing.Size(385, 169);
@@ -332,15 +332,15 @@
             this.btnVehicleSearch.Text = "Search";
             this.btnVehicleSearch.UseVisualStyleBackColor = true;
             // 
-            // label5
+            // lblVehicleSearch
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(19, 4);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(103, 17);
-            this.label5.TabIndex = 27;
-            this.label5.Text = "Search Vehicle";
+            this.lblVehicleSearch.AutoSize = true;
+            this.lblVehicleSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblVehicleSearch.Location = new System.Drawing.Point(19, 4);
+            this.lblVehicleSearch.Name = "lblVehicleSearch";
+            this.lblVehicleSearch.Size = new System.Drawing.Size(103, 17);
+            this.lblVehicleSearch.TabIndex = 27;
+            this.lblVehicleSearch.Text = "Search Vehicle";
             // 
             // frmAdminPage
             // 
@@ -349,16 +349,16 @@
             this.ClientSize = new System.Drawing.Size(800, 485);
             this.Controls.Add(this.pnlVehicleSearch);
             this.Controls.Add(this.pnlReportView);
-            this.Controls.Add(this.dataGridViewAdminPage);
+            this.Controls.Add(this.dataGridViewDisplay);
             this.Controls.Add(this.lblAdminNameDisplay);
             this.Controls.Add(this.lblWelcome);
-            this.Controls.Add(this.menuStrip1);
-            this.MainMenuStrip = this.menuStrip1;
+            this.Controls.Add(this.menuStripAdminPage);
+            this.MainMenuStrip = this.menuStripAdminPage;
             this.Name = "frmAdminPage";
             this.Text = "AdminPage";
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewAdminPage)).EndInit();
+            this.menuStripAdminPage.ResumeLayout(false);
+            this.menuStripAdminPage.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDisplay)).EndInit();
             this.pnlReportView.ResumeLayout(false);
             this.pnlReportView.PerformLayout();
             this.pnlVehicleSearch.ResumeLayout(false);
@@ -370,7 +370,7 @@
 
         #endregion
 
-        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.MenuStrip menuStripAdminPage;
         private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem editToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem viewToolStripMenuItem;
@@ -384,12 +384,12 @@
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
         private System.Windows.Forms.Label lblWelcome;
         private System.Windows.Forms.Label lblAdminNameDisplay;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox TxtRegi;
+        private System.Windows.Forms.ComboBox cbStateOrTerritory;
+        private System.Windows.Forms.TextBox txtLetters;
+        private System.Windows.Forms.TextBox txtRegionalTransportAuthority;
+        private System.Windows.Forms.TextBox txtDigits;
         private System.Windows.Forms.Label lblRegNo;
-        private System.Windows.Forms.DataGridView dataGridViewAdminPage;
+        private System.Windows.Forms.DataGridView dataGridViewDisplay;
         private System.Windows.Forms.Panel pnlReportView;
         private System.Windows.Forms.DateTimePicker dateTimePickerTo;
         private System.Windows.Forms.DateTimePicker dateTimePickerFrom;
@@ -400,7 +400,7 @@
         private System.Windows.Forms.Label lblToDate;
         private System.Windows.Forms.Label lblFromDate;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label lblVehicleSearch;
         private System.Windows.Forms.Button btnVehicleSearch;
     }
 }
