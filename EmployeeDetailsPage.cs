@@ -17,11 +17,6 @@ namespace TollBoothManagementSystem
             InitializeComponent();
         }
 
-        private void closeToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Close();
-        }
-
         private void frmEmployeeDetails_Load(object sender, EventArgs e)
         {
             txtEmployeeId.Enabled = false;
@@ -74,9 +69,26 @@ namespace TollBoothManagementSystem
             btnSubmit.Enabled = true;
         }
 
-        private void btnSubmit_Click(object sender, EventArgs e)
+        private void closeToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
+            new frmAdminPage().Show();
+            Close();
+        }
 
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            txtEmployeeId.Text = "";
+            txtEmployeeName.Text = "";
+            txtEmployeeEmail.Text = "";
+            txtEmployeeMobileNumber.Text = "";
+            txtEmployeePassword.Text = "";
+            checkBoxAdminPrivilege.Checked = false;
         }
     }
 }

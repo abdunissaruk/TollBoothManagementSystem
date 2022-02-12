@@ -16,18 +16,17 @@ namespace TollBoothManagementSystem
         {
             InitializeComponent();
         }
-
         
         private void btnSubmit_Click(object sender, EventArgs e)
         {
-            if (txtLoginId.Text == "admin@toll.com" &&
-               txtPassword.Text == "admin")
+            if (txtLoginId.Text == "1" &&
+               txtPassword.Text == "1")
             {
                 new frmAdminPage().Show();
                 Hide();
             }
-            else if (txtLoginId.Text == "staff@toll.com" &&
-                     txtPassword.Text == "staff")
+            else if (txtLoginId.Text == "2" &&
+                     txtPassword.Text == "2")
             {
                 new frmDashboardPage().Show();
                 Hide();
@@ -35,7 +34,6 @@ namespace TollBoothManagementSystem
             else
             {
                 MessageBox.Show("Incorrect");
-                Hide();
             } 
         }
 

@@ -17,12 +17,16 @@ namespace TollBoothManagementSystem
             InitializeComponent();
         }
 
+        private void logoutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new frmLoginPage().Show();
+            Close();
+        }
+
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Close();
         }
-
-        
 
         private void employeeDetailsToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -30,6 +34,12 @@ namespace TollBoothManagementSystem
             Hide();
         }
 
-        
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            comboBoxStateOrTerritory.Text = "";
+            txtRegionalTransportAuthority.Text = "";
+            txtLetters.Text = "";
+            txtDigits.Text = "";
+        }
     }
 }

@@ -45,7 +45,7 @@
             this.lblTollBooth.BackColor = System.Drawing.Color.Transparent;
             this.lblTollBooth.Font = new System.Drawing.Font("Calibri", 28.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTollBooth.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(194)))), ((int)(((byte)(200)))));
-            this.lblTollBooth.Location = new System.Drawing.Point(58, 31);
+            this.lblTollBooth.Location = new System.Drawing.Point(54, 35);
             this.lblTollBooth.Name = "lblTollBooth";
             this.lblTollBooth.Size = new System.Drawing.Size(228, 59);
             this.lblTollBooth.TabIndex = 0;
@@ -55,11 +55,11 @@
             // 
             this.lblLoginId.AutoSize = true;
             this.lblLoginId.BackColor = System.Drawing.Color.Transparent;
-            this.lblLoginId.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLoginId.Font = new System.Drawing.Font("Calibri", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblLoginId.ForeColor = System.Drawing.Color.White;
             this.lblLoginId.Location = new System.Drawing.Point(11, 133);
             this.lblLoginId.Name = "lblLoginId";
-            this.lblLoginId.Size = new System.Drawing.Size(55, 20);
+            this.lblLoginId.Size = new System.Drawing.Size(47, 21);
             this.lblLoginId.TabIndex = 1;
             this.lblLoginId.Text = "Login";
             // 
@@ -67,35 +67,37 @@
             // 
             this.lblPassword.AutoSize = true;
             this.lblPassword.BackColor = System.Drawing.Color.Transparent;
-            this.lblPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPassword.Font = new System.Drawing.Font("Calibri", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPassword.ForeColor = System.Drawing.Color.White;
             this.lblPassword.Location = new System.Drawing.Point(11, 223);
             this.lblPassword.Name = "lblPassword";
-            this.lblPassword.Size = new System.Drawing.Size(91, 20);
+            this.lblPassword.Size = new System.Drawing.Size(78, 21);
             this.lblPassword.TabIndex = 2;
             this.lblPassword.Text = "Password";
             // 
             // txtLoginId
             // 
+            this.txtLoginId.Font = new System.Drawing.Font("Calibri", 10F);
             this.txtLoginId.Location = new System.Drawing.Point(140, 133);
             this.txtLoginId.Name = "txtLoginId";
-            this.txtLoginId.Size = new System.Drawing.Size(161, 22);
+            this.txtLoginId.Size = new System.Drawing.Size(161, 28);
             this.txtLoginId.TabIndex = 3;
             // 
             // txtPassword
             // 
+            this.txtPassword.Font = new System.Drawing.Font("Calibri", 10F);
             this.txtPassword.Location = new System.Drawing.Point(140, 223);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '*';
-            this.txtPassword.Size = new System.Drawing.Size(161, 22);
+            this.txtPassword.Size = new System.Drawing.Size(161, 28);
             this.txtPassword.TabIndex = 4;
             // 
             // btnSubmit
             // 
             this.btnSubmit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(194)))), ((int)(((byte)(200)))));
-            this.btnSubmit.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSubmit.Font = new System.Drawing.Font("Calibri", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSubmit.ForeColor = System.Drawing.Color.Black;
-            this.btnSubmit.Location = new System.Drawing.Point(179, 300);
+            this.btnSubmit.Location = new System.Drawing.Point(118, 295);
             this.btnSubmit.Name = "btnSubmit";
             this.btnSubmit.Size = new System.Drawing.Size(95, 37);
             this.btnSubmit.TabIndex = 5;

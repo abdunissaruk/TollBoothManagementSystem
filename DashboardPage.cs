@@ -17,6 +17,26 @@ namespace TollBoothManagementSystem
             InitializeComponent();
         }
 
-        
+        private void logoutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new frmLoginPage().Show();
+            Close();
+        }
+
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void btnReset_Click(object sender, EventArgs e)
+        {
+            comboBoxStateOrTerritory.Text = "";
+            txtRegionalTransportAuthority.Text = "";
+            txtLetters.Text = "";
+            txtDigits.Text = "";
+            radioButtonOneWay.Checked = true;
+            radioButtonTwoWay.Checked = false;
+            comboBoxVehicleClass.Text = "";
+        }
     }
 }
