@@ -34,22 +34,20 @@
             this.logoutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.employeeDetailsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.viewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dialyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.weeklyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.monthlyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.lblWelcome = new System.Windows.Forms.Label();
-            this.lblAdminNameDisplay = new System.Windows.Forms.Label();
+            this.lblNameDisplayAdmin = new System.Windows.Forms.Label();
             this.cbStateOrTerritory = new System.Windows.Forms.ComboBox();
             this.txtLetters = new System.Windows.Forms.TextBox();
             this.txtRegionalTransportAuthority = new System.Windows.Forms.TextBox();
             this.txtDigits = new System.Windows.Forms.TextBox();
             this.lblRegNo = new System.Windows.Forms.Label();
             this.dataGridViewDisplay = new System.Windows.Forms.DataGridView();
-            this.pnlReportView = new System.Windows.Forms.Panel();
-            this.label6 = new System.Windows.Forms.Label();
             this.lblToDate = new System.Windows.Forms.Label();
             this.lblFromDate = new System.Windows.Forms.Label();
             this.dateTimePickerTo = new System.Windows.Forms.DateTimePicker();
@@ -57,18 +55,24 @@
             this.btnMonthlyReportView = new System.Windows.Forms.Button();
             this.btnWeeklyReportView = new System.Windows.Forms.Button();
             this.btnDialyReportView = new System.Windows.Forms.Button();
-            this.pnlVehicleSearch = new System.Windows.Forms.Panel();
             this.btnVehicleSearch = new System.Windows.Forms.Button();
+            this.groupBoxVehicleSearch = new System.Windows.Forms.GroupBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.lblVehicleSearch = new System.Windows.Forms.Label();
-            this.employeeDetailsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.groupBoxViewReport = new System.Windows.Forms.GroupBox();
+            this.lblViewReport = new System.Windows.Forms.Label();
+            this.lblWelcome = new System.Windows.Forms.Label();
             this.menuStripAdminPage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDisplay)).BeginInit();
-            this.pnlReportView.SuspendLayout();
-            this.pnlVehicleSearch.SuspendLayout();
+            this.groupBoxVehicleSearch.SuspendLayout();
+            this.groupBoxViewReport.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStripAdminPage
             // 
+            this.menuStripAdminPage.Font = new System.Drawing.Font("Calibri", 10F);
             this.menuStripAdminPage.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStripAdminPage.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fileToolStripMenuItem,
@@ -77,9 +81,9 @@
             this.helpToolStripMenuItem});
             this.menuStripAdminPage.Location = new System.Drawing.Point(0, 0);
             this.menuStripAdminPage.Name = "menuStripAdminPage";
-            this.menuStripAdminPage.Size = new System.Drawing.Size(800, 28);
+            this.menuStripAdminPage.Size = new System.Drawing.Size(800, 30);
             this.menuStripAdminPage.TabIndex = 0;
-            this.menuStripAdminPage.Text = "menuStrip1";
+            this.menuStripAdminPage.Text = "menuStripAdminPage";
             // 
             // fileToolStripMenuItem
             // 
@@ -87,19 +91,19 @@
             this.logoutToolStripMenuItem,
             this.exitToolStripMenuItem});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            this.fileToolStripMenuItem.Size = new System.Drawing.Size(46, 24);
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(48, 26);
             this.fileToolStripMenuItem.Text = "File";
             // 
             // logoutToolStripMenuItem
             // 
             this.logoutToolStripMenuItem.Name = "logoutToolStripMenuItem";
-            this.logoutToolStripMenuItem.Size = new System.Drawing.Size(139, 26);
+            this.logoutToolStripMenuItem.Size = new System.Drawing.Size(142, 26);
             this.logoutToolStripMenuItem.Text = "Logout";
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(139, 26);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(142, 26);
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
@@ -108,15 +112,22 @@
             this.editToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.employeeDetailsToolStripMenuItem});
             this.editToolStripMenuItem.Name = "editToolStripMenuItem";
-            this.editToolStripMenuItem.Size = new System.Drawing.Size(49, 24);
+            this.editToolStripMenuItem.Size = new System.Drawing.Size(51, 26);
             this.editToolStripMenuItem.Text = "Edit";
+            // 
+            // employeeDetailsToolStripMenuItem
+            // 
+            this.employeeDetailsToolStripMenuItem.Name = "employeeDetailsToolStripMenuItem";
+            this.employeeDetailsToolStripMenuItem.Size = new System.Drawing.Size(213, 26);
+            this.employeeDetailsToolStripMenuItem.Text = "Employee Details";
+            this.employeeDetailsToolStripMenuItem.Click += new System.EventHandler(this.employeeDetailsToolStripMenuItem_Click);
             // 
             // viewToolStripMenuItem
             // 
             this.viewToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.reportToolStripMenuItem});
             this.viewToolStripMenuItem.Name = "viewToolStripMenuItem";
-            this.viewToolStripMenuItem.Size = new System.Drawing.Size(55, 24);
+            this.viewToolStripMenuItem.Size = new System.Drawing.Size(58, 26);
             this.viewToolStripMenuItem.Text = "View";
             // 
             // reportToolStripMenuItem
@@ -126,160 +137,126 @@
             this.weeklyToolStripMenuItem,
             this.monthlyToolStripMenuItem});
             this.reportToolStripMenuItem.Name = "reportToolStripMenuItem";
-            this.reportToolStripMenuItem.Size = new System.Drawing.Size(171, 26);
+            this.reportToolStripMenuItem.Size = new System.Drawing.Size(179, 26);
             this.reportToolStripMenuItem.Text = "Print Report";
             // 
             // dialyToolStripMenuItem
             // 
             this.dialyToolStripMenuItem.Name = "dialyToolStripMenuItem";
-            this.dialyToolStripMenuItem.Size = new System.Drawing.Size(146, 26);
+            this.dialyToolStripMenuItem.Size = new System.Drawing.Size(154, 26);
             this.dialyToolStripMenuItem.Text = "Dialy";
             // 
             // weeklyToolStripMenuItem
             // 
             this.weeklyToolStripMenuItem.Name = "weeklyToolStripMenuItem";
-            this.weeklyToolStripMenuItem.Size = new System.Drawing.Size(146, 26);
+            this.weeklyToolStripMenuItem.Size = new System.Drawing.Size(154, 26);
             this.weeklyToolStripMenuItem.Text = "Weekly";
             // 
             // monthlyToolStripMenuItem
             // 
             this.monthlyToolStripMenuItem.Name = "monthlyToolStripMenuItem";
-            this.monthlyToolStripMenuItem.Size = new System.Drawing.Size(146, 26);
+            this.monthlyToolStripMenuItem.Size = new System.Drawing.Size(154, 26);
             this.monthlyToolStripMenuItem.Text = "Monthly";
             // 
             // helpToolStripMenuItem
             // 
             this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
-            this.helpToolStripMenuItem.Size = new System.Drawing.Size(55, 24);
+            this.helpToolStripMenuItem.Size = new System.Drawing.Size(56, 26);
             this.helpToolStripMenuItem.Text = "Help";
             // 
-            // lblWelcome
+            // lblNameDisplayAdmin
             // 
-            this.lblWelcome.AutoSize = true;
-            this.lblWelcome.Location = new System.Drawing.Point(575, 11);
-            this.lblWelcome.Name = "lblWelcome";
-            this.lblWelcome.Size = new System.Drawing.Size(66, 17);
-            this.lblWelcome.TabIndex = 1;
-            this.lblWelcome.Text = "Welcome";
-            // 
-            // lblAdminNameDisplay
-            // 
-            this.lblAdminNameDisplay.AutoSize = true;
-            this.lblAdminNameDisplay.Location = new System.Drawing.Point(647, 11);
-            this.lblAdminNameDisplay.Name = "lblAdminNameDisplay";
-            this.lblAdminNameDisplay.Size = new System.Drawing.Size(86, 17);
-            this.lblAdminNameDisplay.TabIndex = 2;
-            this.lblAdminNameDisplay.Text = "Admin name";
+            this.lblNameDisplayAdmin.AutoSize = true;
+            this.lblNameDisplayAdmin.Font = new System.Drawing.Font("Calibri", 10F);
+            this.lblNameDisplayAdmin.Location = new System.Drawing.Point(629, 5);
+            this.lblNameDisplayAdmin.Name = "lblNameDisplayAdmin";
+            this.lblNameDisplayAdmin.Size = new System.Drawing.Size(0, 21);
+            this.lblNameDisplayAdmin.TabIndex = 2;
             // 
             // cbStateOrTerritory
             // 
             this.cbStateOrTerritory.FormattingEnabled = true;
-            this.cbStateOrTerritory.Location = new System.Drawing.Point(148, 43);
+            this.cbStateOrTerritory.Location = new System.Drawing.Point(149, 43);
             this.cbStateOrTerritory.Name = "cbStateOrTerritory";
-            this.cbStateOrTerritory.Size = new System.Drawing.Size(41, 24);
+            this.cbStateOrTerritory.Size = new System.Drawing.Size(41, 26);
             this.cbStateOrTerritory.TabIndex = 26;
             // 
             // txtLetters
             // 
-            this.txtLetters.Location = new System.Drawing.Point(250, 45);
+            this.txtLetters.Location = new System.Drawing.Point(277, 43);
             this.txtLetters.Name = "txtLetters";
-            this.txtLetters.Size = new System.Drawing.Size(37, 22);
+            this.txtLetters.Size = new System.Drawing.Size(37, 26);
             this.txtLetters.TabIndex = 25;
             // 
             // txtRegionalTransportAuthority
             // 
-            this.txtRegionalTransportAuthority.Location = new System.Drawing.Point(206, 45);
+            this.txtRegionalTransportAuthority.Location = new System.Drawing.Point(215, 43);
             this.txtRegionalTransportAuthority.Name = "txtRegionalTransportAuthority";
-            this.txtRegionalTransportAuthority.Size = new System.Drawing.Size(37, 22);
+            this.txtRegionalTransportAuthority.Size = new System.Drawing.Size(37, 26);
             this.txtRegionalTransportAuthority.TabIndex = 24;
             // 
             // txtDigits
             // 
-            this.txtDigits.Location = new System.Drawing.Point(307, 43);
+            this.txtDigits.Location = new System.Drawing.Point(339, 43);
             this.txtDigits.Name = "txtDigits";
-            this.txtDigits.Size = new System.Drawing.Size(37, 22);
+            this.txtDigits.Size = new System.Drawing.Size(37, 26);
             this.txtDigits.TabIndex = 23;
             // 
             // lblRegNo
             // 
             this.lblRegNo.AutoSize = true;
-            this.lblRegNo.Location = new System.Drawing.Point(19, 43);
+            this.lblRegNo.Location = new System.Drawing.Point(22, 46);
             this.lblRegNo.Name = "lblRegNo";
-            this.lblRegNo.Size = new System.Drawing.Size(110, 17);
+            this.lblRegNo.Size = new System.Drawing.Size(107, 18);
             this.lblRegNo.TabIndex = 22;
             this.lblRegNo.Text = "Registration No.";
             // 
             // dataGridViewDisplay
             // 
+            this.dataGridViewDisplay.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridViewDisplay.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewDisplay.Location = new System.Drawing.Point(15, 215);
             this.dataGridViewDisplay.Name = "dataGridViewDisplay";
             this.dataGridViewDisplay.RowHeadersWidth = 51;
             this.dataGridViewDisplay.RowTemplate.Height = 24;
-            this.dataGridViewDisplay.Size = new System.Drawing.Size(773, 261);
+            this.dataGridViewDisplay.Size = new System.Drawing.Size(770, 261);
             this.dataGridViewDisplay.TabIndex = 27;
-            // 
-            // pnlReportView
-            // 
-            this.pnlReportView.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pnlReportView.Controls.Add(this.label6);
-            this.pnlReportView.Controls.Add(this.lblToDate);
-            this.pnlReportView.Controls.Add(this.lblFromDate);
-            this.pnlReportView.Controls.Add(this.dateTimePickerTo);
-            this.pnlReportView.Controls.Add(this.dateTimePickerFrom);
-            this.pnlReportView.Controls.Add(this.btnMonthlyReportView);
-            this.pnlReportView.Controls.Add(this.btnWeeklyReportView);
-            this.pnlReportView.Controls.Add(this.btnDialyReportView);
-            this.pnlReportView.Location = new System.Drawing.Point(406, 40);
-            this.pnlReportView.Name = "pnlReportView";
-            this.pnlReportView.Size = new System.Drawing.Size(382, 169);
-            this.pnlReportView.TabIndex = 28;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(22, 4);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(51, 17);
-            this.label6.TabIndex = 28;
-            this.label6.Text = "Report";
             // 
             // lblToDate
             // 
             this.lblToDate.AutoSize = true;
-            this.lblToDate.Location = new System.Drawing.Point(22, 136);
+            this.lblToDate.Location = new System.Drawing.Point(23, 139);
             this.lblToDate.Name = "lblToDate";
-            this.lblToDate.Size = new System.Drawing.Size(49, 17);
+            this.lblToDate.Size = new System.Drawing.Size(41, 18);
             this.lblToDate.TabIndex = 6;
             this.lblToDate.Text = "To     :";
             // 
             // lblFromDate
             // 
             this.lblFromDate.AutoSize = true;
-            this.lblFromDate.Location = new System.Drawing.Point(22, 108);
+            this.lblFromDate.Location = new System.Drawing.Point(23, 111);
             this.lblFromDate.Name = "lblFromDate";
-            this.lblFromDate.Size = new System.Drawing.Size(48, 17);
+            this.lblFromDate.Size = new System.Drawing.Size(47, 18);
             this.lblFromDate.TabIndex = 5;
             this.lblFromDate.Text = "From :";
             // 
             // dateTimePickerTo
             // 
-            this.dateTimePickerTo.Location = new System.Drawing.Point(171, 131);
+            this.dateTimePickerTo.Location = new System.Drawing.Point(172, 134);
             this.dateTimePickerTo.Name = "dateTimePickerTo";
-            this.dateTimePickerTo.Size = new System.Drawing.Size(200, 22);
+            this.dateTimePickerTo.Size = new System.Drawing.Size(200, 26);
             this.dateTimePickerTo.TabIndex = 4;
             // 
             // dateTimePickerFrom
             // 
-            this.dateTimePickerFrom.Location = new System.Drawing.Point(171, 103);
+            this.dateTimePickerFrom.Location = new System.Drawing.Point(172, 106);
             this.dateTimePickerFrom.Name = "dateTimePickerFrom";
-            this.dateTimePickerFrom.Size = new System.Drawing.Size(200, 22);
+            this.dateTimePickerFrom.Size = new System.Drawing.Size(200, 26);
             this.dateTimePickerFrom.TabIndex = 3;
             // 
             // btnMonthlyReportView
             // 
-            this.btnMonthlyReportView.Location = new System.Drawing.Point(274, 43);
+            this.btnMonthlyReportView.Location = new System.Drawing.Point(275, 46);
             this.btnMonthlyReportView.Name = "btnMonthlyReportView";
             this.btnMonthlyReportView.Size = new System.Drawing.Size(97, 54);
             this.btnMonthlyReportView.TabIndex = 2;
@@ -288,7 +265,7 @@
             // 
             // btnWeeklyReportView
             // 
-            this.btnWeeklyReportView.Location = new System.Drawing.Point(149, 43);
+            this.btnWeeklyReportView.Location = new System.Drawing.Point(150, 46);
             this.btnWeeklyReportView.Name = "btnWeeklyReportView";
             this.btnWeeklyReportView.Size = new System.Drawing.Size(97, 54);
             this.btnWeeklyReportView.TabIndex = 1;
@@ -297,77 +274,142 @@
             // 
             // btnDialyReportView
             // 
-            this.btnDialyReportView.Location = new System.Drawing.Point(25, 43);
+            this.btnDialyReportView.Location = new System.Drawing.Point(26, 46);
             this.btnDialyReportView.Name = "btnDialyReportView";
             this.btnDialyReportView.Size = new System.Drawing.Size(97, 54);
             this.btnDialyReportView.TabIndex = 0;
             this.btnDialyReportView.Text = "Day";
             this.btnDialyReportView.UseVisualStyleBackColor = true;
             // 
-            // pnlVehicleSearch
-            // 
-            this.pnlVehicleSearch.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pnlVehicleSearch.Controls.Add(this.btnVehicleSearch);
-            this.pnlVehicleSearch.Controls.Add(this.lblVehicleSearch);
-            this.pnlVehicleSearch.Controls.Add(this.lblRegNo);
-            this.pnlVehicleSearch.Controls.Add(this.txtDigits);
-            this.pnlVehicleSearch.Controls.Add(this.txtLetters);
-            this.pnlVehicleSearch.Controls.Add(this.cbStateOrTerritory);
-            this.pnlVehicleSearch.Controls.Add(this.txtRegionalTransportAuthority);
-            this.pnlVehicleSearch.Location = new System.Drawing.Point(15, 40);
-            this.pnlVehicleSearch.Name = "pnlVehicleSearch";
-            this.pnlVehicleSearch.Size = new System.Drawing.Size(385, 169);
-            this.pnlVehicleSearch.TabIndex = 29;
-            // 
             // btnVehicleSearch
             // 
-            this.btnVehicleSearch.Location = new System.Drawing.Point(247, 99);
+            this.btnVehicleSearch.Location = new System.Drawing.Point(262, 102);
             this.btnVehicleSearch.Name = "btnVehicleSearch";
             this.btnVehicleSearch.Size = new System.Drawing.Size(97, 54);
             this.btnVehicleSearch.TabIndex = 28;
             this.btnVehicleSearch.Text = "Search";
             this.btnVehicleSearch.UseVisualStyleBackColor = true;
             // 
+            // groupBoxVehicleSearch
+            // 
+            this.groupBoxVehicleSearch.Controls.Add(this.label3);
+            this.groupBoxVehicleSearch.Controls.Add(this.label2);
+            this.groupBoxVehicleSearch.Controls.Add(this.label1);
+            this.groupBoxVehicleSearch.Controls.Add(this.lblVehicleSearch);
+            this.groupBoxVehicleSearch.Controls.Add(this.btnVehicleSearch);
+            this.groupBoxVehicleSearch.Controls.Add(this.lblRegNo);
+            this.groupBoxVehicleSearch.Controls.Add(this.txtRegionalTransportAuthority);
+            this.groupBoxVehicleSearch.Controls.Add(this.cbStateOrTerritory);
+            this.groupBoxVehicleSearch.Controls.Add(this.txtDigits);
+            this.groupBoxVehicleSearch.Controls.Add(this.txtLetters);
+            this.groupBoxVehicleSearch.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBoxVehicleSearch.Location = new System.Drawing.Point(15, 40);
+            this.groupBoxVehicleSearch.Name = "groupBoxVehicleSearch";
+            this.groupBoxVehicleSearch.Size = new System.Drawing.Size(382, 169);
+            this.groupBoxVehicleSearch.TabIndex = 30;
+            this.groupBoxVehicleSearch.TabStop = false;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(320, 46);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(13, 18);
+            this.label3.TabIndex = 32;
+            this.label3.Text = "-";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(258, 46);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(13, 18);
+            this.label2.TabIndex = 31;
+            this.label2.Text = "-";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(196, 46);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(13, 18);
+            this.label1.TabIndex = 30;
+            this.label1.Text = "-";
+            // 
             // lblVehicleSearch
             // 
             this.lblVehicleSearch.AutoSize = true;
-            this.lblVehicleSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblVehicleSearch.Location = new System.Drawing.Point(19, 4);
+            this.lblVehicleSearch.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Bold);
+            this.lblVehicleSearch.Location = new System.Drawing.Point(7, 12);
             this.lblVehicleSearch.Name = "lblVehicleSearch";
-            this.lblVehicleSearch.Size = new System.Drawing.Size(103, 17);
-            this.lblVehicleSearch.TabIndex = 27;
-            this.lblVehicleSearch.Text = "Search Vehicle";
+            this.lblVehicleSearch.Size = new System.Drawing.Size(112, 21);
+            this.lblVehicleSearch.TabIndex = 29;
+            this.lblVehicleSearch.Text = "Vehicle Search";
             // 
-            // employeeDetailsToolStripMenuItem
+            // groupBoxViewReport
             // 
-            this.employeeDetailsToolStripMenuItem.Name = "employeeDetailsToolStripMenuItem";
-            this.employeeDetailsToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.employeeDetailsToolStripMenuItem.Text = "Employee Details";
-            this.employeeDetailsToolStripMenuItem.Click += new System.EventHandler(this.employeeDetailsToolStripMenuItem_Click);
+            this.groupBoxViewReport.Controls.Add(this.lblViewReport);
+            this.groupBoxViewReport.Controls.Add(this.btnWeeklyReportView);
+            this.groupBoxViewReport.Controls.Add(this.lblToDate);
+            this.groupBoxViewReport.Controls.Add(this.btnDialyReportView);
+            this.groupBoxViewReport.Controls.Add(this.lblFromDate);
+            this.groupBoxViewReport.Controls.Add(this.btnMonthlyReportView);
+            this.groupBoxViewReport.Controls.Add(this.dateTimePickerTo);
+            this.groupBoxViewReport.Controls.Add(this.dateTimePickerFrom);
+            this.groupBoxViewReport.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBoxViewReport.Location = new System.Drawing.Point(403, 40);
+            this.groupBoxViewReport.Name = "groupBoxViewReport";
+            this.groupBoxViewReport.Size = new System.Drawing.Size(382, 169);
+            this.groupBoxViewReport.TabIndex = 31;
+            this.groupBoxViewReport.TabStop = false;
+            // 
+            // lblViewReport
+            // 
+            this.lblViewReport.AutoSize = true;
+            this.lblViewReport.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Bold);
+            this.lblViewReport.Location = new System.Drawing.Point(6, 12);
+            this.lblViewReport.Name = "lblViewReport";
+            this.lblViewReport.Size = new System.Drawing.Size(99, 21);
+            this.lblViewReport.TabIndex = 30;
+            this.lblViewReport.Text = "View Report";
+            // 
+            // lblWelcome
+            // 
+            this.lblWelcome.AutoSize = true;
+            this.lblWelcome.Font = new System.Drawing.Font("Calibri", 10F);
+            this.lblWelcome.Location = new System.Drawing.Point(549, 5);
+            this.lblWelcome.Name = "lblWelcome";
+            this.lblWelcome.Size = new System.Drawing.Size(74, 21);
+            this.lblWelcome.TabIndex = 31;
+            this.lblWelcome.Text = "Welcome";
             // 
             // frmAdminPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::TollBoothManagementSystem.Properties.Resources.bg_Planae;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(800, 485);
-            this.Controls.Add(this.pnlVehicleSearch);
-            this.Controls.Add(this.pnlReportView);
-            this.Controls.Add(this.dataGridViewDisplay);
-            this.Controls.Add(this.lblAdminNameDisplay);
             this.Controls.Add(this.lblWelcome);
+            this.Controls.Add(this.groupBoxViewReport);
+            this.Controls.Add(this.groupBoxVehicleSearch);
+            this.Controls.Add(this.lblNameDisplayAdmin);
+            this.Controls.Add(this.dataGridViewDisplay);
             this.Controls.Add(this.menuStripAdminPage);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStripAdminPage;
+            this.MaximizeBox = false;
             this.Name = "frmAdminPage";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Admin Dashboard";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.menuStripAdminPage.ResumeLayout(false);
             this.menuStripAdminPage.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDisplay)).EndInit();
-            this.pnlReportView.ResumeLayout(false);
-            this.pnlReportView.PerformLayout();
-            this.pnlVehicleSearch.ResumeLayout(false);
-            this.pnlVehicleSearch.PerformLayout();
+            this.groupBoxVehicleSearch.ResumeLayout(false);
+            this.groupBoxVehicleSearch.PerformLayout();
+            this.groupBoxViewReport.ResumeLayout(false);
+            this.groupBoxViewReport.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -386,26 +428,29 @@
         private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem logoutToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
-        private System.Windows.Forms.Label lblWelcome;
-        private System.Windows.Forms.Label lblAdminNameDisplay;
+        private System.Windows.Forms.Label lblNameDisplayAdmin;
         private System.Windows.Forms.ComboBox cbStateOrTerritory;
         private System.Windows.Forms.TextBox txtLetters;
         private System.Windows.Forms.TextBox txtRegionalTransportAuthority;
         private System.Windows.Forms.TextBox txtDigits;
         private System.Windows.Forms.Label lblRegNo;
         private System.Windows.Forms.DataGridView dataGridViewDisplay;
-        private System.Windows.Forms.Panel pnlReportView;
         private System.Windows.Forms.DateTimePicker dateTimePickerTo;
         private System.Windows.Forms.DateTimePicker dateTimePickerFrom;
         private System.Windows.Forms.Button btnMonthlyReportView;
         private System.Windows.Forms.Button btnWeeklyReportView;
         private System.Windows.Forms.Button btnDialyReportView;
-        private System.Windows.Forms.Panel pnlVehicleSearch;
         private System.Windows.Forms.Label lblToDate;
         private System.Windows.Forms.Label lblFromDate;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label lblVehicleSearch;
         private System.Windows.Forms.Button btnVehicleSearch;
         private System.Windows.Forms.ToolStripMenuItem employeeDetailsToolStripMenuItem;
+        private System.Windows.Forms.GroupBox groupBoxVehicleSearch;
+        private System.Windows.Forms.Label lblVehicleSearch;
+        private System.Windows.Forms.GroupBox groupBoxViewReport;
+        private System.Windows.Forms.Label lblViewReport;
+        private System.Windows.Forms.Label lblWelcome;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
     }
 }

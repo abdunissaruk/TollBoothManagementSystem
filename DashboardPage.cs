@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace TollBoothManagementSystem
 {
-    public partial class frmDashboard : Form
+    public partial class frmDashboardPage : Form
     {
-        public frmDashboard()
+        public frmDashboardPage()
         {
             InitializeComponent();
         }

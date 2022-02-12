@@ -29,7 +29,7 @@ namespace TollBoothManagementSystem
             else if (txtLoginId.Text == "staff@toll.com" &&
                      txtPassword.Text == "staff")
             {
-                new frmDashboard().Show();
+                new frmDashboardPage().Show();
                 Hide();
             }
             else
@@ -38,5 +38,6 @@ namespace TollBoothManagementSystem
                 Hide();
             } 
         }
+
     }
 }

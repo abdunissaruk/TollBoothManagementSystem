@@ -231,6 +231,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::TollBoothManagementSystem.Properties.Resources.bg_Planae;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(800, 485);
             this.Controls.Add(this.btnSearch);
             this.Controls.Add(this.btnClear);
@@ -247,11 +249,13 @@
             this.Controls.Add(this.lblEmployeeEmail);
             this.Controls.Add(this.lblEmployeeName);
             this.Controls.Add(this.menuStripEmployeeDetails);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStripEmployeeDetails;
+            this.MaximizeBox = false;
             this.Name = "frmEmployeeDetails";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Employee Details";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frmEmployeeDetails_Load);
             this.menuStripEmployeeDetails.ResumeLayout(false);
             this.menuStripEmployeeDetails.PerformLayout();

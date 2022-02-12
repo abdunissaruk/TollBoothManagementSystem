@@ -35,25 +35,29 @@
             this.txtLoginId = new System.Windows.Forms.TextBox();
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.btnSubmit = new System.Windows.Forms.Button();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.groupBox1.SuspendLayout();
+            this.groupBoxLoginPage = new System.Windows.Forms.GroupBox();
+            this.groupBoxLoginPage.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblTollBooth
             // 
             this.lblTollBooth.AutoSize = true;
-            this.lblTollBooth.Font = new System.Drawing.Font("Monotype Corsiva", 28.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTollBooth.Location = new System.Drawing.Point(137, 28);
+            this.lblTollBooth.BackColor = System.Drawing.Color.Transparent;
+            this.lblTollBooth.Font = new System.Drawing.Font("Calibri", 28.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTollBooth.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(194)))), ((int)(((byte)(200)))));
+            this.lblTollBooth.Location = new System.Drawing.Point(58, 31);
             this.lblTollBooth.Name = "lblTollBooth";
-            this.lblTollBooth.Size = new System.Drawing.Size(216, 57);
+            this.lblTollBooth.Size = new System.Drawing.Size(228, 59);
             this.lblTollBooth.TabIndex = 0;
             this.lblTollBooth.Text = "Toll Booth";
             // 
             // lblLoginId
             // 
             this.lblLoginId.AutoSize = true;
+            this.lblLoginId.BackColor = System.Drawing.Color.Transparent;
             this.lblLoginId.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLoginId.Location = new System.Drawing.Point(39, 132);
+            this.lblLoginId.ForeColor = System.Drawing.Color.White;
+            this.lblLoginId.Location = new System.Drawing.Point(11, 133);
             this.lblLoginId.Name = "lblLoginId";
             this.lblLoginId.Size = new System.Drawing.Size(55, 20);
             this.lblLoginId.TabIndex = 1;
@@ -62,8 +66,10 @@
             // lblPassword
             // 
             this.lblPassword.AutoSize = true;
+            this.lblPassword.BackColor = System.Drawing.Color.Transparent;
             this.lblPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPassword.Location = new System.Drawing.Point(39, 220);
+            this.lblPassword.ForeColor = System.Drawing.Color.White;
+            this.lblPassword.Location = new System.Drawing.Point(11, 223);
             this.lblPassword.Name = "lblPassword";
             this.lblPassword.Size = new System.Drawing.Size(91, 20);
             this.lblPassword.TabIndex = 2;
@@ -71,55 +77,64 @@
             // 
             // txtLoginId
             // 
-            this.txtLoginId.Location = new System.Drawing.Point(187, 130);
+            this.txtLoginId.Location = new System.Drawing.Point(140, 133);
             this.txtLoginId.Name = "txtLoginId";
             this.txtLoginId.Size = new System.Drawing.Size(161, 22);
             this.txtLoginId.TabIndex = 3;
             // 
             // txtPassword
             // 
-            this.txtPassword.Location = new System.Drawing.Point(187, 218);
+            this.txtPassword.Location = new System.Drawing.Point(140, 223);
             this.txtPassword.Name = "txtPassword";
+            this.txtPassword.PasswordChar = '*';
             this.txtPassword.Size = new System.Drawing.Size(161, 22);
             this.txtPassword.TabIndex = 4;
             // 
             // btnSubmit
             // 
+            this.btnSubmit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(194)))), ((int)(((byte)(200)))));
             this.btnSubmit.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSubmit.Location = new System.Drawing.Point(226, 297);
+            this.btnSubmit.ForeColor = System.Drawing.Color.Black;
+            this.btnSubmit.Location = new System.Drawing.Point(179, 300);
             this.btnSubmit.Name = "btnSubmit";
             this.btnSubmit.Size = new System.Drawing.Size(95, 37);
             this.btnSubmit.TabIndex = 5;
             this.btnSubmit.Text = "Submit";
-            this.btnSubmit.UseVisualStyleBackColor = true;
+            this.btnSubmit.UseVisualStyleBackColor = false;
             this.btnSubmit.Click += new System.EventHandler(this.btnSubmit_Click);
             // 
-            // groupBox1
+            // groupBoxLoginPage
             // 
-            this.groupBox1.Controls.Add(this.lblLoginId);
-            this.groupBox1.Controls.Add(this.btnSubmit);
-            this.groupBox1.Controls.Add(this.lblTollBooth);
-            this.groupBox1.Controls.Add(this.txtPassword);
-            this.groupBox1.Controls.Add(this.lblPassword);
-            this.groupBox1.Controls.Add(this.txtLoginId);
-            this.groupBox1.Location = new System.Drawing.Point(417, 37);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(361, 390);
-            this.groupBox1.TabIndex = 6;
-            this.groupBox1.TabStop = false;
+            this.groupBoxLoginPage.BackColor = System.Drawing.Color.Transparent;
+            this.groupBoxLoginPage.Controls.Add(this.lblTollBooth);
+            this.groupBoxLoginPage.Controls.Add(this.lblLoginId);
+            this.groupBoxLoginPage.Controls.Add(this.lblPassword);
+            this.groupBoxLoginPage.Controls.Add(this.btnSubmit);
+            this.groupBoxLoginPage.Controls.Add(this.txtPassword);
+            this.groupBoxLoginPage.Controls.Add(this.txtLoginId);
+            this.groupBoxLoginPage.Location = new System.Drawing.Point(420, 62);
+            this.groupBoxLoginPage.Name = "groupBoxLoginPage";
+            this.groupBoxLoginPage.Size = new System.Drawing.Size(322, 359);
+            this.groupBoxLoginPage.TabIndex = 6;
+            this.groupBoxLoginPage.TabStop = false;
             // 
             // frmLoginPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(194)))), ((int)(((byte)(200)))));
+            this.BackgroundImage = global::TollBoothManagementSystem.Properties.Resources.bg_Planae;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(800, 485);
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.groupBoxLoginPage);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "frmLoginPage";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            this.groupBoxLoginPage.ResumeLayout(false);
+            this.groupBoxLoginPage.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -132,7 +147,7 @@
         private System.Windows.Forms.TextBox txtLoginId;
         private System.Windows.Forms.TextBox txtPassword;
         private System.Windows.Forms.Button btnSubmit;
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox groupBoxLoginPage;
     }
 }
 

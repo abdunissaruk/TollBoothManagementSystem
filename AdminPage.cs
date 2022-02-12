@@ -29,5 +29,7 @@ namespace TollBoothManagementSystem
             new frmEmployeeDetails().Show();
             Hide();
         }
+
+        
     }
 }

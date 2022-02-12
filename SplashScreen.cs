@@ -16,5 +16,19 @@ namespace TollBoothManagementSystem
         {
             InitializeComponent();
         }
+
+        private void frmSplashScreen_Load(object sender, EventArgs e)
+        {
+            TransparencyKey = BackColor;
+        }
+
+        private void timerSplashScreen_Tick(object sender, EventArgs e)
+        {
+            timerSplashScreen.Stop();
+            this.Hide();
+            new frmLoginPage().Show();
+        }
+
+        
     }
 }

@@ -16,7 +16,7 @@ namespace TollBoothManagementSystem
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmLoginPage());
+            Application.Run(new frmSplashScreen());
         }
     }
 }
