@@ -63,6 +63,16 @@ namespace TollBoothManagementSystem.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap WhatsApp_Image_2022_02_11_at_10_33_55_PM {
+            get {
+                object obj = ResourceManager.GetObject("WhatsApp Image 2022-02-11 at 10.33.55 PM", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap WhatsApp_Image_2022_02_11_at_9_56_10_PM {
             get {
                 object obj = ResourceManager.GetObject("WhatsApp Image 2022-02-11 at 9.56.10 PM", resourceCulture);

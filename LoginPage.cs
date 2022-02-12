@@ -20,12 +20,6 @@ namespace TollBoothManagementSystem
         
         private void btnSubmit_Click(object sender, EventArgs e)
         {
-            new frmDashboard().Show();
-            Hide();
-        }
-
-        private void frmLoginPage_Load(object sender, EventArgs e)
-        {
             if (txtLoginId.Text == "admin@toll.com" &&
                txtPassword.Text == "admin")
             {
@@ -38,7 +32,11 @@ namespace TollBoothManagementSystem
                 new frmDashboard().Show();
                 Hide();
             }
-
+            else
+            {
+                MessageBox.Show("Incorrect");
+                Hide();
+            } 
         }
     }
 }

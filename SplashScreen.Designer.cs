@@ -1,6 +1,6 @@
 ﻿namespace TollBoothManagementSystem
 {
-    partial class SplashScreen
+    partial class frmSplashScreen
     {
         /// <summary>
         /// Required designer variable.
@@ -30,13 +30,14 @@
         {
             this.SuspendLayout();
             // 
-            // SplashScreen
+            // frmSplashScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::TollBoothManagementSystem.Properties.Resources.WhatsApp_Image_2022_02_11_at_10_33_55_PM;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(800, 485);
-            this.Name = "SplashScreen";
-            this.Text = "StartupPage";
+            this.Name = "frmSplashScreen";
             this.ResumeLayout(false);
 
         }
