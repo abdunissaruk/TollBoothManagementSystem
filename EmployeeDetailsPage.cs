@@ -7,14 +7,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using TollBoothManagementSystem.Model;
+using TollBoothManagementSystem.Services;
+
 
 namespace TollBoothManagementSystem
 {
     public partial class frmEmployeeDetails : Form
     {
+        private readonly EmployeeServices _service;
         public frmEmployeeDetails()
         {
             InitializeComponent();
+            _service = new EmployeeServices();
         }
 
         private void frmEmployeeDetails_Load(object sender, EventArgs e)
@@ -89,6 +94,40 @@ namespace TollBoothManagementSystem
             txtEmployeeMobileNumber.Text = "";
             txtEmployeePassword.Text = "";
             checkBoxAdminPrivilege.Checked = false;
+        }
+
+        private void btnSubmit_Click(object sender, EventArgs e)
+        {
+            var EmpAdminPrivelegeResult = 0;
+            if (checkBoxAdminPrivilege.Checked)
+                EmpAdminPrivelegeResult = 1;
+            else
+                EmpAdminPrivelegeResult = 0;
+            var employee = new Employee()
+            {
+                EmpName = txtEmployeeName.Text,
+                EmpEmail = txtEmployeeEmail.Text,
+                EmpMobile = txtEmployeeMobileNumber.Text,
+                EmpPassword = txtEmployeePassword.Text,
+                EmpAdminPrivelege = EmpAdminPrivelegeResult
+            };
+            var res = _service.AddOneEmployee(employee);
+            if (res > 0)
+                MessageBox.Show("Added");  
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            var id = Convert.ToInt32(txtEmployeeId.Text);
+            var employee = _service.SearchEmployee(id);
+            txtEmployeeName.Text = employee.EmpName;
+            txtEmployeeEmail.Text = employee.EmpEmail;
+            txtEmployeeMobileNumber.Text = employee.EmpMobile;
+            txtEmployeePassword.Text = employee.EmpPassword;
+            if (employee.EmpAdminPrivelege == 1)
+                checkBoxAdminPrivilege.Checked = true;
+            if (employee.EmpAdminPrivelege == 0)
+                checkBoxAdminPrivilege.Checked = false;
         }
     }
 }
