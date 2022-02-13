@@ -38,5 +38,10 @@ namespace TollBoothManagementSystem
             radioButtonTwoWay.Checked = false;
             comboBoxVehicleClass.Text = "";
         }
+
+        private void btnProceed_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
