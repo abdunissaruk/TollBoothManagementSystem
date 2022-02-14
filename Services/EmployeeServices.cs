@@ -87,14 +87,20 @@ namespace TollBoothManagementSystem.Services
             cmd.Parameters.AddWithValue("@email", username);
             cmd.Parameters.AddWithValue("@password", password);
             var reader = cmd.ExecuteReader();
-            reader.Read();
-            var employee = new Employee()
+            if (reader.Read())
             {
-                EmpName = reader.GetString(0),
-                EmpAdminPrivelege = reader.GetInt32(1)
-            };
-            reader.Close();
-            return employee;
+                var employee = new Employee()
+                {
+                    EmpName = reader.GetString(0),
+                    EmpAdminPrivelege = reader.GetInt32(1)
+                };
+
+                reader.Close();
+                return employee;                
+            }
+            else
+                return null;
+            
         }
 
     }

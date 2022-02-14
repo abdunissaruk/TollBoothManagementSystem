@@ -24,24 +24,28 @@ namespace TollBoothManagementSystem
 
         private void btnSubmit_Click(object sender, EventArgs e)
         {
-            var Username = txtLoginId.Text;
-            var Password = txtPassword.Text;
-            var employee = _service.EmployeeLogin(Username, Password);
-            if (employee.EmpAdminPrivelege == 1)
+            var username = txtLoginId.Text;
+            var password = txtPassword.Text;
+            var employeeLog = _service.EmployeeLogin(username, password);
+            if (employeeLog != null)
             {
-                new frmAdminPage().Show();
-                Hide();
+                if (employeeLog.EmpAdminPrivelege == 1)
+                {
+                    new frmAdminPage().Show();
+                    Hide();
 
+                }
+                else if (employeeLog.EmpAdminPrivelege == 0)
+                {
+                    new frmDashboardPage().Show();
+                    Hide();
+                }
             }
-            else if (employee.EmpAdminPrivelege == 0)
-            {
-                new frmDashboardPage().Show();
-                Hide();
-            }
-            else
+            else if(employeeLog == null)
             {
                 MessageBox.Show("Incorrect Entry");
             }
+            
         }
     }
 }
