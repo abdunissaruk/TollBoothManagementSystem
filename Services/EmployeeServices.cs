@@ -52,6 +52,7 @@ namespace TollBoothManagementSystem.Services
         }
         public Employee EmployeeLogin(String username, String password)
         {
+
             ConnectionManager.EnsureConnectionIsActive();
             var sql = $"SELECT  { nameof(Employee.EmpName)}, { nameof(Employee.EmpAdminPrivelege)} FROM {nameof(Employee)} WHERE EmpEmail=@email and EmpPassword=@password";
             var cmd = new SqlCommand(sql, _connection);
@@ -65,6 +66,8 @@ namespace TollBoothManagementSystem.Services
                 EmpAdminPrivelege = reader.GetInt32(1)
             };
             reader.Close();
+
+
             return employee;
 
         }

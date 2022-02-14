@@ -119,6 +119,7 @@
             this.btnProceed.TabIndex = 24;
             this.btnProceed.Text = "Proceed";
             this.btnProceed.UseVisualStyleBackColor = false;
+            this.btnProceed.Click += new System.EventHandler(this.btnProceed_Click);
             // 
             // btnReset
             // 
@@ -298,7 +299,6 @@
             this.groupBoxDashboard.Size = new System.Drawing.Size(455, 426);
             this.groupBoxDashboard.TabIndex = 33;
             this.groupBoxDashboard.TabStop = false;
-           
             // 
             // lblVehicleDetails
             // 
