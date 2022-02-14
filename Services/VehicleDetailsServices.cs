@@ -18,7 +18,10 @@ namespace TollBoothManagementSystem.Services
         }
         public int AddOneEntry(Employee employee)
         {
-
+            return 0;
+        }
+        public int SearchVehicle(Employee employee)
+        {
             return 0;
         }
     }

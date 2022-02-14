@@ -22,15 +22,11 @@ namespace TollBoothManagementSystem
 
         }
 
-        
         private void btnSubmit_Click(object sender, EventArgs e)
         {
-
             var Username = txtLoginId.Text;
             var Password = txtPassword.Text;
             var employee = _service.EmployeeLogin(Username, Password);
-
-
             if (employee.EmpAdminPrivelege == 1)
             {
                 new frmAdminPage().Show();
@@ -46,9 +42,6 @@ namespace TollBoothManagementSystem
             {
                 MessageBox.Show("Incorrect Entry");
             }
-
         }
-
-
     }
 }
