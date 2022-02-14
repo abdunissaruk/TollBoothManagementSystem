@@ -38,7 +38,6 @@
             this.employeeDetailsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.viewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.dialyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.weeklyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.monthlyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -66,6 +65,8 @@
             this.groupBoxViewReport = new System.Windows.Forms.GroupBox();
             this.lblViewReport = new System.Windows.Forms.Label();
             this.lblWelcome = new System.Windows.Forms.Label();
+            this.dailyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.customToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStripAdminPage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDisplay)).BeginInit();
             this.groupBoxVehicleSearch.SuspendLayout();
@@ -100,19 +101,19 @@
             // logoutToolStripMenuItem
             // 
             this.logoutToolStripMenuItem.Name = "logoutToolStripMenuItem";
-            this.logoutToolStripMenuItem.Size = new System.Drawing.Size(142, 26);
+            this.logoutToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.logoutToolStripMenuItem.Text = "Logout";
             this.logoutToolStripMenuItem.Click += new System.EventHandler(this.logoutToolStripMenuItem_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(139, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(221, 6);
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(142, 26);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
@@ -127,7 +128,7 @@
             // employeeDetailsToolStripMenuItem
             // 
             this.employeeDetailsToolStripMenuItem.Name = "employeeDetailsToolStripMenuItem";
-            this.employeeDetailsToolStripMenuItem.Size = new System.Drawing.Size(213, 26);
+            this.employeeDetailsToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.employeeDetailsToolStripMenuItem.Text = "Employee Details";
             this.employeeDetailsToolStripMenuItem.Click += new System.EventHandler(this.employeeDetailsToolStripMenuItem_Click);
             // 
@@ -142,29 +143,24 @@
             // reportToolStripMenuItem
             // 
             this.reportToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.dialyToolStripMenuItem,
+            this.dailyToolStripMenuItem,
             this.weeklyToolStripMenuItem,
-            this.monthlyToolStripMenuItem});
+            this.monthlyToolStripMenuItem,
+            this.customToolStripMenuItem});
             this.reportToolStripMenuItem.Name = "reportToolStripMenuItem";
-            this.reportToolStripMenuItem.Size = new System.Drawing.Size(179, 26);
+            this.reportToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.reportToolStripMenuItem.Text = "Print Report";
-            // 
-            // dialyToolStripMenuItem
-            // 
-            this.dialyToolStripMenuItem.Name = "dialyToolStripMenuItem";
-            this.dialyToolStripMenuItem.Size = new System.Drawing.Size(154, 26);
-            this.dialyToolStripMenuItem.Text = "Dialy";
             // 
             // weeklyToolStripMenuItem
             // 
             this.weeklyToolStripMenuItem.Name = "weeklyToolStripMenuItem";
-            this.weeklyToolStripMenuItem.Size = new System.Drawing.Size(154, 26);
+            this.weeklyToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.weeklyToolStripMenuItem.Text = "Weekly";
             // 
             // monthlyToolStripMenuItem
             // 
             this.monthlyToolStripMenuItem.Name = "monthlyToolStripMenuItem";
-            this.monthlyToolStripMenuItem.Size = new System.Drawing.Size(154, 26);
+            this.monthlyToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.monthlyToolStripMenuItem.Text = "Monthly";
             // 
             // helpToolStripMenuItem
@@ -405,6 +401,18 @@
             this.lblWelcome.TabIndex = 31;
             this.lblWelcome.Text = "Welcome";
             // 
+            // dailyToolStripMenuItem
+            // 
+            this.dailyToolStripMenuItem.Name = "dailyToolStripMenuItem";
+            this.dailyToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.dailyToolStripMenuItem.Text = "Daily";
+            // 
+            // customToolStripMenuItem
+            // 
+            this.customToolStripMenuItem.Name = "customToolStripMenuItem";
+            this.customToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.customToolStripMenuItem.Text = "Custom";
+            // 
             // frmAdminPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -444,7 +452,6 @@
         private System.Windows.Forms.ToolStripMenuItem editToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem viewToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem reportToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem dialyToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem weeklyToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem monthlyToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
@@ -476,5 +483,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.Button btnClear;
+        private System.Windows.Forms.ToolStripMenuItem dailyToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem customToolStripMenuItem;
     }
 }

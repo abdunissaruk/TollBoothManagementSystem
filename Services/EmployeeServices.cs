@@ -30,6 +30,7 @@ namespace TollBoothManagementSystem.Services
             cmd.Parameters.AddWithValue("@adminPrivelage", employee.EmpAdminPrivelege);
             return cmd.ExecuteNonQuery();
         }
+
         public Employee SearchEmployee(int id)
         {
             ConnectionManager.EnsureConnectionIsActive();
@@ -37,18 +38,47 @@ namespace TollBoothManagementSystem.Services
             var cmd = new SqlCommand(sql, _connection);
             cmd.Parameters.AddWithValue("@id", id);
             var reader = cmd.ExecuteReader();
-            reader.Read();
-            var employee = new Employee()
+            if (reader.Read())
             {
-                EmpName = reader.GetString(0),
-                EmpEmail = reader.GetString(1),
-                EmpMobile = reader.GetString(2),
-                EmpPassword = reader.GetString(3),
-                EmpAdminPrivelege = reader.GetInt32(4)
-            };
-            reader.Close();
-            return employee;
+                var employee = new Employee()
+                {
+                    EmpName = reader.GetString(0),
+                    EmpEmail = reader.GetString(1),
+                    EmpMobile = reader.GetString(2),
+                    EmpPassword = reader.GetString(3),
+                    EmpAdminPrivelege = reader.GetInt32(4)
+                };
+                reader.Close();
+                return employee;
+            }
+            else
+                return null;
         }
+
+        public int UpdateEmployee(int id, Employee employee)
+        {
+            ConnectionManager.EnsureConnectionIsActive();
+            var sql = $"UPDATE {nameof(Employee)} SET {nameof(Employee.EmpName)} = @name, {nameof(Employee.EmpEmail)} = @email, {nameof(Employee.EmpMobile)} = @mobile, {nameof(Employee.EmpPassword)} = @password, {nameof(Employee.EmpAdminPrivelege)} = @adminPrivelage WHERE {nameof(Employee.EmpId)} = @id";
+            var cmd = new SqlCommand(sql, _connection);
+            cmd.Parameters.AddWithValue("@id", id);
+            cmd.Parameters.AddWithValue("@name", employee.EmpName);
+            cmd.Parameters.AddWithValue("@email", employee.EmpEmail);
+            cmd.Parameters.AddWithValue("@mobile", employee.EmpMobile);
+            cmd.Parameters.AddWithValue("@password", employee.EmpPassword);
+            cmd.Parameters.AddWithValue("@adminPrivelage", employee.EmpAdminPrivelege);
+            return cmd.ExecuteNonQuery();
+
+        }
+
+        public int DeleteEmployee(int id)
+        {
+            ConnectionManager.EnsureConnectionIsActive();
+            var sql = $"DELETE FROM {nameof(Employee)} WHERE EmpId=@id";
+            var cmd = new SqlCommand(sql, _connection);
+            cmd.Parameters.AddWithValue("@id", id);
+            return cmd.ExecuteNonQuery();
+        }
+
         public Employee EmployeeLogin(String username, String password)
         {
             ConnectionManager.EnsureConnectionIsActive();

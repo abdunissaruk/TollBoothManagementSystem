@@ -22,56 +22,14 @@ namespace TollBoothManagementSystem
             _service = new EmployeeServices();
         }
 
-        private void frmEmployeeDetails_Load(object sender, EventArgs e)
+        private void Clear()
         {
-            txtEmployeeId.Enabled = false;
-            txtEmployeeName.Enabled = false;
-            txtEmployeeEmail.Enabled = false;
-            txtEmployeeMobileNumber.Enabled = false;
-            txtEmployeePassword.Enabled = false;
-            checkBoxAdminPrivilege.Enabled = false;
-            btnClear.Enabled = false;
-            btnSearch.Enabled = false;
-            btnSubmit.Enabled = false;
-        }
-
-        private void newToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            txtEmployeeId.Enabled = false;
-            txtEmployeeName.Enabled = true;
-            txtEmployeeEmail.Enabled = true;
-            txtEmployeeMobileNumber.Enabled = true;
-            txtEmployeePassword.Enabled = true;
-            checkBoxAdminPrivilege.Enabled = true;
-            btnClear.Enabled = true;
-            btnSearch.Enabled = false;
-            btnSubmit.Enabled = true;
-        }
-
-        private void editToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            txtEmployeeId.Enabled = true;
-            txtEmployeeName.Enabled = true;
-            txtEmployeeEmail.Enabled = true;
-            txtEmployeeMobileNumber.Enabled = true;
-            txtEmployeePassword.Enabled = true;
-            checkBoxAdminPrivilege.Enabled = true;
-            btnClear.Enabled = true;
-            btnSearch.Enabled = true;
-            btnSubmit.Enabled = true;
-        }
-
-        private void deleteToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            txtEmployeeId.Enabled = true;
-            txtEmployeeName.Enabled = false;
-            txtEmployeeEmail.Enabled = false;
-            txtEmployeeMobileNumber.Enabled = false;
-            txtEmployeePassword.Enabled = false;
-            checkBoxAdminPrivilege.Enabled = false;
-            btnClear.Enabled = true;
-            btnSearch.Enabled = true;
-            btnSubmit.Enabled = true;
+            txtEmployeeId.Text = "";
+            txtEmployeeName.Text = "";
+            txtEmployeeEmail.Text = "";
+            txtEmployeeMobileNumber.Text = "";
+            txtEmployeePassword.Text = "";
+            checkBoxAdminPrivilege.Checked = false;
         }
 
         private void closeToolStripMenuItem_Click_1(object sender, EventArgs e)
@@ -88,46 +46,113 @@ namespace TollBoothManagementSystem
 
         private void btnClear_Click(object sender, EventArgs e)
         {
-            txtEmployeeId.Text = "";
-            txtEmployeeName.Text = "";
-            txtEmployeeEmail.Text = "";
-            txtEmployeeMobileNumber.Text = "";
-            txtEmployeePassword.Text = "";
-            checkBoxAdminPrivilege.Checked = false;
-        }
-
-        private void btnSubmit_Click(object sender, EventArgs e)
-        {
-            var EmpAdminPrivelegeResult = 0;
-            if (checkBoxAdminPrivilege.Checked)
-                EmpAdminPrivelegeResult = 1;
-            else
-                EmpAdminPrivelegeResult = 0;
-            var employee = new Employee()
-            {
-                EmpName = txtEmployeeName.Text,
-                EmpEmail = txtEmployeeEmail.Text,
-                EmpMobile = txtEmployeeMobileNumber.Text,
-                EmpPassword = txtEmployeePassword.Text,
-                EmpAdminPrivelege = EmpAdminPrivelegeResult
-            };
-            var res = _service.AddOneEmployee(employee);
-            if (res > 0)
-                MessageBox.Show("Added");  
+            Clear();
         }
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
+            if (txtEmployeeId.Text == "")
+            {
+                Clear();
+                return;
+            }
             var id = Convert.ToInt32(txtEmployeeId.Text);
             var employee = _service.SearchEmployee(id);
-            txtEmployeeName.Text = employee.EmpName;
-            txtEmployeeEmail.Text = employee.EmpEmail;
-            txtEmployeeMobileNumber.Text = employee.EmpMobile;
-            txtEmployeePassword.Text = employee.EmpPassword;
-            if (employee.EmpAdminPrivelege == 1)
-                checkBoxAdminPrivilege.Checked = true;
-            if (employee.EmpAdminPrivelege == 0)
-                checkBoxAdminPrivilege.Checked = false;
+            if (employee != null)
+            {
+                txtEmployeeName.Text = employee.EmpName;
+                txtEmployeeEmail.Text = employee.EmpEmail;
+                txtEmployeeMobileNumber.Text = employee.EmpMobile;
+                txtEmployeePassword.Text = employee.EmpPassword;
+                if (employee.EmpAdminPrivelege == 1)
+                    checkBoxAdminPrivilege.Checked = true;
+                if (employee.EmpAdminPrivelege == 0)
+                    checkBoxAdminPrivilege.Checked = false;
+            }
+            else
+                MessageBox.Show("No result found");
+        }
+
+        private void btnSubmit_Click(object sender, EventArgs e)
+        {
+            if (txtEmployeeId.Text == "")
+            {
+                var EmpAdminPrivelegeResult = 0;
+                if (checkBoxAdminPrivilege.Checked)
+                    EmpAdminPrivelegeResult = 1;
+                else
+                    EmpAdminPrivelegeResult = 0;
+                var employee = new Employee()
+                {
+                    EmpName = txtEmployeeName.Text,
+                    EmpEmail = txtEmployeeEmail.Text,
+                    EmpMobile = txtEmployeeMobileNumber.Text,
+                    EmpPassword = txtEmployeePassword.Text,
+                    EmpAdminPrivelege = EmpAdminPrivelegeResult
+                };
+                var res = _service.AddOneEmployee(employee);
+                if (res > 0)
+                    MessageBox.Show("Added");
+            }
+            else
+            {
+                var id = Convert.ToInt32(txtEmployeeId.Text);
+                var employeeCheck = _service.SearchEmployee(id);
+                if (employeeCheck == null)
+                {
+                    var EmpAdminPrivelegeResult = 0;
+                    if (checkBoxAdminPrivilege.Checked)
+                        EmpAdminPrivelegeResult = 1;
+                    else
+                        EmpAdminPrivelegeResult = 0;
+                    var employee = new Employee()
+                    {
+                        EmpName = txtEmployeeName.Text,
+                        EmpEmail = txtEmployeeEmail.Text,
+                        EmpMobile = txtEmployeeMobileNumber.Text,
+                        EmpPassword = txtEmployeePassword.Text,
+                        EmpAdminPrivelege = EmpAdminPrivelegeResult
+                    };
+                    var res = _service.AddOneEmployee(employee);
+                    if (res > 0)
+                        MessageBox.Show("Added");
+                }
+                else
+                {
+                    var EmpAdminPrivelegeResult = 0;
+                    if (checkBoxAdminPrivilege.Checked)
+                        EmpAdminPrivelegeResult = 1;
+                    else
+                        EmpAdminPrivelegeResult = 0;
+                    var employee = new Employee()
+                    {
+                        EmpName = txtEmployeeName.Text,
+                        EmpEmail = txtEmployeeEmail.Text,
+                        EmpMobile = txtEmployeeMobileNumber.Text,
+                        EmpPassword = txtEmployeePassword.Text,
+                        EmpAdminPrivelege = EmpAdminPrivelegeResult
+                    };
+                    var res = _service.UpdateEmployee(id, employee);
+                    if (res > 0)
+                        MessageBox.Show("Updated");
+                }
+            }
+
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            if (txtEmployeeId.Text == "")
+            {
+                Clear();
+                return;
+            }
+            var id = Convert.ToInt32(txtEmployeeId.Text);
+            var employeeCheck = _service.DeleteEmployee(id);
+            if (employeeCheck > 0)
+                MessageBox.Show("Employee details Deleted");
+            else
+                MessageBox.Show("Employee details not found");
         }
     }
 }
