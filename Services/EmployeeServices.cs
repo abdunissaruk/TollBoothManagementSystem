@@ -50,11 +50,24 @@ namespace TollBoothManagementSystem.Services
             reader.Close();
             return employee;
         }
-        public Employee EmployeeLogin(int id)
+        public Employee EmployeeLogin(String username, String password)
         {
-
-
+            ConnectionManager.EnsureConnectionIsActive();
+            var sql = $"SELECT  { nameof(Employee.EmpName)}, { nameof(Employee.EmpAdminPrivelege)} FROM {nameof(Employee)} WHERE EmpEmail=@email and EmpPassword=@password";
+            var cmd = new SqlCommand(sql, _connection);
+            cmd.Parameters.AddWithValue("@email", username);
+            cmd.Parameters.AddWithValue("@password", password);
+            var reader = cmd.ExecuteReader();
+            reader.Read();
+            var employee = new Employee()
+            {
+                EmpName = reader.GetString(0),
+                EmpAdminPrivelege = reader.GetInt32(1)
+            };
+            reader.Close();
             return employee;
+
         }
+
     }
 }
