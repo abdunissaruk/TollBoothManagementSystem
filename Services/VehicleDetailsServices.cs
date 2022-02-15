@@ -33,6 +33,7 @@ namespace TollBoothManagementSystem.Services
             cmd.Parameters.AddWithValue("@startDate", startDate);
             cmd.Parameters.AddWithValue("@endTime", endTime);
             var reader = cmd.ExecuteReader();
+            
             //checking enrty exist 
             if (reader.Read() == false)
             {
