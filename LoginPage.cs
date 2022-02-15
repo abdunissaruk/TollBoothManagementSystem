@@ -31,20 +31,20 @@ namespace TollBoothManagementSystem
             {
                 if (employeeLog.EmpAdminPrivelege == 1)
                 {
-                    loggedUser = employee.EmpName;
+                    loggedUser = employeeLog.EmpName;
                     new frmAdminPage().Show();
                     Hide();
                 }
                 else if (employeeLog.EmpAdminPrivelege == 0)
                 {
-                    loggedUser = employee.EmpName;
+                    loggedUser = employeeLog.EmpName;
                     new frmDashboardPage().Show();
                     Hide();
                 }
             }
             else
             {
-                MessageBox.Show("Incorrect Entry");
+                MessageBox.Show("Incorrect username or passowrd");
             }
             
         }
