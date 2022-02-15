@@ -42,7 +42,6 @@
             this.weeklyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.monthlyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.customToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.lblNameDisplayAdmin = new System.Windows.Forms.Label();
             this.comboBoxStateOrTerritory = new System.Windows.Forms.ComboBox();
             this.txtLetters = new System.Windows.Forms.TextBox();
@@ -65,9 +64,9 @@
             this.label1 = new System.Windows.Forms.Label();
             this.lblVehicleSearch = new System.Windows.Forms.Label();
             this.groupBoxViewReport = new System.Windows.Forms.GroupBox();
+            this.btnCustom = new System.Windows.Forms.Button();
             this.lblViewReport = new System.Windows.Forms.Label();
             this.lblWelcome = new System.Windows.Forms.Label();
-            this.btnCustom = new System.Windows.Forms.Button();
             this.menuStripAdminPage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDisplay)).BeginInit();
             this.groupBoxVehicleSearch.SuspendLayout();
@@ -81,8 +80,7 @@
             this.menuStripAdminPage.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fileToolStripMenuItem,
             this.editToolStripMenuItem,
-            this.viewToolStripMenuItem,
-            this.helpToolStripMenuItem});
+            this.viewToolStripMenuItem});
             this.menuStripAdminPage.Location = new System.Drawing.Point(0, 0);
             this.menuStripAdminPage.Name = "menuStripAdminPage";
             this.menuStripAdminPage.Size = new System.Drawing.Size(800, 29);
@@ -102,19 +100,19 @@
             // logoutToolStripMenuItem
             // 
             this.logoutToolStripMenuItem.Name = "logoutToolStripMenuItem";
-            this.logoutToolStripMenuItem.Size = new System.Drawing.Size(142, 26);
+            this.logoutToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.logoutToolStripMenuItem.Text = "Logout";
             this.logoutToolStripMenuItem.Click += new System.EventHandler(this.logoutToolStripMenuItem_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(139, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(221, 6);
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(142, 26);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
@@ -129,7 +127,7 @@
             // employeeDetailsToolStripMenuItem
             // 
             this.employeeDetailsToolStripMenuItem.Name = "employeeDetailsToolStripMenuItem";
-            this.employeeDetailsToolStripMenuItem.Size = new System.Drawing.Size(213, 26);
+            this.employeeDetailsToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.employeeDetailsToolStripMenuItem.Text = "Employee Details";
             this.employeeDetailsToolStripMenuItem.Click += new System.EventHandler(this.employeeDetailsToolStripMenuItem_Click);
             // 
@@ -149,7 +147,7 @@
             this.monthlyToolStripMenuItem,
             this.customToolStripMenuItem});
             this.reportToolStripMenuItem.Name = "reportToolStripMenuItem";
-            this.reportToolStripMenuItem.Size = new System.Drawing.Size(179, 26);
+            this.reportToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.reportToolStripMenuItem.Text = "Print Report";
             // 
             // dailyToolStripMenuItem
@@ -175,12 +173,6 @@
             this.customToolStripMenuItem.Name = "customToolStripMenuItem";
             this.customToolStripMenuItem.Size = new System.Drawing.Size(154, 26);
             this.customToolStripMenuItem.Text = "Custom";
-            // 
-            // helpToolStripMenuItem
-            // 
-            this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
-            this.helpToolStripMenuItem.Size = new System.Drawing.Size(56, 25);
-            this.helpToolStripMenuItem.Text = "Help";
             // 
             // lblNameDisplayAdmin
             // 
@@ -398,6 +390,16 @@
             this.groupBoxViewReport.TabIndex = 31;
             this.groupBoxViewReport.TabStop = false;
             // 
+            // btnCustom
+            // 
+            this.btnCustom.Location = new System.Drawing.Point(292, 106);
+            this.btnCustom.Name = "btnCustom";
+            this.btnCustom.Size = new System.Drawing.Size(80, 54);
+            this.btnCustom.TabIndex = 31;
+            this.btnCustom.Text = "Custom";
+            this.btnCustom.UseVisualStyleBackColor = true;
+            this.btnCustom.Click += new System.EventHandler(this.btnCustom_Click);
+            // 
             // lblViewReport
             // 
             this.lblViewReport.AutoSize = true;
@@ -417,16 +419,6 @@
             this.lblWelcome.Size = new System.Drawing.Size(74, 21);
             this.lblWelcome.TabIndex = 31;
             this.lblWelcome.Text = "Welcome";
-            // 
-            // btnCustom
-            // 
-            this.btnCustom.Location = new System.Drawing.Point(292, 106);
-            this.btnCustom.Name = "btnCustom";
-            this.btnCustom.Size = new System.Drawing.Size(80, 54);
-            this.btnCustom.TabIndex = 31;
-            this.btnCustom.Text = "Custom";
-            this.btnCustom.UseVisualStyleBackColor = true;
-            this.btnCustom.Click += new System.EventHandler(this.btnCustom_Click);
             // 
             // frmAdminPage
             // 
@@ -448,6 +440,7 @@
             this.Name = "frmAdminPage";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Admin Dashboard";
+            this.Load += new System.EventHandler(this.frmAdminPage_Load);
             this.menuStripAdminPage.ResumeLayout(false);
             this.menuStripAdminPage.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDisplay)).EndInit();
@@ -469,7 +462,6 @@
         private System.Windows.Forms.ToolStripMenuItem reportToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem weeklyToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem monthlyToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem logoutToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
         private System.Windows.Forms.Label lblNameDisplayAdmin;

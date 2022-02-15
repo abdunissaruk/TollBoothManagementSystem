@@ -22,6 +22,11 @@ namespace TollBoothManagementSystem
             _service = new EmployeeServices();
         }
 
+        private void frmEmployeeDetails_Load(object sender, EventArgs e)
+        {
+
+        }
+
         private void Clear()
         {
             txtEmployeeId.Text = "";

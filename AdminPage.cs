@@ -20,6 +20,11 @@ namespace TollBoothManagementSystem
             _service = new VehicleDetailsServices();
         }
 
+        private void frmAdminPage_Load(object sender, EventArgs e)
+        {
+            lblNameDisplayAdmin.Text = frmLoginPage.loggedUser;
+        }
+
         private void Clear()
         {
             comboBoxStateOrTerritory.Text = "";
