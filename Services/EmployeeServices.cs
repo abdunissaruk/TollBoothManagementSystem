@@ -17,6 +17,37 @@ namespace TollBoothManagementSystem.Services
             _connection = ConnectionManager.Connection;
         }
 
+        public IEnumerable<Employee> DisplayEmployee()
+        {
+            ConnectionManager.EnsureConnectionIsActive();
+            var sql = $"SELECT { nameof(Employee.EmpId)}, { nameof(Employee.EmpName)}, { nameof(Employee.EmpEmail)}, { nameof(Employee.EmpMobile)}, { nameof(Employee.EmpPassword)}, { nameof(Employee.EmpAdminPrivelege)} FROM {nameof(Employee)}";
+            var cmd = new SqlCommand(sql, _connection);
+            var reader = cmd.ExecuteReader();
+
+            if (!reader.Read())
+            {
+                reader.Close();
+                return null;
+            }
+
+            var employeeList = new List<Employee>();
+            while (reader.Read())
+            {
+                var employee = new Employee()
+                {
+                    EmpId= reader.GetInt32(0),
+                    EmpName = reader.GetString(1),
+                    EmpEmail = reader.GetString(2),
+                    EmpMobile = reader.GetString(3),
+                    EmpPassword = reader.GetString(4),
+                    EmpAdminPrivelege = reader.GetInt32(5)
+                };
+                employeeList.Add(employee);
+            }
+            reader.Close();
+            return employeeList;
+        }
+
         public int AddOneEmployee(Employee employee)
         {
             ConnectionManager.EnsureConnectionIsActive();
