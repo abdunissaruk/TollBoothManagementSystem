@@ -20,9 +20,34 @@ namespace TollBoothManagementSystem.Services
         {
             return 0;
         }
-        public int SearchVehicle(Employee employee)
+        public IEnumerable<VehicleDetails> VehicleSearch(string vehicleReg)
         {
-            return 0;
+            ConnectionManager.EnsureConnectionIsActive();
+            var sql = $"SELECT {nameof(VehicleDetails.VehicleReg)}, {nameof(VehicleDetails.VehicleDateTime)}, {nameof(VehicleDetails.TripType)}, {nameof(VehicleDetails.VehicleClass)}, {nameof(VehicleDetails.Amount)} FROM {nameof(VehicleDetails)} WHERE {nameof(VehicleDetails.VehicleReg)}=@vehicleReg";
+            var cmd = new SqlCommand(sql, _connection);
+            cmd.Parameters.AddWithValue("@vehicleReg", vehicleReg);
+            var reader = cmd.ExecuteReader();
+            if (reader.Read() == false)
+            {
+                reader.Close();
+                return null;
+            }
+
+            var vehicleD = new List<VehicleDetails>();
+            do
+            {
+                var vehicleDetails = new VehicleDetails()
+                {
+                    VehicleReg = reader.GetString(0),
+                    VehicleDateTime = reader.GetDateTime(1),
+                    TripType = reader.GetBoolean(2),
+                    VehicleClass = reader.GetString(3),
+                    Amount = reader.GetInt32(4)
+                };
+                vehicleD.Add(vehicleDetails);
+            } while (reader.Read());
+            reader.Close();
+            return vehicleD;
         }
         public IEnumerable<VehicleDetails> ViewVehicleDetails(DateTime startDate, DateTime endTime )
         {
