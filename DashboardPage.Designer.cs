@@ -329,6 +329,7 @@
             this.Name = "frmDashboardPage";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Dashboard";
+            this.Load += new System.EventHandler(this.frmDashboardPage_Load);
             this.menuStripDashboard.ResumeLayout(false);
             this.menuStripDashboard.PerformLayout();
             this.groupBoxDashboard.ResumeLayout(false);

@@ -17,6 +17,11 @@ namespace TollBoothManagementSystem
             InitializeComponent();
         }
 
+        private void frmDashboardPage_Load(object sender, EventArgs e)
+        {
+            lblNameDisplayEmployee.Text = frmLoginPage.loggedUser;
+        }
+
         private void logoutToolStripMenuItem_Click(object sender, EventArgs e)
         {
             new frmLoginPage().Show();
