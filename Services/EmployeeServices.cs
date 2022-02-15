@@ -52,7 +52,10 @@ namespace TollBoothManagementSystem.Services
                 return employee;
             }
             else
+            {
+                reader.Close();
                 return null;
+            }
         }
 
         public int UpdateEmployee(int id, Employee employee)
