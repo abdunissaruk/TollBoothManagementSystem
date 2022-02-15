@@ -26,24 +26,27 @@ namespace TollBoothManagementSystem
         {
             var username = txtLoginId.Text;
             var password = txtPassword.Text;
-            var employee = _service.EmployeeLogin(username, password);
-            if (employee.EmpAdminPrivelege == 1)
+            var employeeLog = _service.EmployeeLogin(username, password);
+            if (employeeLog != null)
             {
-                loggedUser = employee.EmpName;
-                new frmAdminPage().Show();
-                Hide();
-
-            }
-            else if (employee.EmpAdminPrivelege == 0)
-            {
-                loggedUser = employee.EmpName;
-                new frmDashboardPage().Show();
-                Hide();
+                if (employeeLog.EmpAdminPrivelege == 1)
+                {
+                    loggedUser = employee.EmpName;
+                    new frmAdminPage().Show();
+                    Hide();
+                }
+                else if (employeeLog.EmpAdminPrivelege == 0)
+                {
+                    loggedUser = employee.EmpName;
+                    new frmDashboardPage().Show();
+                    Hide();
+                }
             }
             else
             {
                 MessageBox.Show("Incorrect Entry");
             }
+            
         }
     }
 }
