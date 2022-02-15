@@ -119,5 +119,18 @@ namespace TollBoothManagementSystem
             else
                 MessageBox.Show("No result found");
         }
+        private void btnVehicleSearch_Click(object sender, EventArgs e)
+        {
+            var vehicleReg = comboBoxStateOrTerritory.SelectedItem.ToString() + txtRegionalTransportAuthority.Text + txtLetters.Text + txtDigits.Text;
+            var vehicleDetails = _service.VehicleSearch(vehicleReg);
+
+            if (vehicleReg != null)
+            { 
+                dataGridViewDisplay.ReadOnly = true;
+                dataGridViewDisplay.DataSource = vehicleDetails;
+            }
+            else
+                MessageBox.Show("No result found");
+        }
     }
 }
