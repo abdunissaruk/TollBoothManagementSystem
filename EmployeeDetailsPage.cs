@@ -22,9 +22,25 @@ namespace TollBoothManagementSystem
             _service = new EmployeeServices();
         }
 
+        private void EmployeeGridDisplay()
+        {
+            var employeeDetails = _service.DisplayEmployee();
+            GridViewEmployeeDetailsClear();
+            if (employeeDetails != null)
+            {
+                dataGridViewEmployeeDetails.ReadOnly = true;
+                dataGridViewEmployeeDetails.DataSource = employeeDetails;
+            }
+        }
+
         private void frmEmployeeDetails_Load(object sender, EventArgs e)
         {
+            EmployeeGridDisplay();
+        }
 
+        private void GridViewEmployeeDetailsClear()
+        {
+            dataGridViewEmployeeDetails.Columns.Clear();
         }
 
         private void Clear()
@@ -98,6 +114,8 @@ namespace TollBoothManagementSystem
                 var res = _service.AddOneEmployee(employee);
                 if (res > 0)
                     MessageBox.Show("Added");
+                GridViewEmployeeDetailsClear();
+                EmployeeGridDisplay();
             }
             else
             {
@@ -121,6 +139,8 @@ namespace TollBoothManagementSystem
                     var res = _service.AddOneEmployee(employee);
                     if (res > 0)
                         MessageBox.Show("Added");
+                    GridViewEmployeeDetailsClear();
+                    EmployeeGridDisplay();
                 }
                 else
                 {
@@ -140,6 +160,8 @@ namespace TollBoothManagementSystem
                     var res = _service.UpdateEmployee(id, employee);
                     if (res > 0)
                         MessageBox.Show("Updated");
+                    GridViewEmployeeDetailsClear();
+                    EmployeeGridDisplay();
                 }
             }
 
@@ -155,7 +177,11 @@ namespace TollBoothManagementSystem
             var id = Convert.ToInt32(txtEmployeeId.Text);
             var employeeCheck = _service.DeleteEmployee(id);
             if (employeeCheck > 0)
+            {
                 MessageBox.Show("Employee details Deleted");
+                GridViewEmployeeDetailsClear();
+                EmployeeGridDisplay();
+            }
             else
                 MessageBox.Show("Employee details not found");
         }
