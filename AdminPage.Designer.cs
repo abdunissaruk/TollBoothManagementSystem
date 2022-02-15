@@ -38,8 +38,10 @@
             this.employeeDetailsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.viewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.dailyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.weeklyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.monthlyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.customToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.lblNameDisplayAdmin = new System.Windows.Forms.Label();
             this.comboBoxStateOrTerritory = new System.Windows.Forms.ComboBox();
@@ -54,7 +56,7 @@
             this.dateTimePickerFrom = new System.Windows.Forms.DateTimePicker();
             this.btnMonthlyReportView = new System.Windows.Forms.Button();
             this.btnWeeklyReportView = new System.Windows.Forms.Button();
-            this.btnDialyReportView = new System.Windows.Forms.Button();
+            this.btnDailyReportView = new System.Windows.Forms.Button();
             this.btnVehicleSearch = new System.Windows.Forms.Button();
             this.groupBoxVehicleSearch = new System.Windows.Forms.GroupBox();
             this.btnClear = new System.Windows.Forms.Button();
@@ -65,8 +67,7 @@
             this.groupBoxViewReport = new System.Windows.Forms.GroupBox();
             this.lblViewReport = new System.Windows.Forms.Label();
             this.lblWelcome = new System.Windows.Forms.Label();
-            this.dailyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.customToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnCustom = new System.Windows.Forms.Button();
             this.menuStripAdminPage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDisplay)).BeginInit();
             this.groupBoxVehicleSearch.SuspendLayout();
@@ -101,19 +102,19 @@
             // logoutToolStripMenuItem
             // 
             this.logoutToolStripMenuItem.Name = "logoutToolStripMenuItem";
-            this.logoutToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.logoutToolStripMenuItem.Size = new System.Drawing.Size(142, 26);
             this.logoutToolStripMenuItem.Text = "Logout";
             this.logoutToolStripMenuItem.Click += new System.EventHandler(this.logoutToolStripMenuItem_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(221, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(139, 6);
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(142, 26);
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
@@ -128,7 +129,7 @@
             // employeeDetailsToolStripMenuItem
             // 
             this.employeeDetailsToolStripMenuItem.Name = "employeeDetailsToolStripMenuItem";
-            this.employeeDetailsToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.employeeDetailsToolStripMenuItem.Size = new System.Drawing.Size(213, 26);
             this.employeeDetailsToolStripMenuItem.Text = "Employee Details";
             this.employeeDetailsToolStripMenuItem.Click += new System.EventHandler(this.employeeDetailsToolStripMenuItem_Click);
             // 
@@ -148,20 +149,32 @@
             this.monthlyToolStripMenuItem,
             this.customToolStripMenuItem});
             this.reportToolStripMenuItem.Name = "reportToolStripMenuItem";
-            this.reportToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.reportToolStripMenuItem.Size = new System.Drawing.Size(179, 26);
             this.reportToolStripMenuItem.Text = "Print Report";
+            // 
+            // dailyToolStripMenuItem
+            // 
+            this.dailyToolStripMenuItem.Name = "dailyToolStripMenuItem";
+            this.dailyToolStripMenuItem.Size = new System.Drawing.Size(154, 26);
+            this.dailyToolStripMenuItem.Text = "Daily";
             // 
             // weeklyToolStripMenuItem
             // 
             this.weeklyToolStripMenuItem.Name = "weeklyToolStripMenuItem";
-            this.weeklyToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.weeklyToolStripMenuItem.Size = new System.Drawing.Size(154, 26);
             this.weeklyToolStripMenuItem.Text = "Weekly";
             // 
             // monthlyToolStripMenuItem
             // 
             this.monthlyToolStripMenuItem.Name = "monthlyToolStripMenuItem";
-            this.monthlyToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.monthlyToolStripMenuItem.Size = new System.Drawing.Size(154, 26);
             this.monthlyToolStripMenuItem.Text = "Monthly";
+            // 
+            // customToolStripMenuItem
+            // 
+            this.customToolStripMenuItem.Name = "customToolStripMenuItem";
+            this.customToolStripMenuItem.Size = new System.Drawing.Size(154, 26);
+            this.customToolStripMenuItem.Text = "Custom";
             // 
             // helpToolStripMenuItem
             // 
@@ -248,14 +261,14 @@
             // 
             // dateTimePickerTo
             // 
-            this.dateTimePickerTo.Location = new System.Drawing.Point(172, 134);
+            this.dateTimePickerTo.Location = new System.Drawing.Point(86, 134);
             this.dateTimePickerTo.Name = "dateTimePickerTo";
             this.dateTimePickerTo.Size = new System.Drawing.Size(200, 26);
             this.dateTimePickerTo.TabIndex = 4;
             // 
             // dateTimePickerFrom
             // 
-            this.dateTimePickerFrom.Location = new System.Drawing.Point(172, 106);
+            this.dateTimePickerFrom.Location = new System.Drawing.Point(86, 106);
             this.dateTimePickerFrom.Name = "dateTimePickerFrom";
             this.dateTimePickerFrom.Size = new System.Drawing.Size(200, 26);
             this.dateTimePickerFrom.TabIndex = 3;
@@ -268,6 +281,7 @@
             this.btnMonthlyReportView.TabIndex = 2;
             this.btnMonthlyReportView.Text = "Month";
             this.btnMonthlyReportView.UseVisualStyleBackColor = true;
+            this.btnMonthlyReportView.Click += new System.EventHandler(this.btnMonthlyReportView_Click);
             // 
             // btnWeeklyReportView
             // 
@@ -277,15 +291,17 @@
             this.btnWeeklyReportView.TabIndex = 1;
             this.btnWeeklyReportView.Text = "Week";
             this.btnWeeklyReportView.UseVisualStyleBackColor = true;
+            this.btnWeeklyReportView.Click += new System.EventHandler(this.btnWeeklyReportView_Click);
             // 
-            // btnDialyReportView
+            // btnDailyReportView
             // 
-            this.btnDialyReportView.Location = new System.Drawing.Point(26, 46);
-            this.btnDialyReportView.Name = "btnDialyReportView";
-            this.btnDialyReportView.Size = new System.Drawing.Size(97, 54);
-            this.btnDialyReportView.TabIndex = 0;
-            this.btnDialyReportView.Text = "Day";
-            this.btnDialyReportView.UseVisualStyleBackColor = true;
+            this.btnDailyReportView.Location = new System.Drawing.Point(26, 46);
+            this.btnDailyReportView.Name = "btnDailyReportView";
+            this.btnDailyReportView.Size = new System.Drawing.Size(97, 54);
+            this.btnDailyReportView.TabIndex = 0;
+            this.btnDailyReportView.Text = "Day";
+            this.btnDailyReportView.UseVisualStyleBackColor = true;
+            this.btnDailyReportView.Click += new System.EventHandler(this.btnDailyReportView_Click);
             // 
             // btnVehicleSearch
             // 
@@ -366,10 +382,11 @@
             // 
             // groupBoxViewReport
             // 
+            this.groupBoxViewReport.Controls.Add(this.btnCustom);
             this.groupBoxViewReport.Controls.Add(this.lblViewReport);
             this.groupBoxViewReport.Controls.Add(this.btnWeeklyReportView);
             this.groupBoxViewReport.Controls.Add(this.lblToDate);
-            this.groupBoxViewReport.Controls.Add(this.btnDialyReportView);
+            this.groupBoxViewReport.Controls.Add(this.btnDailyReportView);
             this.groupBoxViewReport.Controls.Add(this.lblFromDate);
             this.groupBoxViewReport.Controls.Add(this.btnMonthlyReportView);
             this.groupBoxViewReport.Controls.Add(this.dateTimePickerTo);
@@ -401,17 +418,15 @@
             this.lblWelcome.TabIndex = 31;
             this.lblWelcome.Text = "Welcome";
             // 
-            // dailyToolStripMenuItem
+            // btnCustom
             // 
-            this.dailyToolStripMenuItem.Name = "dailyToolStripMenuItem";
-            this.dailyToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.dailyToolStripMenuItem.Text = "Daily";
-            // 
-            // customToolStripMenuItem
-            // 
-            this.customToolStripMenuItem.Name = "customToolStripMenuItem";
-            this.customToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.customToolStripMenuItem.Text = "Custom";
+            this.btnCustom.Location = new System.Drawing.Point(292, 106);
+            this.btnCustom.Name = "btnCustom";
+            this.btnCustom.Size = new System.Drawing.Size(80, 54);
+            this.btnCustom.TabIndex = 31;
+            this.btnCustom.Text = "Custom";
+            this.btnCustom.UseVisualStyleBackColor = true;
+            this.btnCustom.Click += new System.EventHandler(this.btnCustom_Click);
             // 
             // frmAdminPage
             // 
@@ -468,7 +483,7 @@
         private System.Windows.Forms.DateTimePicker dateTimePickerFrom;
         private System.Windows.Forms.Button btnMonthlyReportView;
         private System.Windows.Forms.Button btnWeeklyReportView;
-        private System.Windows.Forms.Button btnDialyReportView;
+        private System.Windows.Forms.Button btnDailyReportView;
         private System.Windows.Forms.Label lblToDate;
         private System.Windows.Forms.Label lblFromDate;
         private System.Windows.Forms.Button btnVehicleSearch;
@@ -485,5 +500,6 @@
         private System.Windows.Forms.Button btnClear;
         private System.Windows.Forms.ToolStripMenuItem dailyToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem customToolStripMenuItem;
+        private System.Windows.Forms.Button btnCustom;
     }
 }
