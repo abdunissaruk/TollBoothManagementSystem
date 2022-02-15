@@ -41,7 +41,7 @@ namespace TollBoothManagementSystem.Services
             }
 
             var vehicles = new List<VehicleDetails>();
-            while (reader.Read())
+            do
             {
                 var vehicleDetails = new VehicleDetails()
                 {
@@ -52,7 +52,7 @@ namespace TollBoothManagementSystem.Services
                     Amount = reader.GetInt32(4)
                 };
                 vehicles.Add(vehicleDetails);
-            }
+            } while (reader.Read());
             reader.Close();
             return vehicles;
         }

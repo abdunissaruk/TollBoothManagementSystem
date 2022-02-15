@@ -24,9 +24,9 @@ namespace TollBoothManagementSystem
 
         private void btnSubmit_Click(object sender, EventArgs e)
         {
-            var Username = txtLoginId.Text;
-            var Password = txtPassword.Text;
-            var employee = _service.EmployeeLogin(Username, Password);
+            var username = txtLoginId.Text;
+            var password = txtPassword.Text;
+            var employee = _service.EmployeeLogin(username, password);
             if (employee.EmpAdminPrivelege == 1)
             {
                 loggedUser = employee.EmpName;

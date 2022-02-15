@@ -31,11 +31,11 @@ namespace TollBoothManagementSystem.Services
             }
 
             var employeeList = new List<Employee>();
-            while (reader.Read())
+            do
             {
                 var employee = new Employee()
                 {
-                    EmpId= reader.GetInt32(0),
+                    EmpId = reader.GetInt32(0),
                     EmpName = reader.GetString(1),
                     EmpEmail = reader.GetString(2),
                     EmpMobile = reader.GetString(3),
@@ -44,6 +44,7 @@ namespace TollBoothManagementSystem.Services
                 };
                 employeeList.Add(employee);
             }
+            while (reader.Read());
             reader.Close();
             return employeeList;
         }
@@ -131,5 +132,33 @@ namespace TollBoothManagementSystem.Services
             return employee;
         }
 
+        public Employee CheckEmployeeExist(String email, String password)
+        {
+            ConnectionManager.EnsureConnectionIsActive();
+            var sql = $"SELECT  * FROM {nameof(Employee)} WHERE EmpEmail=@email and EmpPassword=@password";
+            var cmd = new SqlCommand(sql, _connection);
+            cmd.Parameters.AddWithValue("@email", email);
+            cmd.Parameters.AddWithValue("@password", password);
+            var reader = cmd.ExecuteReader();
+            if (reader.Read())
+            {
+                var employee = new Employee()
+                {
+                    EmpId = reader.GetInt32(0),
+                    EmpName = reader.GetString(1),
+                    EmpEmail = reader.GetString(2),
+                    EmpMobile = reader.GetString(3),
+                    EmpPassword = reader.GetString(4),
+                    EmpAdminPrivelege = reader.GetInt32(5)
+                };
+                reader.Close();
+                return employee;
+            }
+            else
+            {
+                reader.Close();
+                return null;
+            }
+        }
     }
 }

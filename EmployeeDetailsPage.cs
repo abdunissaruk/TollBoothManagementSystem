@@ -96,6 +96,16 @@ namespace TollBoothManagementSystem
 
         private void btnSubmit_Click(object sender, EventArgs e)
         {
+            var email = txtEmployeeEmail.Text;
+            var password = txtEmployeePassword.Text;
+            var checkEmployeeExist = _service.CheckEmployeeExist(email, password);
+
+            if (checkEmployeeExist != null)
+            {
+                MessageBox.Show("Email and Password alredy exist");
+                return;
+            }
+                
             if (txtEmployeeId.Text == "")
             {
                 var EmpAdminPrivelegeResult = 0;
@@ -121,48 +131,31 @@ namespace TollBoothManagementSystem
             {
                 var id = Convert.ToInt32(txtEmployeeId.Text);
                 var employeeCheck = _service.SearchEmployee(id);
+
                 if (employeeCheck == null)
                 {
-                    var EmpAdminPrivelegeResult = 0;
-                    if (checkBoxAdminPrivilege.Checked)
-                        EmpAdminPrivelegeResult = 1;
-                    else
-                        EmpAdminPrivelegeResult = 0;
-                    var employee = new Employee()
-                    {
-                        EmpName = txtEmployeeName.Text,
-                        EmpEmail = txtEmployeeEmail.Text,
-                        EmpMobile = txtEmployeeMobileNumber.Text,
-                        EmpPassword = txtEmployeePassword.Text,
-                        EmpAdminPrivelege = EmpAdminPrivelegeResult
-                    };
-                    var res = _service.AddOneEmployee(employee);
-                    if (res > 0)
-                        MessageBox.Show("Added");
-                    GridViewEmployeeDetailsClear();
-                    EmployeeGridDisplay();
+                    MessageBox.Show("Clear Id");
+                    return;
                 }
+
+                var EmpAdminPrivelegeResult = 0;
+                if (checkBoxAdminPrivilege.Checked)
+                    EmpAdminPrivelegeResult = 1;
                 else
+                    EmpAdminPrivelegeResult = 0;
+                var employee = new Employee()
                 {
-                    var EmpAdminPrivelegeResult = 0;
-                    if (checkBoxAdminPrivilege.Checked)
-                        EmpAdminPrivelegeResult = 1;
-                    else
-                        EmpAdminPrivelegeResult = 0;
-                    var employee = new Employee()
-                    {
-                        EmpName = txtEmployeeName.Text,
-                        EmpEmail = txtEmployeeEmail.Text,
-                        EmpMobile = txtEmployeeMobileNumber.Text,
-                        EmpPassword = txtEmployeePassword.Text,
-                        EmpAdminPrivelege = EmpAdminPrivelegeResult
-                    };
-                    var res = _service.UpdateEmployee(id, employee);
-                    if (res > 0)
-                        MessageBox.Show("Updated");
-                    GridViewEmployeeDetailsClear();
-                    EmployeeGridDisplay();
-                }
+                    EmpName = txtEmployeeName.Text,
+                    EmpEmail = txtEmployeeEmail.Text,
+                    EmpMobile = txtEmployeeMobileNumber.Text,
+                    EmpPassword = txtEmployeePassword.Text,
+                    EmpAdminPrivelege = EmpAdminPrivelegeResult
+                };
+                var res = _service.UpdateEmployee(id, employee);
+                if (res > 0)
+                    MessageBox.Show("Updated");
+                GridViewEmployeeDetailsClear();
+                EmployeeGridDisplay();
             }
 
         }
