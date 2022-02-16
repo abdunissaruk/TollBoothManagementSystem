@@ -117,6 +117,7 @@ namespace TollBoothManagementSystem
                     EmpAdminPrivelegeResult = 1;
                 else
                     EmpAdminPrivelegeResult = 0;
+
                 var employee = new Employee()
                 {
                     EmpName = txtEmployeeName.Text,
