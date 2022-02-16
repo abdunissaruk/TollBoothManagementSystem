@@ -12,7 +12,7 @@ namespace TollBoothManagementSystem.Model
 
         public DateTime VehicleDateTime { get; set; }
 
-        public bool TripType { get; set; }
+        public string TripType { get; set; }
 
         public string VehicleClass { get; set; }
 

@@ -40,7 +40,7 @@ namespace TollBoothManagementSystem.Services
                 {
                     VehicleReg = reader.GetString(0),
                     VehicleDateTime = reader.GetDateTime(1),
-                    TripType = reader.GetBoolean(2),
+                    TripType = reader.GetString(2),
                     VehicleClass = reader.GetString(3),
                     Amount = reader.GetInt32(4)
                 };
@@ -73,7 +73,7 @@ namespace TollBoothManagementSystem.Services
                 {
                     VehicleReg = reader.GetString(0),
                     VehicleDateTime = reader.GetDateTime(1),
-                    TripType = reader.GetBoolean(2),
+                    TripType = reader.GetString(2),
                     VehicleClass = reader.GetString(3),
                     Amount = reader.GetInt32(4)
                 };

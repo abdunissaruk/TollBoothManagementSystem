@@ -39,8 +39,7 @@ namespace TollBoothManagementSystem
             txtRegionalTransportAuthority.Text = "";
             txtLetters.Text = "";
             txtDigits.Text = "";
-            radioButtonOneWay.Checked = true;
-            radioButtonTwoWay.Checked = false;
+            comboBoxTripType.Text = "";
             comboBoxVehicleClass.Text = "";
         }
 

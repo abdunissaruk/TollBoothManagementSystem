@@ -32,8 +32,6 @@
             this.lblVehicleClass = new System.Windows.Forms.Label();
             this.lblTripType = new System.Windows.Forms.Label();
             this.comboBoxVehicleClass = new System.Windows.Forms.ComboBox();
-            this.radioButtonOneWay = new System.Windows.Forms.RadioButton();
-            this.radioButtonTwoWay = new System.Windows.Forms.RadioButton();
             this.btnProceed = new System.Windows.Forms.Button();
             this.btnReset = new System.Windows.Forms.Button();
             this.lblNameDisplayEmployee = new System.Windows.Forms.Label();
@@ -54,6 +52,7 @@
             this.txtDigits = new System.Windows.Forms.TextBox();
             this.groupBoxDashboard = new System.Windows.Forms.GroupBox();
             this.lblVehicleDetails = new System.Windows.Forms.Label();
+            this.comboBoxTripType = new System.Windows.Forms.ComboBox();
             this.menuStripDashboard.SuspendLayout();
             this.groupBoxDashboard.SuspendLayout();
             this.SuspendLayout();
@@ -87,28 +86,6 @@
             this.comboBoxVehicleClass.Name = "comboBoxVehicleClass";
             this.comboBoxVehicleClass.Size = new System.Drawing.Size(241, 26);
             this.comboBoxVehicleClass.TabIndex = 4;
-            // 
-            // radioButtonOneWay
-            // 
-            this.radioButtonOneWay.AutoSize = true;
-            this.radioButtonOneWay.Checked = true;
-            this.radioButtonOneWay.Location = new System.Drawing.Point(191, 155);
-            this.radioButtonOneWay.Name = "radioButtonOneWay";
-            this.radioButtonOneWay.Size = new System.Drawing.Size(84, 22);
-            this.radioButtonOneWay.TabIndex = 22;
-            this.radioButtonOneWay.TabStop = true;
-            this.radioButtonOneWay.Text = "One Way";
-            this.radioButtonOneWay.UseVisualStyleBackColor = true;
-            // 
-            // radioButtonTwoWay
-            // 
-            this.radioButtonTwoWay.AutoSize = true;
-            this.radioButtonTwoWay.Location = new System.Drawing.Point(349, 155);
-            this.radioButtonTwoWay.Name = "radioButtonTwoWay";
-            this.radioButtonTwoWay.Size = new System.Drawing.Size(83, 22);
-            this.radioButtonTwoWay.TabIndex = 23;
-            this.radioButtonTwoWay.Text = "Two Way";
-            this.radioButtonTwoWay.UseVisualStyleBackColor = true;
             // 
             // btnProceed
             // 
@@ -277,6 +254,7 @@
             // groupBoxDashboard
             // 
             this.groupBoxDashboard.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.groupBoxDashboard.Controls.Add(this.comboBoxTripType);
             this.groupBoxDashboard.Controls.Add(this.lblVehicleDetails);
             this.groupBoxDashboard.Controls.Add(this.label2);
             this.groupBoxDashboard.Controls.Add(this.comboBoxStateOrTerritory);
@@ -284,8 +262,6 @@
             this.groupBoxDashboard.Controls.Add(this.label8);
             this.groupBoxDashboard.Controls.Add(this.lblRegNo);
             this.groupBoxDashboard.Controls.Add(this.txtRegionalTransportAuthority);
-            this.groupBoxDashboard.Controls.Add(this.radioButtonOneWay);
-            this.groupBoxDashboard.Controls.Add(this.radioButtonTwoWay);
             this.groupBoxDashboard.Controls.Add(this.txtDigits);
             this.groupBoxDashboard.Controls.Add(this.comboBoxVehicleClass);
             this.groupBoxDashboard.Controls.Add(this.txtLetters);
@@ -309,6 +285,18 @@
             this.lblVehicleDetails.Size = new System.Drawing.Size(114, 21);
             this.lblVehicleDetails.TabIndex = 41;
             this.lblVehicleDetails.Text = "Vehicle Details";
+            // 
+            // comboBoxTripType
+            // 
+            this.comboBoxTripType.FormattingEnabled = true;
+            this.comboBoxTripType.Items.AddRange(new object[] {
+            "3 Wheeler",
+            "4 Wheeler",
+            "6 Wheeler"});
+            this.comboBoxTripType.Location = new System.Drawing.Point(191, 154);
+            this.comboBoxTripType.Name = "comboBoxTripType";
+            this.comboBoxTripType.Size = new System.Drawing.Size(241, 26);
+            this.comboBoxTripType.TabIndex = 42;
             // 
             // frmDashboardPage
             // 
@@ -344,8 +332,6 @@
         private System.Windows.Forms.Label lblVehicleClass;
         private System.Windows.Forms.Label lblTripType;
         private System.Windows.Forms.ComboBox comboBoxVehicleClass;
-        private System.Windows.Forms.RadioButton radioButtonOneWay;
-        private System.Windows.Forms.RadioButton radioButtonTwoWay;
         private System.Windows.Forms.Button btnProceed;
         private System.Windows.Forms.Button btnReset;
         private System.Windows.Forms.Label lblNameDisplayEmployee;
@@ -366,5 +352,6 @@
         private System.Windows.Forms.TextBox txtDigits;
         private System.Windows.Forms.GroupBox groupBoxDashboard;
         private System.Windows.Forms.Label lblVehicleDetails;
+        private System.Windows.Forms.ComboBox comboBoxTripType;
     }
 }
