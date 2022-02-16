@@ -141,24 +141,33 @@ namespace TollBoothManagementSystem
 
                 if (employeeIdCheck != null)
                 {
-                    var EmpAdminPrivelegeResult = 0;
-                    if (checkBoxAdminPrivilege.Checked)
-                        EmpAdminPrivelegeResult = 1;
-                    else
-                        EmpAdminPrivelegeResult = 0;
-                    var employee = new Employee()
+                    DialogResult dialogResult = MessageBox.Show("Do you want to update ?","Please Confirm", MessageBoxButtons.YesNo);
+
+                    if (dialogResult == DialogResult.No)
+                        return;
+                    if (dialogResult == DialogResult.Cancel)
+                        return;
+                    if (dialogResult == DialogResult.Yes)
                     {
-                        EmpName = txtEmployeeName.Text,
-                        EmpEmail = txtEmployeeEmail.Text,
-                        EmpMobile = txtEmployeeMobileNumber.Text,
-                        EmpPassword = txtEmployeePassword.Text,
-                        EmpAdminPrivelege = (Byte)EmpAdminPrivelegeResult
-                    };
-                    var res = _service.UpdateEmployee(id, employee);
-                    if (res > 0)
-                        MessageBox.Show("Employee details updated");
-                    GridViewEmployeeDetailsClear();
-                    EmployeeGridDisplay();
+                        var EmpAdminPrivelegeResult = 0;
+                        if (checkBoxAdminPrivilege.Checked)
+                            EmpAdminPrivelegeResult = 1;
+                        else
+                            EmpAdminPrivelegeResult = 0;
+                        var employee = new Employee()
+                        {
+                            EmpName = txtEmployeeName.Text,
+                            EmpEmail = txtEmployeeEmail.Text,
+                            EmpMobile = txtEmployeeMobileNumber.Text,
+                            EmpPassword = txtEmployeePassword.Text,
+                            EmpAdminPrivelege = (Byte)EmpAdminPrivelegeResult
+                        };
+                        var res = _service.UpdateEmployee(id, employee);
+                        if (res > 0)
+                            MessageBox.Show("Employee details updated");
+                        GridViewEmployeeDetailsClear();
+                        EmployeeGridDisplay();
+                    }
                 }
                 else
                 {
@@ -178,17 +187,26 @@ namespace TollBoothManagementSystem
                 Clear();
                 return;
             }
-            var id = Convert.ToInt32(txtEmployeeId.Text);
-            var employeeCheck = _service.DeleteEmployee(id);
+            DialogResult dialogResult = MessageBox.Show("Do you want to delete ?", "Please Confirm", MessageBoxButtons.YesNo);
 
-            if (employeeCheck == 0)
+            if (dialogResult == DialogResult.No)
+                return;
+            if (dialogResult == DialogResult.Cancel)
+                return;
+            if (dialogResult == DialogResult.Yes)
             {
-                MessageBox.Show("Employee details not found");
-            }
-                
-            MessageBox.Show("Employee details Deleted");
-            GridViewEmployeeDetailsClear();
-            EmployeeGridDisplay();
+                var id = Convert.ToInt32(txtEmployeeId.Text);
+                var employeeCheck = _service.DeleteEmployee(id);
+
+                if (employeeCheck == 0)
+                {
+                    MessageBox.Show("Employee details not found");
+                }
+
+                MessageBox.Show("Employee details Deleted");
+                GridViewEmployeeDetailsClear();
+                EmployeeGridDisplay();
+            }   
         }
     }
 }
