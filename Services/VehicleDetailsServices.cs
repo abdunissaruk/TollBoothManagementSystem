@@ -18,7 +18,16 @@ namespace TollBoothManagementSystem.Services
         }
         public int AddOneEntry(VehicleDetails vehicleDetails)
         {
-            return 0;
+            ConnectionManager.EnsureConnectionIsActive();
+            var sql = $"INSERT INTO {nameof(VehicleDetails)} ({nameof(VehicleDetails.VehicleReg)},{ nameof(VehicleDetails.VehicleDateTime)}, { nameof(VehicleDetails.TripType)}, { nameof(VehicleDetails.VehicleClass)},  { nameof(VehicleDetails.Amount)}) VALUES" +
+                "(@vehicleReg,@vehicleDateTime,@tripType, @vehicleClass, @amount)";
+            var cmd = new SqlCommand(sql, _connection);
+            cmd.Parameters.AddWithValue("@vehicleReg", vehicleDetails.VehicleReg);
+            cmd.Parameters.AddWithValue("@vehicleDateTime", vehicleDetails.VehicleDateTime);
+            cmd.Parameters.AddWithValue("@tripType", vehicleDetails.TripType);
+            cmd.Parameters.AddWithValue("@vehicleClass", vehicleDetails.VehicleClass);
+            cmd.Parameters.AddWithValue("@amount", vehicleDetails.Amount);
+            return cmd.ExecuteNonQuery();
         }
         public IEnumerable<VehicleDetails> VehicleSearch(string vehicleReg)
         {
