@@ -83,8 +83,8 @@
             this.viewToolStripMenuItem});
             this.menuStripAdminPage.Location = new System.Drawing.Point(0, 0);
             this.menuStripAdminPage.Name = "menuStripAdminPage";
-            this.menuStripAdminPage.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
-            this.menuStripAdminPage.Size = new System.Drawing.Size(600, 25);
+            this.menuStripAdminPage.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
+            this.menuStripAdminPage.Size = new System.Drawing.Size(800, 29);
             this.menuStripAdminPage.TabIndex = 0;
             this.menuStripAdminPage.Text = "menuStripAdminPage";
             // 
@@ -95,25 +95,25 @@
             this.toolStripSeparator1,
             this.exitToolStripMenuItem});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            this.fileToolStripMenuItem.Size = new System.Drawing.Size(39, 21);
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(48, 25);
             this.fileToolStripMenuItem.Text = "File";
             // 
             // logoutToolStripMenuItem
             // 
             this.logoutToolStripMenuItem.Name = "logoutToolStripMenuItem";
-            this.logoutToolStripMenuItem.Size = new System.Drawing.Size(115, 22);
+            this.logoutToolStripMenuItem.Size = new System.Drawing.Size(142, 26);
             this.logoutToolStripMenuItem.Text = "Logout";
             this.logoutToolStripMenuItem.Click += new System.EventHandler(this.logoutToolStripMenuItem_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(112, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(139, 6);
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(115, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(142, 26);
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
@@ -122,13 +122,13 @@
             this.editToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.employeeDetailsToolStripMenuItem});
             this.editToolStripMenuItem.Name = "editToolStripMenuItem";
-            this.editToolStripMenuItem.Size = new System.Drawing.Size(42, 21);
+            this.editToolStripMenuItem.Size = new System.Drawing.Size(51, 25);
             this.editToolStripMenuItem.Text = "Edit";
             // 
             // employeeDetailsToolStripMenuItem
             // 
             this.employeeDetailsToolStripMenuItem.Name = "employeeDetailsToolStripMenuItem";
-            this.employeeDetailsToolStripMenuItem.Size = new System.Drawing.Size(173, 22);
+            this.employeeDetailsToolStripMenuItem.Size = new System.Drawing.Size(213, 26);
             this.employeeDetailsToolStripMenuItem.Text = "Employee Details";
             this.employeeDetailsToolStripMenuItem.Click += new System.EventHandler(this.employeeDetailsToolStripMenuItem_Click);
             // 
@@ -137,7 +137,7 @@
             this.viewToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.reportToolStripMenuItem});
             this.viewToolStripMenuItem.Name = "viewToolStripMenuItem";
-            this.viewToolStripMenuItem.Size = new System.Drawing.Size(48, 21);
+            this.viewToolStripMenuItem.Size = new System.Drawing.Size(58, 25);
             this.viewToolStripMenuItem.Text = "View";
             // 
             // reportToolStripMenuItem
@@ -148,41 +148,44 @@
             this.monthlyToolStripMenuItem,
             this.customToolStripMenuItem});
             this.reportToolStripMenuItem.Name = "reportToolStripMenuItem";
-            this.reportToolStripMenuItem.Size = new System.Drawing.Size(145, 22);
+            this.reportToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.reportToolStripMenuItem.Text = "Print Report";
             // 
             // dailyToolStripMenuItem
             // 
             this.dailyToolStripMenuItem.Name = "dailyToolStripMenuItem";
-            this.dailyToolStripMenuItem.Size = new System.Drawing.Size(123, 22);
+            this.dailyToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.dailyToolStripMenuItem.Text = "Daily";
+            this.dailyToolStripMenuItem.Click += new System.EventHandler(this.dailyToolStripMenuItem_Click);
             // 
             // weeklyToolStripMenuItem
             // 
             this.weeklyToolStripMenuItem.Name = "weeklyToolStripMenuItem";
-            this.weeklyToolStripMenuItem.Size = new System.Drawing.Size(123, 22);
+            this.weeklyToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.weeklyToolStripMenuItem.Text = "Weekly";
+            this.weeklyToolStripMenuItem.Click += new System.EventHandler(this.weeklyToolStripMenuItem_Click);
             // 
             // monthlyToolStripMenuItem
             // 
             this.monthlyToolStripMenuItem.Name = "monthlyToolStripMenuItem";
-            this.monthlyToolStripMenuItem.Size = new System.Drawing.Size(123, 22);
+            this.monthlyToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.monthlyToolStripMenuItem.Text = "Monthly";
+            this.monthlyToolStripMenuItem.Click += new System.EventHandler(this.monthlyToolStripMenuItem_Click);
             // 
             // customToolStripMenuItem
             // 
             this.customToolStripMenuItem.Name = "customToolStripMenuItem";
-            this.customToolStripMenuItem.Size = new System.Drawing.Size(123, 22);
+            this.customToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.customToolStripMenuItem.Text = "Custom";
+            this.customToolStripMenuItem.Click += new System.EventHandler(this.customToolStripMenuItem_Click);
             // 
             // lblNameDisplayAdmin
             // 
             this.lblNameDisplayAdmin.AutoSize = true;
             this.lblNameDisplayAdmin.Font = new System.Drawing.Font("Calibri", 10F);
-            this.lblNameDisplayAdmin.Location = new System.Drawing.Point(472, 4);
-            this.lblNameDisplayAdmin.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblNameDisplayAdmin.Location = new System.Drawing.Point(629, 5);
             this.lblNameDisplayAdmin.Name = "lblNameDisplayAdmin";
-            this.lblNameDisplayAdmin.Size = new System.Drawing.Size(0, 17);
+            this.lblNameDisplayAdmin.Size = new System.Drawing.Size(0, 21);
             this.lblNameDisplayAdmin.TabIndex = 2;
             // 
             // comboBoxStateOrTerritory
@@ -190,43 +193,42 @@
             this.comboBoxStateOrTerritory.FormattingEnabled = true;
             this.comboBoxStateOrTerritory.Items.AddRange(new object[] {
             "kl"});
-            this.comboBoxStateOrTerritory.Location = new System.Drawing.Point(99, 50);
-            this.comboBoxStateOrTerritory.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.comboBoxStateOrTerritory.Location = new System.Drawing.Point(132, 62);
+            this.comboBoxStateOrTerritory.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.comboBoxStateOrTerritory.Name = "comboBoxStateOrTerritory";
-            this.comboBoxStateOrTerritory.Size = new System.Drawing.Size(42, 22);
+            this.comboBoxStateOrTerritory.Size = new System.Drawing.Size(55, 26);
             this.comboBoxStateOrTerritory.TabIndex = 26;
             // 
             // txtLetters
             // 
-            this.txtLetters.Location = new System.Drawing.Point(206, 50);
-            this.txtLetters.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtLetters.Location = new System.Drawing.Point(275, 62);
+            this.txtLetters.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtLetters.Name = "txtLetters";
-            this.txtLetters.Size = new System.Drawing.Size(29, 22);
+            this.txtLetters.Size = new System.Drawing.Size(37, 26);
             this.txtLetters.TabIndex = 25;
             // 
             // txtRegionalTransportAuthority
             // 
-            this.txtRegionalTransportAuthority.Location = new System.Drawing.Point(159, 50);
-            this.txtRegionalTransportAuthority.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtRegionalTransportAuthority.Location = new System.Drawing.Point(212, 62);
+            this.txtRegionalTransportAuthority.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtRegionalTransportAuthority.Name = "txtRegionalTransportAuthority";
-            this.txtRegionalTransportAuthority.Size = new System.Drawing.Size(29, 22);
+            this.txtRegionalTransportAuthority.Size = new System.Drawing.Size(37, 26);
             this.txtRegionalTransportAuthority.TabIndex = 24;
             // 
             // txtDigits
             // 
-            this.txtDigits.Location = new System.Drawing.Point(252, 50);
-            this.txtDigits.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtDigits.Location = new System.Drawing.Point(336, 62);
+            this.txtDigits.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtDigits.Name = "txtDigits";
-            this.txtDigits.Size = new System.Drawing.Size(29, 22);
+            this.txtDigits.Size = new System.Drawing.Size(37, 26);
             this.txtDigits.TabIndex = 23;
             // 
             // lblRegNo
             // 
             this.lblRegNo.AutoSize = true;
-            this.lblRegNo.Location = new System.Drawing.Point(4, 52);
-            this.lblRegNo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblRegNo.Location = new System.Drawing.Point(5, 64);
             this.lblRegNo.Name = "lblRegNo";
-            this.lblRegNo.Size = new System.Drawing.Size(94, 14);
+            this.lblRegNo.Size = new System.Drawing.Size(107, 18);
             this.lblRegNo.TabIndex = 22;
             this.lblRegNo.Text = "Registration No.";
             // 
@@ -235,56 +237,54 @@
             this.dataGridViewDisplay.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
             this.dataGridViewDisplay.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridViewDisplay.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewDisplay.Location = new System.Drawing.Point(9, 175);
-            this.dataGridViewDisplay.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dataGridViewDisplay.Location = new System.Drawing.Point(12, 215);
+            this.dataGridViewDisplay.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dataGridViewDisplay.Name = "dataGridViewDisplay";
             this.dataGridViewDisplay.RowHeadersWidth = 51;
             this.dataGridViewDisplay.RowTemplate.Height = 24;
-            this.dataGridViewDisplay.Size = new System.Drawing.Size(580, 212);
+            this.dataGridViewDisplay.Size = new System.Drawing.Size(773, 261);
             this.dataGridViewDisplay.TabIndex = 27;
             // 
             // lblToDate
             // 
             this.lblToDate.AutoSize = true;
-            this.lblToDate.Location = new System.Drawing.Point(17, 114);
-            this.lblToDate.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblToDate.Location = new System.Drawing.Point(23, 140);
             this.lblToDate.Name = "lblToDate";
-            this.lblToDate.Size = new System.Drawing.Size(37, 14);
+            this.lblToDate.Size = new System.Drawing.Size(41, 18);
             this.lblToDate.TabIndex = 6;
             this.lblToDate.Text = "To     :";
             // 
             // lblFromDate
             // 
             this.lblFromDate.AutoSize = true;
-            this.lblFromDate.Location = new System.Drawing.Point(17, 91);
-            this.lblFromDate.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblFromDate.Location = new System.Drawing.Point(23, 112);
             this.lblFromDate.Name = "lblFromDate";
-            this.lblFromDate.Size = new System.Drawing.Size(40, 14);
+            this.lblFromDate.Size = new System.Drawing.Size(47, 18);
             this.lblFromDate.TabIndex = 5;
             this.lblFromDate.Text = "From :";
             // 
             // dateTimePickerTo
             // 
-            this.dateTimePickerTo.Location = new System.Drawing.Point(64, 109);
-            this.dateTimePickerTo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dateTimePickerTo.Location = new System.Drawing.Point(85, 134);
+            this.dateTimePickerTo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dateTimePickerTo.Name = "dateTimePickerTo";
-            this.dateTimePickerTo.Size = new System.Drawing.Size(151, 22);
+            this.dateTimePickerTo.Size = new System.Drawing.Size(200, 26);
             this.dateTimePickerTo.TabIndex = 4;
             // 
             // dateTimePickerFrom
             // 
-            this.dateTimePickerFrom.Location = new System.Drawing.Point(64, 86);
-            this.dateTimePickerFrom.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dateTimePickerFrom.Location = new System.Drawing.Point(85, 106);
+            this.dateTimePickerFrom.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dateTimePickerFrom.Name = "dateTimePickerFrom";
-            this.dateTimePickerFrom.Size = new System.Drawing.Size(151, 22);
+            this.dateTimePickerFrom.Size = new System.Drawing.Size(200, 26);
             this.dateTimePickerFrom.TabIndex = 3;
             // 
             // btnMonthlyReportView
             // 
-            this.btnMonthlyReportView.Location = new System.Drawing.Point(206, 37);
-            this.btnMonthlyReportView.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnMonthlyReportView.Location = new System.Drawing.Point(275, 46);
+            this.btnMonthlyReportView.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnMonthlyReportView.Name = "btnMonthlyReportView";
-            this.btnMonthlyReportView.Size = new System.Drawing.Size(73, 44);
+            this.btnMonthlyReportView.Size = new System.Drawing.Size(97, 54);
             this.btnMonthlyReportView.TabIndex = 2;
             this.btnMonthlyReportView.Text = "Month";
             this.btnMonthlyReportView.UseVisualStyleBackColor = true;
@@ -292,10 +292,10 @@
             // 
             // btnWeeklyReportView
             // 
-            this.btnWeeklyReportView.Location = new System.Drawing.Point(112, 37);
-            this.btnWeeklyReportView.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnWeeklyReportView.Location = new System.Drawing.Point(149, 46);
+            this.btnWeeklyReportView.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnWeeklyReportView.Name = "btnWeeklyReportView";
-            this.btnWeeklyReportView.Size = new System.Drawing.Size(73, 44);
+            this.btnWeeklyReportView.Size = new System.Drawing.Size(97, 54);
             this.btnWeeklyReportView.TabIndex = 1;
             this.btnWeeklyReportView.Text = "Week";
             this.btnWeeklyReportView.UseVisualStyleBackColor = true;
@@ -303,10 +303,10 @@
             // 
             // btnDailyReportView
             // 
-            this.btnDailyReportView.Location = new System.Drawing.Point(20, 37);
-            this.btnDailyReportView.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnDailyReportView.Location = new System.Drawing.Point(27, 46);
+            this.btnDailyReportView.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnDailyReportView.Name = "btnDailyReportView";
-            this.btnDailyReportView.Size = new System.Drawing.Size(73, 44);
+            this.btnDailyReportView.Size = new System.Drawing.Size(97, 54);
             this.btnDailyReportView.TabIndex = 0;
             this.btnDailyReportView.Text = "Day";
             this.btnDailyReportView.UseVisualStyleBackColor = true;
@@ -314,10 +314,10 @@
             // 
             // btnVehicleSearch
             // 
-            this.btnVehicleSearch.Location = new System.Drawing.Point(208, 83);
-            this.btnVehicleSearch.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnVehicleSearch.Location = new System.Drawing.Point(277, 102);
+            this.btnVehicleSearch.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnVehicleSearch.Name = "btnVehicleSearch";
-            this.btnVehicleSearch.Size = new System.Drawing.Size(73, 44);
+            this.btnVehicleSearch.Size = new System.Drawing.Size(97, 54);
             this.btnVehicleSearch.TabIndex = 28;
             this.btnVehicleSearch.Text = "Search";
             this.btnVehicleSearch.UseVisualStyleBackColor = true;
@@ -338,20 +338,20 @@
             this.groupBoxVehicleSearch.Controls.Add(this.txtDigits);
             this.groupBoxVehicleSearch.Controls.Add(this.txtLetters);
             this.groupBoxVehicleSearch.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBoxVehicleSearch.Location = new System.Drawing.Point(9, 32);
-            this.groupBoxVehicleSearch.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBoxVehicleSearch.Location = new System.Drawing.Point(12, 39);
+            this.groupBoxVehicleSearch.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBoxVehicleSearch.Name = "groupBoxVehicleSearch";
-            this.groupBoxVehicleSearch.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.groupBoxVehicleSearch.Size = new System.Drawing.Size(289, 137);
+            this.groupBoxVehicleSearch.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.groupBoxVehicleSearch.Size = new System.Drawing.Size(385, 169);
             this.groupBoxVehicleSearch.TabIndex = 30;
             this.groupBoxVehicleSearch.TabStop = false;
             // 
             // btnClear
             // 
-            this.btnClear.Location = new System.Drawing.Point(112, 83);
-            this.btnClear.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnClear.Location = new System.Drawing.Point(149, 102);
+            this.btnClear.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnClear.Name = "btnClear";
-            this.btnClear.Size = new System.Drawing.Size(73, 44);
+            this.btnClear.Size = new System.Drawing.Size(97, 54);
             this.btnClear.TabIndex = 33;
             this.btnClear.Text = "Clear";
             this.btnClear.UseVisualStyleBackColor = true;
@@ -360,30 +360,27 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(238, 52);
-            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label3.Location = new System.Drawing.Point(317, 64);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(11, 14);
+            this.label3.Size = new System.Drawing.Size(13, 18);
             this.label3.TabIndex = 32;
             this.label3.Text = "-";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(191, 52);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Location = new System.Drawing.Point(255, 64);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(11, 14);
+            this.label2.Size = new System.Drawing.Size(13, 18);
             this.label2.TabIndex = 31;
             this.label2.Text = "-";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(145, 52);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Location = new System.Drawing.Point(193, 64);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(11, 14);
+            this.label1.Size = new System.Drawing.Size(13, 18);
             this.label1.TabIndex = 30;
             this.label1.Text = "-";
             // 
@@ -391,10 +388,9 @@
             // 
             this.lblVehicleSearch.AutoSize = true;
             this.lblVehicleSearch.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Bold);
-            this.lblVehicleSearch.Location = new System.Drawing.Point(5, 10);
-            this.lblVehicleSearch.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblVehicleSearch.Location = new System.Drawing.Point(7, 12);
             this.lblVehicleSearch.Name = "lblVehicleSearch";
-            this.lblVehicleSearch.Size = new System.Drawing.Size(92, 17);
+            this.lblVehicleSearch.Size = new System.Drawing.Size(112, 21);
             this.lblVehicleSearch.TabIndex = 29;
             this.lblVehicleSearch.Text = "Vehicle Search";
             // 
@@ -410,20 +406,20 @@
             this.groupBoxViewReport.Controls.Add(this.dateTimePickerTo);
             this.groupBoxViewReport.Controls.Add(this.dateTimePickerFrom);
             this.groupBoxViewReport.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBoxViewReport.Location = new System.Drawing.Point(302, 32);
-            this.groupBoxViewReport.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBoxViewReport.Location = new System.Drawing.Point(403, 39);
+            this.groupBoxViewReport.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBoxViewReport.Name = "groupBoxViewReport";
-            this.groupBoxViewReport.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.groupBoxViewReport.Size = new System.Drawing.Size(286, 137);
+            this.groupBoxViewReport.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.groupBoxViewReport.Size = new System.Drawing.Size(381, 169);
             this.groupBoxViewReport.TabIndex = 31;
             this.groupBoxViewReport.TabStop = false;
             // 
             // btnCustom
             // 
-            this.btnCustom.Location = new System.Drawing.Point(219, 86);
-            this.btnCustom.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnCustom.Location = new System.Drawing.Point(292, 106);
+            this.btnCustom.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnCustom.Name = "btnCustom";
-            this.btnCustom.Size = new System.Drawing.Size(60, 44);
+            this.btnCustom.Size = new System.Drawing.Size(80, 54);
             this.btnCustom.TabIndex = 31;
             this.btnCustom.Text = "Custom";
             this.btnCustom.UseVisualStyleBackColor = true;
@@ -433,10 +429,9 @@
             // 
             this.lblViewReport.AutoSize = true;
             this.lblViewReport.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Bold);
-            this.lblViewReport.Location = new System.Drawing.Point(4, 10);
-            this.lblViewReport.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblViewReport.Location = new System.Drawing.Point(5, 12);
             this.lblViewReport.Name = "lblViewReport";
-            this.lblViewReport.Size = new System.Drawing.Size(80, 17);
+            this.lblViewReport.Size = new System.Drawing.Size(99, 21);
             this.lblViewReport.TabIndex = 30;
             this.lblViewReport.Text = "View Report";
             // 
@@ -444,20 +439,19 @@
             // 
             this.lblWelcome.AutoSize = true;
             this.lblWelcome.Font = new System.Drawing.Font("Calibri", 10F);
-            this.lblWelcome.Location = new System.Drawing.Point(412, 4);
-            this.lblWelcome.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblWelcome.Location = new System.Drawing.Point(549, 5);
             this.lblWelcome.Name = "lblWelcome";
-            this.lblWelcome.Size = new System.Drawing.Size(60, 17);
+            this.lblWelcome.Size = new System.Drawing.Size(74, 21);
             this.lblWelcome.TabIndex = 31;
             this.lblWelcome.Text = "Welcome";
             // 
             // frmAdminPage
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::TollBoothManagementSystem.Properties.Resources.bg_Planae;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(600, 394);
+            this.ClientSize = new System.Drawing.Size(800, 485);
             this.Controls.Add(this.lblWelcome);
             this.Controls.Add(this.groupBoxViewReport);
             this.Controls.Add(this.groupBoxVehicleSearch);
@@ -467,7 +461,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStripAdminPage;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.MaximizeBox = false;
             this.Name = "frmAdminPage";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

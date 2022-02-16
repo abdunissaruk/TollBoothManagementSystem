@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -60,6 +61,19 @@ namespace TollBoothManagementSystem
             Clear();
         }
 
+        private void btnVehicleSearch_Click(object sender, EventArgs e)
+        {
+            var vehicleReg = comboBoxStateOrTerritory.SelectedItem.ToString() + txtRegionalTransportAuthority.Text + txtLetters.Text + txtDigits.Text;
+            var vehicleDetails = _service.VehicleSearch(vehicleReg);
+
+            if (vehicleReg != null)
+            { 
+                dataGridViewDisplay.ReadOnly = true;
+                dataGridViewDisplay.DataSource = vehicleDetails;
+            }
+            else
+                MessageBox.Show("No result found");
+        }
         private void btnDailyReportView_Click(object sender, EventArgs e)
         {
             var startDate = DateTime.Now.AddDays(-1);
@@ -119,18 +133,95 @@ namespace TollBoothManagementSystem
             else
                 MessageBox.Show("No result found");
         }
-        private void btnVehicleSearch_Click(object sender, EventArgs e)
-        {
-            var vehicleReg = comboBoxStateOrTerritory.SelectedItem.ToString() + txtRegionalTransportAuthority.Text + txtLetters.Text + txtDigits.Text;
-            var vehicleDetails = _service.VehicleSearch(vehicleReg);
 
-            if (vehicleReg != null)
-            { 
-                dataGridViewDisplay.ReadOnly = true;
-                dataGridViewDisplay.DataSource = vehicleDetails;
+        private void dailyToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var startDate = DateTime.Today;
+            var endDate = DateTime.Now;
+            var vehicleDetails = _service.ViewVehicleDetails(startDate, endDate);
+            if(vehicleDetails != null)
+            {
+                string fileName = @"D:\TollBooth -- Print\DailyReport.txt";                              
+                using (StreamWriter writer = new StreamWriter(fileName))
+                {
+                    foreach(var vehicle in vehicleDetails)
+                    {
+                        var result = vehicle.VehicleDateTime.ToString() + "  -  " + vehicle.VehicleReg.ToString() + "  -  " + vehicle.VehicleClass.ToString() + "  -  " + vehicle.TripType.ToString() + "  -  " + vehicle.Amount.ToString() + "\n";
+                        writer.Write(result);
+                    }
+                }                   
+                MessageBox.Show("Daily Report Printed");
+                }
+            else
+                MessageBox.Show("No result found");
+        }
+
+        private void weeklyToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var startDate = DateTime.Now.AddDays(-7);
+            var endDate = DateTime.Now;
+            var vehicleDetails = _service.ViewVehicleDetails(startDate, endDate);
+            if (vehicleDetails != null)
+            {
+                string fileName = @"D:\TollBooth -- Print\WeeklyReport.txt";
+                using (StreamWriter writer = new StreamWriter(fileName))
+                {
+                    foreach (var vehicle in vehicleDetails)
+                    {
+                        var result = vehicle.VehicleDateTime.ToString() + "  -  " + vehicle.VehicleReg.ToString() + "  -  " + vehicle.VehicleClass.ToString() + "  -  " + vehicle.TripType.ToString() + "  -  " + vehicle.Amount.ToString() + "\n";
+                        writer.Write(result);
+                    }
+                }
+                MessageBox.Show("Weekly Report Printed");
             }
             else
                 MessageBox.Show("No result found");
         }
-    }
+
+        private void monthlyToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var startDate = DateTime.Now.AddDays(-30);
+            var endDate = DateTime.Now;
+            var vehicleDetails = _service.ViewVehicleDetails(startDate, endDate);
+            if (vehicleDetails != null)
+            {
+                string fileName = @"D:\TollBooth -- Print\MonthlyReport.txt";
+                using (StreamWriter writer = new StreamWriter(fileName))
+                {
+                    foreach (var vehicle in vehicleDetails)
+                    {
+                        var result = vehicle.VehicleDateTime.ToString() + "  -  " + vehicle.VehicleReg.ToString() + "  -  " + vehicle.VehicleClass.ToString() + "  -  " + vehicle.TripType.ToString() + "  -  " + vehicle.Amount.ToString() + "\n";
+                        writer.Write(result);
+                    }
+                }
+                MessageBox.Show("Monthly Report Printed");
+            }
+            else
+                MessageBox.Show("No result found");
+        }
+
+        private void customToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var startDate = dateTimePickerFrom.Value;
+            var endDate = dateTimePickerTo.Value;
+            var vehicleDetails = _service.ViewVehicleDetails(startDate, endDate);
+            if (vehicleDetails != null)
+            {
+                string fileName = @"D:\TollBooth -- Print\CustomReport.txt";
+                using (StreamWriter writer = new StreamWriter(fileName))
+                {
+                    foreach (var vehicle in vehicleDetails)
+                    {
+                        var result = vehicle.VehicleDateTime.ToString() + "  -  " + vehicle.VehicleReg.ToString() + "  -  " + vehicle.VehicleClass.ToString() + "  -  " + vehicle.TripType.ToString() + "  -  " + vehicle.Amount.ToString() + "\n";
+                        writer.Write(result);
+                    }
+                }
+                MessageBox.Show("Custom Report Printed");
+            }
+            else
+                MessageBox.Show("No result found");
+        }
+    }      
 }
+    
+
