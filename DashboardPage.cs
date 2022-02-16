@@ -17,6 +17,7 @@ namespace TollBoothManagementSystem
     public partial class frmDashboardPage : Form
     {
         private readonly VehicleDetailsServices _connection;
+        private int _amountToBeCollected = 0;
         public frmDashboardPage()
         {
             InitializeComponent();
@@ -63,6 +64,39 @@ namespace TollBoothManagementSystem
             var addOneEntry = _connection.AddOneEntry(vehicleDetails);
             if (addOneEntry > 0)
                 MessageBox.Show("Vehicle details added");        
+        }
+
+        private void comboBoxVehicleClass_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (comboBoxVehicleClass.SelectedItem.ToString() == "Three Wheeler")
+            {
+                _amountToBeCollected = 0;
+                _amountToBeCollected += 50;
+            } 
+            else if (comboBoxVehicleClass.SelectedItem.ToString() == "Four Wheeler")
+            {
+                _amountToBeCollected = 0;
+                _amountToBeCollected += 80;
+            }
+            else if (comboBoxVehicleClass.SelectedItem.ToString() == "Six Wheeler")
+            {
+                _amountToBeCollected = 0;
+                _amountToBeCollected += 100;
+            }
+            rtxtAmountDisplay.Text = _amountToBeCollected.ToString();
+        }
+
+        private void comboBoxTripType_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (comboBoxTripType.SelectedItem.ToString() == "One Way")
+            {
+                _amountToBeCollected *= 1;
+            }
+            else if (comboBoxTripType.SelectedItem.ToString() == "Two Way")
+            {
+                _amountToBeCollected *= 2;
+            }
+            rtxtAmountDisplay.Text = _amountToBeCollected.ToString();
         }
     }
 }

@@ -60,7 +60,7 @@
             // lblVehicleClass
             // 
             this.lblVehicleClass.AutoSize = true;
-            this.lblVehicleClass.Location = new System.Drawing.Point(28, 224);
+            this.lblVehicleClass.Location = new System.Drawing.Point(28, 175);
             this.lblVehicleClass.Name = "lblVehicleClass";
             this.lblVehicleClass.Size = new System.Drawing.Size(88, 18);
             this.lblVehicleClass.TabIndex = 0;
@@ -69,7 +69,7 @@
             // lblTripType
             // 
             this.lblTripType.AutoSize = true;
-            this.lblTripType.Location = new System.Drawing.Point(28, 157);
+            this.lblTripType.Location = new System.Drawing.Point(28, 250);
             this.lblTripType.Name = "lblTripType";
             this.lblTripType.Size = new System.Drawing.Size(63, 18);
             this.lblTripType.TabIndex = 2;
@@ -82,10 +82,11 @@
             "Three Wheeler",
             "Four Wheeler",
             "Six Wheeler"});
-            this.comboBoxVehicleClass.Location = new System.Drawing.Point(191, 221);
+            this.comboBoxVehicleClass.Location = new System.Drawing.Point(191, 172);
             this.comboBoxVehicleClass.Name = "comboBoxVehicleClass";
             this.comboBoxVehicleClass.Size = new System.Drawing.Size(241, 26);
             this.comboBoxVehicleClass.TabIndex = 4;
+            this.comboBoxVehicleClass.SelectedIndexChanged += new System.EventHandler(this.comboBoxVehicleClass_SelectedIndexChanged);
             // 
             // btnProceed
             // 
@@ -282,10 +283,11 @@
             this.comboBoxTripType.Items.AddRange(new object[] {
             "One Way",
             "Two Way"});
-            this.comboBoxTripType.Location = new System.Drawing.Point(191, 154);
+            this.comboBoxTripType.Location = new System.Drawing.Point(191, 247);
             this.comboBoxTripType.Name = "comboBoxTripType";
             this.comboBoxTripType.Size = new System.Drawing.Size(241, 26);
             this.comboBoxTripType.TabIndex = 42;
+            this.comboBoxTripType.SelectedIndexChanged += new System.EventHandler(this.comboBoxTripType_SelectedIndexChanged);
             // 
             // lblVehicleDetails
             // 
