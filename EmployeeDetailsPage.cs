@@ -136,7 +136,6 @@ namespace TollBoothManagementSystem
             }
             else
             {
-
                 var id = Convert.ToInt32(txtEmployeeId.Text);
                 var employeeIdCheck = _service.SearchEmployee(id);
 

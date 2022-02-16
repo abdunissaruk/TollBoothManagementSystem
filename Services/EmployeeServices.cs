@@ -73,7 +73,7 @@ namespace TollBoothManagementSystem.Services
             var reader = cmd.ExecuteReader();
 
             //stop exicution if reader returns false that means no row exist
-            if (reader.Read())
+            if (!reader.Read())
             {
                 reader.Close();
                 return null;
