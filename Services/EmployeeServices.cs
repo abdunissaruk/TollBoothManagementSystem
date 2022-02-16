@@ -24,6 +24,7 @@ namespace TollBoothManagementSystem.Services
             var cmd = new SqlCommand(sql, _connection);
             var reader = cmd.ExecuteReader();
 
+            //stop exicution if reader returns false that means no row exist
             if (!reader.Read())
             {
                 reader.Close();
@@ -70,24 +71,25 @@ namespace TollBoothManagementSystem.Services
             var cmd = new SqlCommand(sql, _connection);
             cmd.Parameters.AddWithValue("@id", id);
             var reader = cmd.ExecuteReader();
+
+            //stop exicution if reader returns false that means no row exist
             if (reader.Read())
-            {
-                var employee = new Employee()
-                {
-                    EmpName = reader.GetString(0),
-                    EmpEmail = reader.GetString(1),
-                    EmpMobile = reader.GetString(2),
-                    EmpPassword = reader.GetString(3),
-                    EmpAdminPrivelege = reader.GetByte(4)
-                };
-                reader.Close();
-                return employee;
-            }
-            else
             {
                 reader.Close();
                 return null;
             }
+
+
+            var employee = new Employee()
+            {
+                EmpName = reader.GetString(0),
+                EmpEmail = reader.GetString(1),
+                EmpMobile = reader.GetString(2),
+                EmpPassword = reader.GetString(3),
+                EmpAdminPrivelege = reader.GetByte(4)
+            };
+            reader.Close();
+            return employee;
         }
 
         public int UpdateEmployee(int id, Employee employee)
@@ -122,20 +124,22 @@ namespace TollBoothManagementSystem.Services
             cmd.Parameters.AddWithValue("@email", username);
             cmd.Parameters.AddWithValue("@password", password);
             var reader = cmd.ExecuteReader();
-            if (reader.Read())
-            {
-                var employee = new Employee()
-                {
-                    EmpName = reader.GetString(0),
-                    EmpAdminPrivelege = reader.GetByte(1),
-                };
 
+            //stop exicution if reader returns false that means no row exist
+            if (!reader.Read())
+            {
                 reader.Close();
-                return employee;                
-            }
-            else
                 return null;
+            }
             
+            var employee = new Employee()
+            {
+                EmpName = reader.GetString(0),
+                EmpAdminPrivelege = reader.GetByte(1),
+            };
+            reader.Close();
+            return employee;
+
         }
 
         public Employee CheckEmployeeExist(String email, String password)
@@ -146,25 +150,25 @@ namespace TollBoothManagementSystem.Services
             cmd.Parameters.AddWithValue("@email", email);
             cmd.Parameters.AddWithValue("@password", password);
             var reader = cmd.ExecuteReader();
-            if (reader.Read())
-            {
-                var employee = new Employee()
-                {
-                    EmpId = reader.GetInt32(0),
-                    EmpName = reader.GetString(1),
-                    EmpEmail = reader.GetString(2),
-                    EmpMobile = reader.GetString(3),
-                    EmpPassword = reader.GetString(4),
-                    EmpAdminPrivelege = reader.GetByte(5)
-                };
-                reader.Close();
-                return employee;
-            }
-            else
+
+            //stop exicution if reader returns false that means no row exist
+            //
+            if (!reader.Read())
             {
                 reader.Close();
                 return null;
             }
+            var employee = new Employee()
+            {
+                EmpId = reader.GetInt32(0),
+                EmpName = reader.GetString(1),
+                EmpEmail = reader.GetString(2),
+                EmpMobile = reader.GetString(3),
+                EmpPassword = reader.GetString(4),
+                EmpAdminPrivelege = reader.GetByte(5)
+            };
+            reader.Close();
+            return employee;
         }
     }
 }

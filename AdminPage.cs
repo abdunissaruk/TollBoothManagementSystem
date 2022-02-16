@@ -66,13 +66,14 @@ namespace TollBoothManagementSystem
             var vehicleReg = comboBoxStateOrTerritory.SelectedItem.ToString() + txtRegionalTransportAuthority.Text + txtLetters.Text + txtDigits.Text;
             var vehicleDetails = _service.VehicleSearch(vehicleReg);
 
-            if (vehicleDetails != null)
-            { 
-                dataGridViewDisplay.ReadOnly = true;
-                dataGridViewDisplay.DataSource = vehicleDetails;
-            }
-            else
+            if (vehicleDetails == null)
+            {
                 MessageBox.Show("No result found");
+                return;
+            }
+
+            dataGridViewDisplay.ReadOnly = true;
+            dataGridViewDisplay.DataSource = vehicleDetails;
         }
         private void btnDailyReportView_Click(object sender, EventArgs e)
         {
@@ -80,13 +81,15 @@ namespace TollBoothManagementSystem
             var endDate = DateTime.Now;
             var vehicleDetails = _service.ViewVehicleDetails(startDate, endDate);
             ClearGridViewDisplay();
-            if (vehicleDetails != null)
+
+            if (vehicleDetails == null)
             {
-                dataGridViewDisplay.ReadOnly = true;
-                dataGridViewDisplay.DataSource = vehicleDetails;
-            }
-            else
                 MessageBox.Show("No result found");
+                return;
+            }
+
+            dataGridViewDisplay.ReadOnly = true;
+            dataGridViewDisplay.DataSource = vehicleDetails;
         }
 
         private void btnWeeklyReportView_Click(object sender, EventArgs e)
@@ -94,14 +97,17 @@ namespace TollBoothManagementSystem
             var startDate = DateTime.Now.AddDays(-7);
             var endDate = DateTime.Now;
             var vehicleDetails = _service.ViewVehicleDetails(startDate, endDate);
+
             ClearGridViewDisplay();
-            if (vehicleDetails != null)
+
+            if (vehicleDetails == null)
             {
-                dataGridViewDisplay.ReadOnly = true;
-                dataGridViewDisplay.DataSource = vehicleDetails;
-            }
-            else
                 MessageBox.Show("No result found");
+                return;
+            }
+
+            dataGridViewDisplay.ReadOnly = true;
+            dataGridViewDisplay.DataSource = vehicleDetails;
         }
 
         private void btnMonthlyReportView_Click(object sender, EventArgs e)
@@ -109,14 +115,17 @@ namespace TollBoothManagementSystem
             var startDate = DateTime.Now.AddDays(-30);
             var endDate = DateTime.Now;
             var vehicleDetails = _service.ViewVehicleDetails(startDate, endDate);
+            
             ClearGridViewDisplay();
-            if (vehicleDetails != null)
+
+            if (vehicleDetails == null)
             {
-                dataGridViewDisplay.ReadOnly = true;
-                dataGridViewDisplay.DataSource = vehicleDetails;
-            }
-            else
                 MessageBox.Show("No result found");
+                return;
+            }
+
+            dataGridViewDisplay.ReadOnly = true;
+            dataGridViewDisplay.DataSource = vehicleDetails;
         }
 
         private void btnCustom_Click(object sender, EventArgs e)
@@ -124,14 +133,17 @@ namespace TollBoothManagementSystem
             var startDate = dateTimePickerFrom.Value;
             var endDate = dateTimePickerTo.Value;
             var vehicleDetails = _service.ViewVehicleDetails(startDate, endDate);
+           
             ClearGridViewDisplay();
-            if (vehicleDetails != null)
+
+            if (vehicleDetails == null)
             {
-                dataGridViewDisplay.ReadOnly = true;
-                dataGridViewDisplay.DataSource = vehicleDetails;
-            }
-            else
                 MessageBox.Show("No result found");
+                return;
+            }
+
+            dataGridViewDisplay.ReadOnly = true;
+            dataGridViewDisplay.DataSource = vehicleDetails;
         }
 
         private void dailyToolStripMenuItem_Click(object sender, EventArgs e)
@@ -139,30 +151,32 @@ namespace TollBoothManagementSystem
             var startDate = DateTime.Today;
             var endDate = DateTime.Now;
             var vehicleDetails = _service.ViewVehicleDetails(startDate, endDate);
-            if(vehicleDetails != null)
+
+            if (vehicleDetails == null)
             {
-                SaveFileDialog saveFileDialog = new SaveFileDialog();
-                saveFileDialog.Title = "Save File";
-                saveFileDialog.DefaultExt = "txt";
-                saveFileDialog.Filter = "txt files (*.txt)|*.txt";
-                string fileName = "";
-                var saveDialogue = saveFileDialog.ShowDialog();
-                if (saveDialogue == DialogResult.Cancel)
-                    return;
-                if (saveDialogue == DialogResult.OK)
-                    fileName = saveFileDialog.FileName;
-                using (StreamWriter writer = new StreamWriter(fileName))
-                {
-                    foreach(var vehicle in vehicleDetails)
-                    {
-                        var result = vehicle.VehicleDateTime.ToString() + "  -  " + vehicle.VehicleReg.ToString() + "  -  " + vehicle.VehicleClass.ToString() + "  -  " + vehicle.TripType.ToString() + "  -  " + vehicle.Amount.ToString() + "\n";
-                        writer.Write(result);
-                    }
-                }                   
-                MessageBox.Show("Daily Report Printed");
-                }
-            else
                 MessageBox.Show("No result found");
+                return;
+            }
+
+            SaveFileDialog saveFileDialog = new SaveFileDialog();
+            saveFileDialog.Title = "Save File";
+            saveFileDialog.DefaultExt = "txt";
+            saveFileDialog.Filter = "txt files (*.txt)|*.txt";
+            string fileName = "";
+            var saveDialogue = saveFileDialog.ShowDialog();
+            if (saveDialogue == DialogResult.Cancel)
+                return;
+            if (saveDialogue == DialogResult.OK)
+                fileName = saveFileDialog.FileName;
+            using (StreamWriter writer = new StreamWriter(fileName))
+            {
+                foreach (var vehicle in vehicleDetails)
+                {
+                    var result = vehicle.VehicleDateTime.ToString() + "  -  " + vehicle.VehicleReg.ToString() + "  -  " + vehicle.VehicleClass.ToString() + "  -  " + vehicle.TripType.ToString() + "  -  " + vehicle.Amount.ToString() + "\n";
+                    writer.Write(result);
+                }
+            }
+            MessageBox.Show("Daily Report Printed");
         }
 
         private void weeklyToolStripMenuItem_Click(object sender, EventArgs e)
@@ -170,30 +184,32 @@ namespace TollBoothManagementSystem
             var startDate = DateTime.Now.AddDays(-7);
             var endDate = DateTime.Now;
             var vehicleDetails = _service.ViewVehicleDetails(startDate, endDate);
-            if (vehicleDetails != null)
+
+            if (vehicleDetails == null)
             {
-                SaveFileDialog saveFileDialog = new SaveFileDialog();
-                saveFileDialog.Title = "Save File";
-                saveFileDialog.DefaultExt = "txt";
-                saveFileDialog.Filter = "txt files (*.txt)|*.txt";
-                string fileName = "";
-                var saveDialogue = saveFileDialog.ShowDialog();
-                if (saveDialogue == DialogResult.Cancel)
-                    return;
-                if (saveDialogue == DialogResult.OK)
-                    fileName = saveFileDialog.FileName;
-                using (StreamWriter writer = new StreamWriter(fileName))
-                {
-                    foreach (var vehicle in vehicleDetails)
-                    {
-                        var result = vehicle.VehicleDateTime.ToString() + "  -  " + vehicle.VehicleReg.ToString() + "  -  " + vehicle.VehicleClass.ToString() + "  -  " + vehicle.TripType.ToString() + "  -  " + vehicle.Amount.ToString() + "\n";
-                        writer.Write(result);
-                    }
-                }
-                MessageBox.Show("Weekly Report Printed");
-            }
-            else
                 MessageBox.Show("No result found");
+                return;
+            }
+
+            SaveFileDialog saveFileDialog = new SaveFileDialog();
+            saveFileDialog.Title = "Save File";
+            saveFileDialog.DefaultExt = "txt";
+            saveFileDialog.Filter = "txt files (*.txt)|*.txt";
+            string fileName = "";
+            var saveDialogue = saveFileDialog.ShowDialog();
+            if (saveDialogue == DialogResult.Cancel)
+                return;
+            if (saveDialogue == DialogResult.OK)
+                fileName = saveFileDialog.FileName;
+            using (StreamWriter writer = new StreamWriter(fileName))
+            {
+                foreach (var vehicle in vehicleDetails)
+                {
+                    var result = vehicle.VehicleDateTime.ToString() + "  -  " + vehicle.VehicleReg.ToString() + "  -  " + vehicle.VehicleClass.ToString() + "  -  " + vehicle.TripType.ToString() + "  -  " + vehicle.Amount.ToString() + "\n";
+                    writer.Write(result);
+                }
+            }
+            MessageBox.Show("Weekly Report Printed");
         }
 
         private void monthlyToolStripMenuItem_Click(object sender, EventArgs e)
@@ -203,28 +219,28 @@ namespace TollBoothManagementSystem
             var vehicleDetails = _service.ViewVehicleDetails(startDate, endDate);
             if (vehicleDetails != null)
             {
-                SaveFileDialog saveFileDialog = new SaveFileDialog();
-                saveFileDialog.Title = "Save File";
-                saveFileDialog.DefaultExt = "txt";
-                saveFileDialog.Filter = "txt files (*.txt)|*.txt";
-                string fileName = "";
-                var saveDialogue= saveFileDialog.ShowDialog();
-                if (saveDialogue == DialogResult.Cancel)
-                    return;
-                if (saveDialogue == DialogResult.OK)
-                    fileName = saveFileDialog.FileName;
-                using (StreamWriter writer = new StreamWriter(fileName))
-                {
-                    foreach (var vehicle in vehicleDetails)
-                    {
-                        var result = vehicle.VehicleDateTime.ToString() + "  -  " + vehicle.VehicleReg.ToString() + "  -  " + vehicle.VehicleClass.ToString() + "  -  " + vehicle.TripType.ToString() + "  -  " + vehicle.Amount.ToString() + "\n";
-                        writer.Write(result);
-                    }
-                }
-                MessageBox.Show("Monthly Report Printed");
-            }
-            else
                 MessageBox.Show("No result found");
+                return;
+            }
+            SaveFileDialog saveFileDialog = new SaveFileDialog();
+            saveFileDialog.Title = "Save File";
+            saveFileDialog.DefaultExt = "txt";
+            saveFileDialog.Filter = "txt files (*.txt)|*.txt";
+            string fileName = "";
+            var saveDialogue = saveFileDialog.ShowDialog();
+            if (saveDialogue == DialogResult.Cancel)
+                return;
+            if (saveDialogue == DialogResult.OK)
+                fileName = saveFileDialog.FileName;
+            using (StreamWriter writer = new StreamWriter(fileName))
+            {
+                foreach (var vehicle in vehicleDetails)
+                {
+                    var result = vehicle.VehicleDateTime.ToString() + "  -  " + vehicle.VehicleReg.ToString() + "  -  " + vehicle.VehicleClass.ToString() + "  -  " + vehicle.TripType.ToString() + "  -  " + vehicle.Amount.ToString() + "\n";
+                    writer.Write(result);
+                }
+            }
+            MessageBox.Show("Monthly Report Printed");
         }
 
         private void customToolStripMenuItem_Click(object sender, EventArgs e)
@@ -234,28 +250,28 @@ namespace TollBoothManagementSystem
             var vehicleDetails = _service.ViewVehicleDetails(startDate, endDate);
             if (vehicleDetails != null)
             {
-                SaveFileDialog saveFileDialog = new SaveFileDialog();
-                saveFileDialog.Title = "Save File";
-                saveFileDialog.DefaultExt = "txt";
-                saveFileDialog.Filter = "txt files (*.txt)|*.txt";
-                string fileName = "";
-                var saveDialogue = saveFileDialog.ShowDialog();
-                if (saveDialogue == DialogResult.Cancel)
-                    return;
-                if (saveDialogue == DialogResult.OK)
-                    fileName = saveFileDialog.FileName;
-                using (StreamWriter writer = new StreamWriter(fileName))
-                {
-                    foreach (var vehicle in vehicleDetails)
-                    {
-                        var result = vehicle.VehicleDateTime.ToString() + "  -  " + vehicle.VehicleReg.ToString() + "  -  " + vehicle.VehicleClass.ToString() + "  -  " + vehicle.TripType.ToString() + "  -  " + vehicle.Amount.ToString() + "\n";
-                        writer.Write(result);
-                    }
-                }
-                MessageBox.Show("Custom Report Printed");
-            }
-            else
                 MessageBox.Show("No result found");
+                return;
+            }
+            SaveFileDialog saveFileDialog = new SaveFileDialog();
+            saveFileDialog.Title = "Save File";
+            saveFileDialog.DefaultExt = "txt";
+            saveFileDialog.Filter = "txt files (*.txt)|*.txt";
+            string fileName = "";
+            var saveDialogue = saveFileDialog.ShowDialog();
+            if (saveDialogue == DialogResult.Cancel)
+                return;
+            if (saveDialogue == DialogResult.OK)
+                fileName = saveFileDialog.FileName;
+            using (StreamWriter writer = new StreamWriter(fileName))
+            {
+                foreach (var vehicle in vehicleDetails)
+                {
+                    var result = vehicle.VehicleDateTime.ToString() + "  -  " + vehicle.VehicleReg.ToString() + "  -  " + vehicle.VehicleClass.ToString() + "  -  " + vehicle.TripType.ToString() + "  -  " + vehicle.Amount.ToString() + "\n";
+                    writer.Write(result);
+                }
+            }
+            MessageBox.Show("Custom Report Printed");
         }
     }      
 }

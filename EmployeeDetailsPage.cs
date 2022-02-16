@@ -79,19 +79,21 @@ namespace TollBoothManagementSystem
             }
             var id = Convert.ToInt32(txtEmployeeId.Text);
             var employee = _service.SearchEmployee(id);
-            if (employee != null)
+
+            if (employee == null)
             {
-                txtEmployeeName.Text = employee.EmpName;
-                txtEmployeeEmail.Text = employee.EmpEmail;
-                txtEmployeeMobileNumber.Text = employee.EmpMobile;
-                txtEmployeePassword.Text = employee.EmpPassword;
-                if (employee.EmpAdminPrivelege == 1)
-                    checkBoxAdminPrivilege.Checked = true;
-                if (employee.EmpAdminPrivelege == 0)
-                    checkBoxAdminPrivilege.Checked = false;
-            }
-            else
                 MessageBox.Show("No result found");
+                return;
+            }
+
+            txtEmployeeName.Text = employee.EmpName;
+            txtEmployeeEmail.Text = employee.EmpEmail;
+            txtEmployeeMobileNumber.Text = employee.EmpMobile;
+            txtEmployeePassword.Text = employee.EmpPassword;
+            if (employee.EmpAdminPrivelege == 1)
+                checkBoxAdminPrivilege.Checked = true;
+            if (employee.EmpAdminPrivelege == 0)
+                checkBoxAdminPrivilege.Checked = false;
         }
 
         private void btnSubmit_Click(object sender, EventArgs e)
@@ -179,14 +181,15 @@ namespace TollBoothManagementSystem
             }
             var id = Convert.ToInt32(txtEmployeeId.Text);
             var employeeCheck = _service.DeleteEmployee(id);
-            if (employeeCheck > 0)
+
+            if (employeeCheck == 0)
             {
-                MessageBox.Show("Employee details Deleted");
-                GridViewEmployeeDetailsClear();
-                EmployeeGridDisplay();
-            }
-            else
                 MessageBox.Show("Employee details not found");
+            }
+                
+            MessageBox.Show("Employee details Deleted");
+            GridViewEmployeeDetailsClear();
+            EmployeeGridDisplay();
         }
     }
 }

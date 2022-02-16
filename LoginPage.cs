@@ -14,7 +14,7 @@ namespace TollBoothManagementSystem
     public partial class frmLoginPage : Form
     {
         private readonly EmployeeServices _service;
-        public static string loggedUser="";
+        public static string loggedUser = "";
         public frmLoginPage()
         {
             InitializeComponent();
@@ -26,27 +26,36 @@ namespace TollBoothManagementSystem
         {
             var username = txtLoginId.Text;
             var password = txtPassword.Text;
-            var employeeLog = _service.EmployeeLogin(username, password);
-            if (employeeLog != null)
+
+            //checking user enterd or not username and password 
+            if (username == ""|| password == "")
             {
-                if (employeeLog.EmpAdminPrivelege == 1)
-                {
-                    loggedUser = employeeLog.EmpName;
-                    new frmAdminPage().Show();
-                    Hide();
-                }
-                else if (employeeLog.EmpAdminPrivelege == 0)
-                {
-                    loggedUser = employeeLog.EmpName;
-                    new frmDashboardPage().Show();
-                    Hide();
-                }
+                MessageBox.Show("Please enter username and password");
+                return;
             }
-            else
+            var employeeLog = _service.EmployeeLogin(username, password);
+
+            //checking user enterd username and password exist in the employee database 
+            if (employeeLog == null)
             {
                 MessageBox.Show("Incorrect username or passowrd");
+                return;
             }
-            
+
+            //providing admin privelege
+            if (employeeLog.EmpAdminPrivelege == 1)
+            {
+                loggedUser = employeeLog.EmpName;
+                new frmAdminPage().Show();
+                Hide();
+            }
+            else if (employeeLog.EmpAdminPrivelege == 0)
+            {
+                loggedUser = employeeLog.EmpName;
+                new frmDashboardPage().Show();
+                Hide();
+            }
+
         }
     }
 }

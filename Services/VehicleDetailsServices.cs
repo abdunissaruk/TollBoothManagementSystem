@@ -16,7 +16,7 @@ namespace TollBoothManagementSystem.Services
         {
             _connection = ConnectionManager.Connection;
         }
-        public int AddOneEntry(Employee employee)
+        public int AddOneEntry(VehicleDetails vehicleDetails)
         {
             return 0;
         }
@@ -27,6 +27,8 @@ namespace TollBoothManagementSystem.Services
             var cmd = new SqlCommand(sql, _connection);
             cmd.Parameters.AddWithValue("@vehicleReg", vehicleReg);
             var reader = cmd.ExecuteReader();
+
+            //stop exicution if reader returns false that means no row exist
             if (reader.Read() == false)
             {
                 reader.Close();
@@ -58,8 +60,8 @@ namespace TollBoothManagementSystem.Services
             cmd.Parameters.AddWithValue("@startDate", startDate);
             cmd.Parameters.AddWithValue("@endTime", endTime);
             var reader = cmd.ExecuteReader();
-            
-            //checking enrty exist 
+
+            //stop exicution if reader returns false that means no row exist
             if (reader.Read() == false)
             {
                 reader.Close();
