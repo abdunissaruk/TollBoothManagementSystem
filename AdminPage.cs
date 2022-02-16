@@ -141,7 +141,16 @@ namespace TollBoothManagementSystem
             var vehicleDetails = _service.ViewVehicleDetails(startDate, endDate);
             if(vehicleDetails != null)
             {
-                string fileName = @"D:\TollBooth -- Print\DailyReport.txt";                              
+                SaveFileDialog saveFileDialog = new SaveFileDialog();
+                saveFileDialog.Title = "Save File";
+                saveFileDialog.DefaultExt = "txt";
+                saveFileDialog.Filter = "txt files (*.txt)|*.txt";
+                string fileName = "";
+                var saveDialogue = saveFileDialog.ShowDialog();
+                if (saveDialogue == DialogResult.Cancel)
+                    return;
+                if (saveDialogue == DialogResult.OK)
+                    fileName = saveFileDialog.FileName;
                 using (StreamWriter writer = new StreamWriter(fileName))
                 {
                     foreach(var vehicle in vehicleDetails)
@@ -163,7 +172,16 @@ namespace TollBoothManagementSystem
             var vehicleDetails = _service.ViewVehicleDetails(startDate, endDate);
             if (vehicleDetails != null)
             {
-                string fileName = @"D:\TollBooth -- Print\WeeklyReport.txt";
+                SaveFileDialog saveFileDialog = new SaveFileDialog();
+                saveFileDialog.Title = "Save File";
+                saveFileDialog.DefaultExt = "txt";
+                saveFileDialog.Filter = "txt files (*.txt)|*.txt";
+                string fileName = "";
+                var saveDialogue = saveFileDialog.ShowDialog();
+                if (saveDialogue == DialogResult.Cancel)
+                    return;
+                if (saveDialogue == DialogResult.OK)
+                    fileName = saveFileDialog.FileName;
                 using (StreamWriter writer = new StreamWriter(fileName))
                 {
                     foreach (var vehicle in vehicleDetails)
@@ -185,7 +203,16 @@ namespace TollBoothManagementSystem
             var vehicleDetails = _service.ViewVehicleDetails(startDate, endDate);
             if (vehicleDetails != null)
             {
-                string fileName = @"D:\TollBooth -- Print\MonthlyReport.txt";
+                SaveFileDialog saveFileDialog = new SaveFileDialog();
+                saveFileDialog.Title = "Save File";
+                saveFileDialog.DefaultExt = "txt";
+                saveFileDialog.Filter = "txt files (*.txt)|*.txt";
+                string fileName = "";
+                var saveDialogue= saveFileDialog.ShowDialog();
+                if (saveDialogue == DialogResult.Cancel)
+                    return;
+                if (saveDialogue == DialogResult.OK)
+                    fileName = saveFileDialog.FileName;
                 using (StreamWriter writer = new StreamWriter(fileName))
                 {
                     foreach (var vehicle in vehicleDetails)
@@ -207,7 +234,16 @@ namespace TollBoothManagementSystem
             var vehicleDetails = _service.ViewVehicleDetails(startDate, endDate);
             if (vehicleDetails != null)
             {
-                string fileName = @"D:\TollBooth -- Print\CustomReport.txt";
+                SaveFileDialog saveFileDialog = new SaveFileDialog();
+                saveFileDialog.Title = "Save File";
+                saveFileDialog.DefaultExt = "txt";
+                saveFileDialog.Filter = "txt files (*.txt)|*.txt";
+                string fileName = "";
+                var saveDialogue = saveFileDialog.ShowDialog();
+                if (saveDialogue == DialogResult.Cancel)
+                    return;
+                if (saveDialogue == DialogResult.OK)
+                    fileName = saveFileDialog.FileName;
                 using (StreamWriter writer = new StreamWriter(fileName))
                 {
                     foreach (var vehicle in vehicleDetails)
