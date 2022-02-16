@@ -40,7 +40,7 @@ namespace TollBoothManagementSystem.Services
                     EmpEmail = reader.GetString(2),
                     EmpMobile = reader.GetString(3),
                     EmpPassword = reader.GetString(4),
-                    EmpAdminPrivelege = reader.GetInt32(5)
+                    EmpAdminPrivelege = reader.GetByte(5)
                 };
                 employeeList.Add(employee);
             }
@@ -78,7 +78,7 @@ namespace TollBoothManagementSystem.Services
                     EmpEmail = reader.GetString(1),
                     EmpMobile = reader.GetString(2),
                     EmpPassword = reader.GetString(3),
-                    EmpAdminPrivelege = reader.GetInt32(4)
+                    EmpAdminPrivelege = reader.GetByte(4)
                 };
                 reader.Close();
                 return employee;
@@ -127,7 +127,7 @@ namespace TollBoothManagementSystem.Services
                 var employee = new Employee()
                 {
                     EmpName = reader.GetString(0),
-                    EmpAdminPrivelege = reader.GetInt32(1)
+                    EmpAdminPrivelege = reader.GetByte(1),
                 };
 
                 reader.Close();
@@ -155,7 +155,7 @@ namespace TollBoothManagementSystem.Services
                     EmpEmail = reader.GetString(2),
                     EmpMobile = reader.GetString(3),
                     EmpPassword = reader.GetString(4),
-                    EmpAdminPrivelege = reader.GetInt32(5)
+                    EmpAdminPrivelege = reader.GetByte(5)
                 };
                 reader.Close();
                 return employee;

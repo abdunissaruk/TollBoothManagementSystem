@@ -9,7 +9,7 @@ namespace TollBoothManagementSystem.Data
 {
     internal static class ConnectionManager
     {
-        static string _connectionString = @"Server=LAPTOP-3S4C0H11\SQLEXPRESS01;Database=TollboothManagementSystem;Integrated Security=true";
+        static string _connectionString = @"Server=LAPTOP-3S4C0H11\NISSAR;Database=Tollbooth;Integrated Security=true";
         public static readonly SqlConnection Connection;
 
         static ConnectionManager()

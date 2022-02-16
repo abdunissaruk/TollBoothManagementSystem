@@ -66,7 +66,7 @@ namespace TollBoothManagementSystem
             var vehicleReg = comboBoxStateOrTerritory.SelectedItem.ToString() + txtRegionalTransportAuthority.Text + txtLetters.Text + txtDigits.Text;
             var vehicleDetails = _service.VehicleSearch(vehicleReg);
 
-            if (vehicleReg != null)
+            if (vehicleDetails != null)
             { 
                 dataGridViewDisplay.ReadOnly = true;
                 dataGridViewDisplay.DataSource = vehicleDetails;

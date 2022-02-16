@@ -18,6 +18,6 @@ namespace TollBoothManagementSystem.Model
 
         public string EmpPassword { get; set; }
 
-        public int EmpAdminPrivelege { get; set; }
+        public Byte EmpAdminPrivelege { get; set; }
     }
 }

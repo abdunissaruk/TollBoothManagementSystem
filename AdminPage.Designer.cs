@@ -148,34 +148,34 @@
             this.monthlyToolStripMenuItem,
             this.customToolStripMenuItem});
             this.reportToolStripMenuItem.Name = "reportToolStripMenuItem";
-            this.reportToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.reportToolStripMenuItem.Size = new System.Drawing.Size(179, 26);
             this.reportToolStripMenuItem.Text = "Print Report";
             // 
             // dailyToolStripMenuItem
             // 
             this.dailyToolStripMenuItem.Name = "dailyToolStripMenuItem";
-            this.dailyToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.dailyToolStripMenuItem.Size = new System.Drawing.Size(154, 26);
             this.dailyToolStripMenuItem.Text = "Daily";
             this.dailyToolStripMenuItem.Click += new System.EventHandler(this.dailyToolStripMenuItem_Click);
             // 
             // weeklyToolStripMenuItem
             // 
             this.weeklyToolStripMenuItem.Name = "weeklyToolStripMenuItem";
-            this.weeklyToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.weeklyToolStripMenuItem.Size = new System.Drawing.Size(154, 26);
             this.weeklyToolStripMenuItem.Text = "Weekly";
             this.weeklyToolStripMenuItem.Click += new System.EventHandler(this.weeklyToolStripMenuItem_Click);
             // 
             // monthlyToolStripMenuItem
             // 
             this.monthlyToolStripMenuItem.Name = "monthlyToolStripMenuItem";
-            this.monthlyToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.monthlyToolStripMenuItem.Size = new System.Drawing.Size(154, 26);
             this.monthlyToolStripMenuItem.Text = "Monthly";
             this.monthlyToolStripMenuItem.Click += new System.EventHandler(this.monthlyToolStripMenuItem_Click);
             // 
             // customToolStripMenuItem
             // 
             this.customToolStripMenuItem.Name = "customToolStripMenuItem";
-            this.customToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.customToolStripMenuItem.Size = new System.Drawing.Size(154, 26);
             this.customToolStripMenuItem.Text = "Custom";
             this.customToolStripMenuItem.Click += new System.EventHandler(this.customToolStripMenuItem_Click);
             // 
@@ -192,7 +192,9 @@
             // 
             this.comboBoxStateOrTerritory.FormattingEnabled = true;
             this.comboBoxStateOrTerritory.Items.AddRange(new object[] {
-            "kl"});
+            "KL",
+            "TN",
+            "AP"});
             this.comboBoxStateOrTerritory.Location = new System.Drawing.Point(132, 62);
             this.comboBoxStateOrTerritory.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.comboBoxStateOrTerritory.Name = "comboBoxStateOrTerritory";

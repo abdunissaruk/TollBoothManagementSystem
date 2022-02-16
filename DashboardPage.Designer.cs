@@ -51,8 +51,8 @@
             this.txtLetters = new System.Windows.Forms.TextBox();
             this.txtDigits = new System.Windows.Forms.TextBox();
             this.groupBoxDashboard = new System.Windows.Forms.GroupBox();
-            this.lblVehicleDetails = new System.Windows.Forms.Label();
             this.comboBoxTripType = new System.Windows.Forms.ComboBox();
+            this.lblVehicleDetails = new System.Windows.Forms.Label();
             this.menuStripDashboard.SuspendLayout();
             this.groupBoxDashboard.SuspendLayout();
             this.SuspendLayout();
@@ -79,9 +79,9 @@
             // 
             this.comboBoxVehicleClass.FormattingEnabled = true;
             this.comboBoxVehicleClass.Items.AddRange(new object[] {
-            "3 Wheeler",
-            "4 Wheeler",
-            "6 Wheeler"});
+            "Three Wheeler",
+            "Four Wheeler",
+            "Six Wheeler"});
             this.comboBoxVehicleClass.Location = new System.Drawing.Point(191, 221);
             this.comboBoxVehicleClass.Name = "comboBoxVehicleClass";
             this.comboBoxVehicleClass.Size = new System.Drawing.Size(241, 26);
@@ -276,6 +276,17 @@
             this.groupBoxDashboard.TabIndex = 33;
             this.groupBoxDashboard.TabStop = false;
             // 
+            // comboBoxTripType
+            // 
+            this.comboBoxTripType.FormattingEnabled = true;
+            this.comboBoxTripType.Items.AddRange(new object[] {
+            "One Way",
+            "Two Way"});
+            this.comboBoxTripType.Location = new System.Drawing.Point(191, 154);
+            this.comboBoxTripType.Name = "comboBoxTripType";
+            this.comboBoxTripType.Size = new System.Drawing.Size(241, 26);
+            this.comboBoxTripType.TabIndex = 42;
+            // 
             // lblVehicleDetails
             // 
             this.lblVehicleDetails.AutoSize = true;
@@ -285,18 +296,6 @@
             this.lblVehicleDetails.Size = new System.Drawing.Size(114, 21);
             this.lblVehicleDetails.TabIndex = 41;
             this.lblVehicleDetails.Text = "Vehicle Details";
-            // 
-            // comboBoxTripType
-            // 
-            this.comboBoxTripType.FormattingEnabled = true;
-            this.comboBoxTripType.Items.AddRange(new object[] {
-            "3 Wheeler",
-            "4 Wheeler",
-            "6 Wheeler"});
-            this.comboBoxTripType.Location = new System.Drawing.Point(191, 154);
-            this.comboBoxTripType.Name = "comboBoxTripType";
-            this.comboBoxTripType.Size = new System.Drawing.Size(241, 26);
-            this.comboBoxTripType.TabIndex = 42;
             // 
             // frmDashboardPage
             // 

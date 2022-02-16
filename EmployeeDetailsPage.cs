@@ -124,7 +124,7 @@ namespace TollBoothManagementSystem
                     EmpEmail = txtEmployeeEmail.Text,
                     EmpMobile = txtEmployeeMobileNumber.Text,
                     EmpPassword = txtEmployeePassword.Text,
-                    EmpAdminPrivelege = EmpAdminPrivelegeResult
+                    EmpAdminPrivelege = (Byte)EmpAdminPrivelegeResult
                 };
                 var res = _service.AddOneEmployee(employee);
                 if (res > 0)
@@ -151,7 +151,7 @@ namespace TollBoothManagementSystem
                         EmpEmail = txtEmployeeEmail.Text,
                         EmpMobile = txtEmployeeMobileNumber.Text,
                         EmpPassword = txtEmployeePassword.Text,
-                        EmpAdminPrivelege = EmpAdminPrivelegeResult
+                        EmpAdminPrivelege = (Byte)EmpAdminPrivelegeResult
                     };
                     var res = _service.UpdateEmployee(id, employee);
                     if (res > 0)
