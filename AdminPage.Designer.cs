@@ -67,10 +67,13 @@
             this.btnCustom = new System.Windows.Forms.Button();
             this.lblViewReport = new System.Windows.Forms.Label();
             this.lblWelcome = new System.Windows.Forms.Label();
+            this.btnClearAll = new System.Windows.Forms.Button();
+            this.panelClearAll = new System.Windows.Forms.Panel();
             this.menuStripAdminPage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDisplay)).BeginInit();
             this.groupBoxVehicleSearch.SuspendLayout();
             this.groupBoxViewReport.SuspendLayout();
+            this.panelClearAll.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStripAdminPage
@@ -84,7 +87,7 @@
             this.menuStripAdminPage.Location = new System.Drawing.Point(0, 0);
             this.menuStripAdminPage.Name = "menuStripAdminPage";
             this.menuStripAdminPage.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
-            this.menuStripAdminPage.Size = new System.Drawing.Size(800, 29);
+            this.menuStripAdminPage.Size = new System.Drawing.Size(953, 29);
             this.menuStripAdminPage.TabIndex = 0;
             this.menuStripAdminPage.Text = "menuStripAdminPage";
             // 
@@ -96,25 +99,27 @@
             this.exitToolStripMenuItem});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
             this.fileToolStripMenuItem.Size = new System.Drawing.Size(48, 25);
-            this.fileToolStripMenuItem.Text = "File";
+            this.fileToolStripMenuItem.Text = "&File";
             // 
             // logoutToolStripMenuItem
             // 
             this.logoutToolStripMenuItem.Name = "logoutToolStripMenuItem";
-            this.logoutToolStripMenuItem.Size = new System.Drawing.Size(142, 26);
-            this.logoutToolStripMenuItem.Text = "Logout";
+            this.logoutToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.L)));
+            this.logoutToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.logoutToolStripMenuItem.Text = "&Logout";
             this.logoutToolStripMenuItem.Click += new System.EventHandler(this.logoutToolStripMenuItem_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(139, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(221, 6);
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(142, 26);
-            this.exitToolStripMenuItem.Text = "Exit";
+            this.exitToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.E)));
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.exitToolStripMenuItem.Text = "&Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
             // editToolStripMenuItem
@@ -123,13 +128,15 @@
             this.employeeDetailsToolStripMenuItem});
             this.editToolStripMenuItem.Name = "editToolStripMenuItem";
             this.editToolStripMenuItem.Size = new System.Drawing.Size(51, 25);
-            this.editToolStripMenuItem.Text = "Edit";
+            this.editToolStripMenuItem.Text = "&Edit";
             // 
             // employeeDetailsToolStripMenuItem
             // 
             this.employeeDetailsToolStripMenuItem.Name = "employeeDetailsToolStripMenuItem";
-            this.employeeDetailsToolStripMenuItem.Size = new System.Drawing.Size(213, 26);
-            this.employeeDetailsToolStripMenuItem.Text = "Employee Details";
+            this.employeeDetailsToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Alt) 
+            | System.Windows.Forms.Keys.E)));
+            this.employeeDetailsToolStripMenuItem.Size = new System.Drawing.Size(292, 26);
+            this.employeeDetailsToolStripMenuItem.Text = "&Employee Details";
             this.employeeDetailsToolStripMenuItem.Click += new System.EventHandler(this.employeeDetailsToolStripMenuItem_Click);
             // 
             // viewToolStripMenuItem
@@ -138,7 +145,7 @@
             this.reportToolStripMenuItem});
             this.viewToolStripMenuItem.Name = "viewToolStripMenuItem";
             this.viewToolStripMenuItem.Size = new System.Drawing.Size(58, 25);
-            this.viewToolStripMenuItem.Text = "View";
+            this.viewToolStripMenuItem.Text = "&View";
             // 
             // reportToolStripMenuItem
             // 
@@ -148,35 +155,36 @@
             this.monthlyToolStripMenuItem,
             this.customToolStripMenuItem});
             this.reportToolStripMenuItem.Name = "reportToolStripMenuItem";
-            this.reportToolStripMenuItem.Size = new System.Drawing.Size(179, 26);
-            this.reportToolStripMenuItem.Text = "Print Report";
+            this.reportToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.P)));
+            this.reportToolStripMenuItem.Size = new System.Drawing.Size(231, 26);
+            this.reportToolStripMenuItem.Text = "&Print Report";
             // 
             // dailyToolStripMenuItem
             // 
             this.dailyToolStripMenuItem.Name = "dailyToolStripMenuItem";
-            this.dailyToolStripMenuItem.Size = new System.Drawing.Size(154, 26);
-            this.dailyToolStripMenuItem.Text = "Daily";
+            this.dailyToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.dailyToolStripMenuItem.Text = "&Daily";
             this.dailyToolStripMenuItem.Click += new System.EventHandler(this.dailyToolStripMenuItem_Click);
             // 
             // weeklyToolStripMenuItem
             // 
             this.weeklyToolStripMenuItem.Name = "weeklyToolStripMenuItem";
-            this.weeklyToolStripMenuItem.Size = new System.Drawing.Size(154, 26);
-            this.weeklyToolStripMenuItem.Text = "Weekly";
+            this.weeklyToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.weeklyToolStripMenuItem.Text = "&Weekly";
             this.weeklyToolStripMenuItem.Click += new System.EventHandler(this.weeklyToolStripMenuItem_Click);
             // 
             // monthlyToolStripMenuItem
             // 
             this.monthlyToolStripMenuItem.Name = "monthlyToolStripMenuItem";
-            this.monthlyToolStripMenuItem.Size = new System.Drawing.Size(154, 26);
-            this.monthlyToolStripMenuItem.Text = "Monthly";
+            this.monthlyToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.monthlyToolStripMenuItem.Text = "&Monthly";
             this.monthlyToolStripMenuItem.Click += new System.EventHandler(this.monthlyToolStripMenuItem_Click);
             // 
             // customToolStripMenuItem
             // 
             this.customToolStripMenuItem.Name = "customToolStripMenuItem";
-            this.customToolStripMenuItem.Size = new System.Drawing.Size(154, 26);
-            this.customToolStripMenuItem.Text = "Custom";
+            this.customToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.customToolStripMenuItem.Text = "&Custom";
             this.customToolStripMenuItem.Click += new System.EventHandler(this.customToolStripMenuItem_Click);
             // 
             // lblNameDisplayAdmin
@@ -190,20 +198,55 @@
             // 
             // comboBoxStateOrTerritory
             // 
+            this.comboBoxStateOrTerritory.BackColor = System.Drawing.Color.White;
             this.comboBoxStateOrTerritory.FormattingEnabled = true;
             this.comboBoxStateOrTerritory.Items.AddRange(new object[] {
             "KL",
+            "AP",
+            "AS",
+            "BR",
+            "CG",
+            "GA",
+            "GJ",
+            "HR",
+            "HP",
+            "JH",
+            "KA",
+            "MP",
+            "MH",
+            "MN",
+            "ML",
+            "MZ",
+            "NL",
+            "OD",
+            "PB",
+            "RJ",
+            "SK",
             "TN",
-            "AP"});
-            this.comboBoxStateOrTerritory.Location = new System.Drawing.Point(132, 62);
+            "TS",
+            "TR",
+            "UP",
+            "UK",
+            "WB",
+            "AN",
+            "CH",
+            "DN",
+            "DD",
+            "DL",
+            "JK",
+            "LA",
+            "LD",
+            "PY"});
+            this.comboBoxStateOrTerritory.Location = new System.Drawing.Point(134, 61);
             this.comboBoxStateOrTerritory.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.comboBoxStateOrTerritory.Name = "comboBoxStateOrTerritory";
             this.comboBoxStateOrTerritory.Size = new System.Drawing.Size(55, 26);
             this.comboBoxStateOrTerritory.TabIndex = 26;
+            this.comboBoxStateOrTerritory.SelectedIndexChanged += new System.EventHandler(this.comboBoxStateOrTerritory_SelectedIndexChanged);
             // 
             // txtLetters
             // 
-            this.txtLetters.Location = new System.Drawing.Point(275, 62);
+            this.txtLetters.Location = new System.Drawing.Point(277, 61);
             this.txtLetters.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtLetters.Name = "txtLetters";
             this.txtLetters.Size = new System.Drawing.Size(37, 26);
@@ -211,7 +254,7 @@
             // 
             // txtRegionalTransportAuthority
             // 
-            this.txtRegionalTransportAuthority.Location = new System.Drawing.Point(212, 62);
+            this.txtRegionalTransportAuthority.Location = new System.Drawing.Point(214, 61);
             this.txtRegionalTransportAuthority.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtRegionalTransportAuthority.Name = "txtRegionalTransportAuthority";
             this.txtRegionalTransportAuthority.Size = new System.Drawing.Size(37, 26);
@@ -219,7 +262,7 @@
             // 
             // txtDigits
             // 
-            this.txtDigits.Location = new System.Drawing.Point(336, 62);
+            this.txtDigits.Location = new System.Drawing.Point(338, 61);
             this.txtDigits.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtDigits.Name = "txtDigits";
             this.txtDigits.Size = new System.Drawing.Size(37, 26);
@@ -236,7 +279,7 @@
             // 
             // dataGridViewDisplay
             // 
-            this.dataGridViewDisplay.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.dataGridViewDisplay.BackgroundColor = System.Drawing.Color.White;
             this.dataGridViewDisplay.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridViewDisplay.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewDisplay.Location = new System.Drawing.Point(12, 215);
@@ -244,7 +287,7 @@
             this.dataGridViewDisplay.Name = "dataGridViewDisplay";
             this.dataGridViewDisplay.RowHeadersWidth = 51;
             this.dataGridViewDisplay.RowTemplate.Height = 24;
-            this.dataGridViewDisplay.Size = new System.Drawing.Size(773, 261);
+            this.dataGridViewDisplay.Size = new System.Drawing.Size(929, 340);
             this.dataGridViewDisplay.TabIndex = 27;
             // 
             // lblToDate
@@ -270,7 +313,7 @@
             this.dateTimePickerTo.Location = new System.Drawing.Point(85, 134);
             this.dateTimePickerTo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dateTimePickerTo.Name = "dateTimePickerTo";
-            this.dateTimePickerTo.Size = new System.Drawing.Size(200, 26);
+            this.dateTimePickerTo.Size = new System.Drawing.Size(287, 26);
             this.dateTimePickerTo.TabIndex = 4;
             // 
             // dateTimePickerFrom
@@ -278,51 +321,55 @@
             this.dateTimePickerFrom.Location = new System.Drawing.Point(85, 106);
             this.dateTimePickerFrom.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dateTimePickerFrom.Name = "dateTimePickerFrom";
-            this.dateTimePickerFrom.Size = new System.Drawing.Size(200, 26);
+            this.dateTimePickerFrom.Size = new System.Drawing.Size(287, 26);
             this.dateTimePickerFrom.TabIndex = 3;
             // 
             // btnMonthlyReportView
             // 
-            this.btnMonthlyReportView.Location = new System.Drawing.Point(275, 46);
+            this.btnMonthlyReportView.BackColor = System.Drawing.Color.OldLace;
+            this.btnMonthlyReportView.Location = new System.Drawing.Point(192, 45);
             this.btnMonthlyReportView.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnMonthlyReportView.Name = "btnMonthlyReportView";
-            this.btnMonthlyReportView.Size = new System.Drawing.Size(97, 54);
+            this.btnMonthlyReportView.Size = new System.Drawing.Size(87, 54);
             this.btnMonthlyReportView.TabIndex = 2;
             this.btnMonthlyReportView.Text = "Month";
-            this.btnMonthlyReportView.UseVisualStyleBackColor = true;
+            this.btnMonthlyReportView.UseVisualStyleBackColor = false;
             this.btnMonthlyReportView.Click += new System.EventHandler(this.btnMonthlyReportView_Click);
             // 
             // btnWeeklyReportView
             // 
-            this.btnWeeklyReportView.Location = new System.Drawing.Point(149, 46);
+            this.btnWeeklyReportView.BackColor = System.Drawing.Color.OldLace;
+            this.btnWeeklyReportView.Location = new System.Drawing.Point(99, 45);
             this.btnWeeklyReportView.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnWeeklyReportView.Name = "btnWeeklyReportView";
-            this.btnWeeklyReportView.Size = new System.Drawing.Size(97, 54);
+            this.btnWeeklyReportView.Size = new System.Drawing.Size(87, 54);
             this.btnWeeklyReportView.TabIndex = 1;
             this.btnWeeklyReportView.Text = "Week";
-            this.btnWeeklyReportView.UseVisualStyleBackColor = true;
+            this.btnWeeklyReportView.UseVisualStyleBackColor = false;
             this.btnWeeklyReportView.Click += new System.EventHandler(this.btnWeeklyReportView_Click);
             // 
             // btnDailyReportView
             // 
-            this.btnDailyReportView.Location = new System.Drawing.Point(27, 46);
+            this.btnDailyReportView.BackColor = System.Drawing.Color.OldLace;
+            this.btnDailyReportView.Location = new System.Drawing.Point(6, 45);
             this.btnDailyReportView.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnDailyReportView.Name = "btnDailyReportView";
-            this.btnDailyReportView.Size = new System.Drawing.Size(97, 54);
+            this.btnDailyReportView.Size = new System.Drawing.Size(87, 54);
             this.btnDailyReportView.TabIndex = 0;
             this.btnDailyReportView.Text = "Day";
-            this.btnDailyReportView.UseVisualStyleBackColor = true;
+            this.btnDailyReportView.UseVisualStyleBackColor = false;
             this.btnDailyReportView.Click += new System.EventHandler(this.btnDailyReportView_Click);
             // 
             // btnVehicleSearch
             // 
+            this.btnVehicleSearch.BackColor = System.Drawing.Color.OldLace;
             this.btnVehicleSearch.Location = new System.Drawing.Point(277, 102);
             this.btnVehicleSearch.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnVehicleSearch.Name = "btnVehicleSearch";
             this.btnVehicleSearch.Size = new System.Drawing.Size(97, 54);
             this.btnVehicleSearch.TabIndex = 28;
             this.btnVehicleSearch.Text = "Search";
-            this.btnVehicleSearch.UseVisualStyleBackColor = true;
+            this.btnVehicleSearch.UseVisualStyleBackColor = false;
             this.btnVehicleSearch.Click += new System.EventHandler(this.btnVehicleSearch_Click);
             // 
             // groupBoxVehicleSearch
@@ -344,25 +391,26 @@
             this.groupBoxVehicleSearch.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBoxVehicleSearch.Name = "groupBoxVehicleSearch";
             this.groupBoxVehicleSearch.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBoxVehicleSearch.Size = new System.Drawing.Size(385, 169);
+            this.groupBoxVehicleSearch.Size = new System.Drawing.Size(386, 169);
             this.groupBoxVehicleSearch.TabIndex = 30;
             this.groupBoxVehicleSearch.TabStop = false;
             // 
             // btnClear
             // 
-            this.btnClear.Location = new System.Drawing.Point(149, 102);
+            this.btnClear.BackColor = System.Drawing.Color.OldLace;
+            this.btnClear.Location = new System.Drawing.Point(134, 102);
             this.btnClear.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(97, 54);
             this.btnClear.TabIndex = 33;
             this.btnClear.Text = "Clear";
-            this.btnClear.UseVisualStyleBackColor = true;
+            this.btnClear.UseVisualStyleBackColor = false;
             this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(317, 64);
+            this.label3.Location = new System.Drawing.Point(319, 63);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(13, 18);
             this.label3.TabIndex = 32;
@@ -371,7 +419,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(255, 64);
+            this.label2.Location = new System.Drawing.Point(257, 63);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(13, 18);
             this.label2.TabIndex = 31;
@@ -380,7 +428,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(193, 64);
+            this.label1.Location = new System.Drawing.Point(195, 63);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(13, 18);
             this.label1.TabIndex = 30;
@@ -408,30 +456,31 @@
             this.groupBoxViewReport.Controls.Add(this.dateTimePickerTo);
             this.groupBoxViewReport.Controls.Add(this.dateTimePickerFrom);
             this.groupBoxViewReport.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBoxViewReport.Location = new System.Drawing.Point(403, 39);
+            this.groupBoxViewReport.Location = new System.Drawing.Point(563, 39);
             this.groupBoxViewReport.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBoxViewReport.Name = "groupBoxViewReport";
             this.groupBoxViewReport.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBoxViewReport.Size = new System.Drawing.Size(381, 169);
+            this.groupBoxViewReport.Size = new System.Drawing.Size(378, 169);
             this.groupBoxViewReport.TabIndex = 31;
             this.groupBoxViewReport.TabStop = false;
             // 
             // btnCustom
             // 
-            this.btnCustom.Location = new System.Drawing.Point(292, 106);
+            this.btnCustom.BackColor = System.Drawing.Color.OldLace;
+            this.btnCustom.Location = new System.Drawing.Point(285, 45);
             this.btnCustom.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnCustom.Name = "btnCustom";
-            this.btnCustom.Size = new System.Drawing.Size(80, 54);
+            this.btnCustom.Size = new System.Drawing.Size(87, 54);
             this.btnCustom.TabIndex = 31;
             this.btnCustom.Text = "Custom";
-            this.btnCustom.UseVisualStyleBackColor = true;
+            this.btnCustom.UseVisualStyleBackColor = false;
             this.btnCustom.Click += new System.EventHandler(this.btnCustom_Click);
             // 
             // lblViewReport
             // 
             this.lblViewReport.AutoSize = true;
             this.lblViewReport.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Bold);
-            this.lblViewReport.Location = new System.Drawing.Point(5, 12);
+            this.lblViewReport.Location = new System.Drawing.Point(8, 12);
             this.lblViewReport.Name = "lblViewReport";
             this.lblViewReport.Size = new System.Drawing.Size(99, 21);
             this.lblViewReport.TabIndex = 30;
@@ -447,13 +496,34 @@
             this.lblWelcome.TabIndex = 31;
             this.lblWelcome.Text = "Welcome";
             // 
+            // btnClearAll
+            // 
+            this.btnClearAll.BackColor = System.Drawing.Color.Aquamarine;
+            this.btnClearAll.Location = new System.Drawing.Point(3, 2);
+            this.btnClearAll.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnClearAll.Name = "btnClearAll";
+            this.btnClearAll.Size = new System.Drawing.Size(146, 165);
+            this.btnClearAll.TabIndex = 32;
+            this.btnClearAll.Text = "Clear All";
+            this.btnClearAll.UseVisualStyleBackColor = false;
+            this.btnClearAll.Click += new System.EventHandler(this.btnClearAll_Click);
+            // 
+            // panelClearAll
+            // 
+            this.panelClearAll.Controls.Add(this.btnClearAll);
+            this.panelClearAll.Location = new System.Drawing.Point(405, 39);
+            this.panelClearAll.Name = "panelClearAll";
+            this.panelClearAll.Size = new System.Drawing.Size(152, 169);
+            this.panelClearAll.TabIndex = 33;
+            // 
             // frmAdminPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::TollBoothManagementSystem.Properties.Resources.bg_Planae;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(800, 485);
+            this.ClientSize = new System.Drawing.Size(953, 566);
+            this.Controls.Add(this.panelClearAll);
             this.Controls.Add(this.lblWelcome);
             this.Controls.Add(this.groupBoxViewReport);
             this.Controls.Add(this.groupBoxVehicleSearch);
@@ -468,6 +538,7 @@
             this.Name = "frmAdminPage";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Admin Dashboard";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmAdminPage_FormClosed);
             this.Load += new System.EventHandler(this.frmAdminPage_Load);
             this.menuStripAdminPage.ResumeLayout(false);
             this.menuStripAdminPage.PerformLayout();
@@ -476,6 +547,7 @@
             this.groupBoxVehicleSearch.PerformLayout();
             this.groupBoxViewReport.ResumeLayout(false);
             this.groupBoxViewReport.PerformLayout();
+            this.panelClearAll.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -521,5 +593,7 @@
         private System.Windows.Forms.ToolStripMenuItem dailyToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem customToolStripMenuItem;
         private System.Windows.Forms.Button btnCustom;
+        private System.Windows.Forms.Button btnClearAll;
+        private System.Windows.Forms.Panel panelClearAll;
     }
 }

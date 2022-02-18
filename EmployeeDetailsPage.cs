@@ -55,13 +55,13 @@ namespace TollBoothManagementSystem
 
         private void closeToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
-            new frmAdminPage().Show();
-            Close();
+            frmLoginPage.frmAdminPageObj.Show();
+            frmAdminPage.frmEmployeeDetailsObj.Dispose();
         }
 
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Close();
+            Environment.Exit(0);
         }
 
 
@@ -101,6 +101,12 @@ namespace TollBoothManagementSystem
             if (txtEmployeeName.Text == "" || txtEmployeeEmail.Text == "" || txtEmployeeMobileNumber.Text == "" || txtEmployeePassword.Text == "")
             {
                 MessageBox.Show("All field requred");
+                return;
+            }
+            var passwordLength = txtEmployeePassword.Text.Length;
+            if (passwordLength < 4)
+            {
+                MessageBox.Show("The password must have atleast 4 characters long.");
                 return;
             }
             var email = txtEmployeeEmail.Text;
@@ -174,10 +180,7 @@ namespace TollBoothManagementSystem
                     MessageBox.Show("Clear Id to add new employee details");
                     return;
                 }
-
-                
             }
-
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
@@ -207,6 +210,11 @@ namespace TollBoothManagementSystem
                 GridViewEmployeeDetailsClear();
                 EmployeeGridDisplay();
             }   
+        }
+
+        private void frmEmployeeDetails_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            frmLoginPage.frmAdminPageObj.Show();
         }
     }
 }

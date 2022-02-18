@@ -15,6 +15,11 @@ namespace TollBoothManagementSystem
     public partial class frmAdminPage : Form
     {
         private readonly VehicleDetailsServices _service;
+
+        private bool _isStatetypeComboBoxChanged = false;
+
+        public static frmEmployeeDetails frmEmployeeDetailsObj;
+
         public frmAdminPage()
         {
             InitializeComponent();
@@ -41,18 +46,19 @@ namespace TollBoothManagementSystem
 
         private void logoutToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            new frmLoginPage().Show();
-            Close();
+            frmSplashScreen.frmLoginPageObj.Show();
+            frmLoginPage.frmAdminPageObj.Dispose();
         }
 
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Close();
+            Environment.Exit(0);
         }
 
         private void employeeDetailsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            new frmEmployeeDetails().Show();
+            frmEmployeeDetailsObj = new frmEmployeeDetails();
+            frmEmployeeDetailsObj.Show();
             Hide();
         }
 
@@ -61,9 +67,23 @@ namespace TollBoothManagementSystem
             Clear();
         }
 
+        private void btnClearAll_Click(object sender, EventArgs e)
+        {
+            Clear();
+            ClearGridViewDisplay();
+        }
+
+        private void comboBoxStateOrTerritory_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            _isStatetypeComboBoxChanged = true;
+        }
+
         private void btnVehicleSearch_Click(object sender, EventArgs e)
         {
-            var vehicleReg = comboBoxStateOrTerritory.SelectedItem.ToString() + txtRegionalTransportAuthority.Text + txtLetters.Text + txtDigits.Text;
+            if (!_isStatetypeComboBoxChanged)
+                return;
+            var vehicleReg = comboBoxStateOrTerritory.SelectedItem.ToString() + "-" + txtRegionalTransportAuthority.Text 
+                + "-" + txtLetters.Text + "-" + txtDigits.Text;
             var vehicleDetails = _service.VehicleSearch(vehicleReg);
 
             if (vehicleDetails == null)
@@ -74,10 +94,11 @@ namespace TollBoothManagementSystem
 
             dataGridViewDisplay.ReadOnly = true;
             dataGridViewDisplay.DataSource = vehicleDetails;
+            Clear();
         }
         private void btnDailyReportView_Click(object sender, EventArgs e)
         {
-            var startDate = DateTime.Now.AddDays(-1);
+            var startDate = DateTime.Today;
             var endDate = DateTime.Now;
             var vehicleDetails = _service.ViewVehicleDetails(startDate, endDate);
             ClearGridViewDisplay();
@@ -94,7 +115,7 @@ namespace TollBoothManagementSystem
 
         private void btnWeeklyReportView_Click(object sender, EventArgs e)
         {
-            var startDate = DateTime.Now.AddDays(-7);
+            var startDate = DateTime.Today.AddDays(-1 * (int)(DateTime.Today.DayOfWeek) + 1);
             var endDate = DateTime.Now;
             var vehicleDetails = _service.ViewVehicleDetails(startDate, endDate);
 
@@ -112,7 +133,8 @@ namespace TollBoothManagementSystem
 
         private void btnMonthlyReportView_Click(object sender, EventArgs e)
         {
-            var startDate = DateTime.Now.AddDays(-30);
+            var today = DateTime.Now;
+            var startDate = new DateTime(today.Year, today.Month, 1);
             var endDate = DateTime.Now;
             var vehicleDetails = _service.ViewVehicleDetails(startDate, endDate);
             
@@ -160,8 +182,8 @@ namespace TollBoothManagementSystem
 
             SaveFileDialog saveFileDialog = new SaveFileDialog();
             saveFileDialog.Title = "Save File";
-            saveFileDialog.DefaultExt = "txt";
-            saveFileDialog.Filter = "txt files (*.txt)|*.txt";
+            saveFileDialog.DefaultExt = "csv";
+            saveFileDialog.Filter = "csv files (*.csv)|*.csv";
             string fileName = "";
             var saveDialogue = saveFileDialog.ShowDialog();
             if (saveDialogue == DialogResult.Cancel)
@@ -172,7 +194,9 @@ namespace TollBoothManagementSystem
             {
                 foreach (var vehicle in vehicleDetails)
                 {
-                    var result = vehicle.VehicleDateTime.ToString() + "  -  " + vehicle.VehicleReg.ToString() + "  -  " + vehicle.VehicleClass.ToString() + "  -  " + vehicle.TripType.ToString() + "  -  " + vehicle.Amount.ToString() + "\n";
+                    var result = vehicle.VehicleDateTime.ToString() + "," + vehicle.VehicleReg.ToString() + "," 
+                        + vehicle.VehicleClass.ToString() + "," + vehicle.TripType.ToString() + "," 
+                        + vehicle.Amount.ToString() + "," + vehicle.Returned.ToString() + "\n";
                     writer.Write(result);
                 }
             }
@@ -181,7 +205,7 @@ namespace TollBoothManagementSystem
 
         private void weeklyToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var startDate = DateTime.Now.AddDays(-7);
+            var startDate = DateTime.Today.AddDays(-1 * (int)(DateTime.Today.DayOfWeek) + 1);
             var endDate = DateTime.Now;
             var vehicleDetails = _service.ViewVehicleDetails(startDate, endDate);
 
@@ -193,8 +217,8 @@ namespace TollBoothManagementSystem
 
             SaveFileDialog saveFileDialog = new SaveFileDialog();
             saveFileDialog.Title = "Save File";
-            saveFileDialog.DefaultExt = "txt";
-            saveFileDialog.Filter = "txt files (*.txt)|*.txt";
+            saveFileDialog.DefaultExt = "csv";
+            saveFileDialog.Filter = "csv files (*.csv)|*.csv";
             string fileName = "";
             var saveDialogue = saveFileDialog.ShowDialog();
             if (saveDialogue == DialogResult.Cancel)
@@ -205,7 +229,9 @@ namespace TollBoothManagementSystem
             {
                 foreach (var vehicle in vehicleDetails)
                 {
-                    var result = vehicle.VehicleDateTime.ToString() + "  -  " + vehicle.VehicleReg.ToString() + "  -  " + vehicle.VehicleClass.ToString() + "  -  " + vehicle.TripType.ToString() + "  -  " + vehicle.Amount.ToString() + "\n";
+                    var result = vehicle.VehicleDateTime.ToString() + "," + vehicle.VehicleReg.ToString() + "," 
+                        + vehicle.VehicleClass.ToString() + "," + vehicle.TripType.ToString() + "," 
+                        + vehicle.Amount.ToString() + "," + vehicle.Returned.ToString() + "\n";
                     writer.Write(result);
                 }
             }
@@ -214,18 +240,19 @@ namespace TollBoothManagementSystem
 
         private void monthlyToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var startDate = DateTime.Now.AddDays(-30);
+            var today = DateTime.Now;
+            var startDate = new DateTime(today.Year, today.Month, 1);
             var endDate = DateTime.Now;
             var vehicleDetails = _service.ViewVehicleDetails(startDate, endDate);
-            if (vehicleDetails != null)
+            if (vehicleDetails == null)
             {
                 MessageBox.Show("No result found");
                 return;
             }
             SaveFileDialog saveFileDialog = new SaveFileDialog();
             saveFileDialog.Title = "Save File";
-            saveFileDialog.DefaultExt = "txt";
-            saveFileDialog.Filter = "txt files (*.txt)|*.txt";
+            saveFileDialog.DefaultExt = "csv";
+            saveFileDialog.Filter = "csv files (*.csv)|*.csv";
             string fileName = "";
             var saveDialogue = saveFileDialog.ShowDialog();
             if (saveDialogue == DialogResult.Cancel)
@@ -236,7 +263,9 @@ namespace TollBoothManagementSystem
             {
                 foreach (var vehicle in vehicleDetails)
                 {
-                    var result = vehicle.VehicleDateTime.ToString() + "  -  " + vehicle.VehicleReg.ToString() + "  -  " + vehicle.VehicleClass.ToString() + "  -  " + vehicle.TripType.ToString() + "  -  " + vehicle.Amount.ToString() + "\n";
+                    var result = vehicle.VehicleDateTime.ToString() + "," + vehicle.VehicleReg.ToString() + "," 
+                        + vehicle.VehicleClass.ToString() + "," + vehicle.TripType.ToString() + "," 
+                        + vehicle.Amount.ToString() + "," + vehicle.Returned.ToString() + "\n";
                     writer.Write(result);
                 }
             }
@@ -248,15 +277,15 @@ namespace TollBoothManagementSystem
             var startDate = dateTimePickerFrom.Value;
             var endDate = dateTimePickerTo.Value;
             var vehicleDetails = _service.ViewVehicleDetails(startDate, endDate);
-            if (vehicleDetails != null)
+            if (vehicleDetails == null)
             {
                 MessageBox.Show("No result found");
                 return;
             }
             SaveFileDialog saveFileDialog = new SaveFileDialog();
             saveFileDialog.Title = "Save File";
-            saveFileDialog.DefaultExt = "txt";
-            saveFileDialog.Filter = "txt files (*.txt)|*.txt";
+            saveFileDialog.DefaultExt = "csv";
+            saveFileDialog.Filter = "csv files (*.csv)|*.csv";
             string fileName = "";
             var saveDialogue = saveFileDialog.ShowDialog();
             if (saveDialogue == DialogResult.Cancel)
@@ -267,11 +296,18 @@ namespace TollBoothManagementSystem
             {
                 foreach (var vehicle in vehicleDetails)
                 {
-                    var result = vehicle.VehicleDateTime.ToString() + "  -  " + vehicle.VehicleReg.ToString() + "  -  " + vehicle.VehicleClass.ToString() + "  -  " + vehicle.TripType.ToString() + "  -  " + vehicle.Amount.ToString() + "\n";
+                    var result = vehicle.VehicleDateTime.ToString() + "," + vehicle.VehicleReg.ToString() + "," 
+                        + vehicle.VehicleClass.ToString() + "," + vehicle.TripType.ToString() + "," 
+                        + vehicle.Amount.ToString() + "," + vehicle.Returned.ToString() + "\n";
                     writer.Write(result);
                 }
             }
             MessageBox.Show("Custom Report Printed");
+        }
+
+        private void frmAdminPage_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Environment.Exit(0);
         }
     }      
 }

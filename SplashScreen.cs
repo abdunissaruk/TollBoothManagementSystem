@@ -12,6 +12,7 @@ namespace TollBoothManagementSystem
 {
     public partial class frmSplashScreen : Form
     {
+        public static frmLoginPage frmLoginPageObj;
         public frmSplashScreen()
         {
             InitializeComponent();
@@ -25,8 +26,9 @@ namespace TollBoothManagementSystem
         private void timerSplashScreen_Tick(object sender, EventArgs e)
         {
             timerSplashScreen.Stop();
+            frmLoginPageObj = new frmLoginPage();
+            frmLoginPageObj.Show();
             this.Hide();
-            new frmLoginPage().Show();
         }
 
         

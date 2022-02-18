@@ -18,5 +18,7 @@ namespace TollBoothManagementSystem.Model
 
         public int Amount { get; set; }
 
+        public Byte Returned { get; set; }
+
     }
 }
