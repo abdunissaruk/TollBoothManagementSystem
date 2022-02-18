@@ -105,20 +105,20 @@
             // 
             this.logoutToolStripMenuItem.Name = "logoutToolStripMenuItem";
             this.logoutToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.L)));
-            this.logoutToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.logoutToolStripMenuItem.Size = new System.Drawing.Size(192, 26);
             this.logoutToolStripMenuItem.Text = "&Logout";
             this.logoutToolStripMenuItem.Click += new System.EventHandler(this.logoutToolStripMenuItem_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(221, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(189, 6);
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
             this.exitToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.E)));
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(192, 26);
             this.exitToolStripMenuItem.Text = "&Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
@@ -162,28 +162,28 @@
             // dailyToolStripMenuItem
             // 
             this.dailyToolStripMenuItem.Name = "dailyToolStripMenuItem";
-            this.dailyToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.dailyToolStripMenuItem.Size = new System.Drawing.Size(154, 26);
             this.dailyToolStripMenuItem.Text = "&Daily";
             this.dailyToolStripMenuItem.Click += new System.EventHandler(this.dailyToolStripMenuItem_Click);
             // 
             // weeklyToolStripMenuItem
             // 
             this.weeklyToolStripMenuItem.Name = "weeklyToolStripMenuItem";
-            this.weeklyToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.weeklyToolStripMenuItem.Size = new System.Drawing.Size(154, 26);
             this.weeklyToolStripMenuItem.Text = "&Weekly";
             this.weeklyToolStripMenuItem.Click += new System.EventHandler(this.weeklyToolStripMenuItem_Click);
             // 
             // monthlyToolStripMenuItem
             // 
             this.monthlyToolStripMenuItem.Name = "monthlyToolStripMenuItem";
-            this.monthlyToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.monthlyToolStripMenuItem.Size = new System.Drawing.Size(154, 26);
             this.monthlyToolStripMenuItem.Text = "&Monthly";
             this.monthlyToolStripMenuItem.Click += new System.EventHandler(this.monthlyToolStripMenuItem_Click);
             // 
             // customToolStripMenuItem
             // 
             this.customToolStripMenuItem.Name = "customToolStripMenuItem";
-            this.customToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.customToolStripMenuItem.Size = new System.Drawing.Size(154, 26);
             this.customToolStripMenuItem.Text = "&Custom";
             this.customToolStripMenuItem.Click += new System.EventHandler(this.customToolStripMenuItem_Click);
             // 
@@ -191,7 +191,7 @@
             // 
             this.lblNameDisplayAdmin.AutoSize = true;
             this.lblNameDisplayAdmin.Font = new System.Drawing.Font("Calibri", 10F);
-            this.lblNameDisplayAdmin.Location = new System.Drawing.Point(629, 5);
+            this.lblNameDisplayAdmin.Location = new System.Drawing.Point(751, 5);
             this.lblNameDisplayAdmin.Name = "lblNameDisplayAdmin";
             this.lblNameDisplayAdmin.Size = new System.Drawing.Size(0, 21);
             this.lblNameDisplayAdmin.TabIndex = 2;
@@ -241,7 +241,7 @@
             this.comboBoxStateOrTerritory.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.comboBoxStateOrTerritory.Name = "comboBoxStateOrTerritory";
             this.comboBoxStateOrTerritory.Size = new System.Drawing.Size(55, 26);
-            this.comboBoxStateOrTerritory.TabIndex = 26;
+            this.comboBoxStateOrTerritory.TabIndex = 1;
             this.comboBoxStateOrTerritory.SelectedIndexChanged += new System.EventHandler(this.comboBoxStateOrTerritory_SelectedIndexChanged);
             // 
             // txtLetters
@@ -250,7 +250,7 @@
             this.txtLetters.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtLetters.Name = "txtLetters";
             this.txtLetters.Size = new System.Drawing.Size(37, 26);
-            this.txtLetters.TabIndex = 25;
+            this.txtLetters.TabIndex = 3;
             // 
             // txtRegionalTransportAuthority
             // 
@@ -258,7 +258,7 @@
             this.txtRegionalTransportAuthority.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtRegionalTransportAuthority.Name = "txtRegionalTransportAuthority";
             this.txtRegionalTransportAuthority.Size = new System.Drawing.Size(37, 26);
-            this.txtRegionalTransportAuthority.TabIndex = 24;
+            this.txtRegionalTransportAuthority.TabIndex = 2;
             // 
             // txtDigits
             // 
@@ -266,7 +266,7 @@
             this.txtDigits.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtDigits.Name = "txtDigits";
             this.txtDigits.Size = new System.Drawing.Size(37, 26);
-            this.txtDigits.TabIndex = 23;
+            this.txtDigits.TabIndex = 4;
             // 
             // lblRegNo
             // 
@@ -367,7 +367,7 @@
             this.btnVehicleSearch.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnVehicleSearch.Name = "btnVehicleSearch";
             this.btnVehicleSearch.Size = new System.Drawing.Size(97, 54);
-            this.btnVehicleSearch.TabIndex = 28;
+            this.btnVehicleSearch.TabIndex = 5;
             this.btnVehicleSearch.Text = "Search";
             this.btnVehicleSearch.UseVisualStyleBackColor = false;
             this.btnVehicleSearch.Click += new System.EventHandler(this.btnVehicleSearch_Click);
@@ -402,7 +402,7 @@
             this.btnClear.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(97, 54);
-            this.btnClear.TabIndex = 33;
+            this.btnClear.TabIndex = 6;
             this.btnClear.Text = "Clear";
             this.btnClear.UseVisualStyleBackColor = false;
             this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
@@ -490,7 +490,7 @@
             // 
             this.lblWelcome.AutoSize = true;
             this.lblWelcome.Font = new System.Drawing.Font("Calibri", 10F);
-            this.lblWelcome.Location = new System.Drawing.Point(549, 5);
+            this.lblWelcome.Location = new System.Drawing.Point(675, 5);
             this.lblWelcome.Name = "lblWelcome";
             this.lblWelcome.Size = new System.Drawing.Size(74, 21);
             this.lblWelcome.TabIndex = 31;
@@ -503,7 +503,7 @@
             this.btnClearAll.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnClearAll.Name = "btnClearAll";
             this.btnClearAll.Size = new System.Drawing.Size(146, 165);
-            this.btnClearAll.TabIndex = 32;
+            this.btnClearAll.TabIndex = 7;
             this.btnClearAll.Text = "Clear All";
             this.btnClearAll.UseVisualStyleBackColor = false;
             this.btnClearAll.Click += new System.EventHandler(this.btnClearAll_Click);
