@@ -50,6 +50,12 @@
             this.groupBoxEmployeeDetails = new System.Windows.Forms.GroupBox();
             this.btnDelete = new System.Windows.Forms.Button();
             this.dataGridViewEmployeeDetails = new System.Windows.Forms.DataGridView();
+            this.EmployeeId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.email = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.mobile = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.password = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.adminPrivilege = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.menuStripEmployeeDetails.SuspendLayout();
             this.groupBoxEmployeeDetails.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewEmployeeDetails)).BeginInit();
@@ -58,89 +64,89 @@
             // lblEmployeeName
             // 
             this.lblEmployeeName.AutoSize = true;
-            this.lblEmployeeName.Location = new System.Drawing.Point(30, 101);
+            this.lblEmployeeName.Location = new System.Drawing.Point(71, 69);
             this.lblEmployeeName.Name = "lblEmployeeName";
-            this.lblEmployeeName.Size = new System.Drawing.Size(45, 17);
+            this.lblEmployeeName.Size = new System.Drawing.Size(44, 16);
             this.lblEmployeeName.TabIndex = 0;
             this.lblEmployeeName.Text = "Name";
             // 
             // lblEmployeeEmail
             // 
             this.lblEmployeeEmail.AutoSize = true;
-            this.lblEmployeeEmail.Location = new System.Drawing.Point(30, 150);
+            this.lblEmployeeEmail.Location = new System.Drawing.Point(71, 118);
             this.lblEmployeeEmail.Name = "lblEmployeeEmail";
-            this.lblEmployeeEmail.Size = new System.Drawing.Size(47, 17);
+            this.lblEmployeeEmail.Size = new System.Drawing.Size(45, 16);
             this.lblEmployeeEmail.TabIndex = 1;
             this.lblEmployeeEmail.Text = "E-Mail";
             // 
             // lblEmployeeMobileNumber
             // 
             this.lblEmployeeMobileNumber.AutoSize = true;
-            this.lblEmployeeMobileNumber.Location = new System.Drawing.Point(30, 200);
+            this.lblEmployeeMobileNumber.Location = new System.Drawing.Point(71, 168);
             this.lblEmployeeMobileNumber.Name = "lblEmployeeMobileNumber";
-            this.lblEmployeeMobileNumber.Size = new System.Drawing.Size(103, 17);
+            this.lblEmployeeMobileNumber.Size = new System.Drawing.Size(99, 16);
             this.lblEmployeeMobileNumber.TabIndex = 2;
             this.lblEmployeeMobileNumber.Text = "Mobile Number";
             // 
             // lblEmployeeId
             // 
             this.lblEmployeeId.AutoSize = true;
-            this.lblEmployeeId.Location = new System.Drawing.Point(30, 52);
+            this.lblEmployeeId.Location = new System.Drawing.Point(71, 20);
             this.lblEmployeeId.Name = "lblEmployeeId";
-            this.lblEmployeeId.Size = new System.Drawing.Size(87, 17);
+            this.lblEmployeeId.Size = new System.Drawing.Size(85, 16);
             this.lblEmployeeId.TabIndex = 3;
             this.lblEmployeeId.Text = "Employee ID";
             // 
             // lblEmployeePassord
             // 
             this.lblEmployeePassord.AutoSize = true;
-            this.lblEmployeePassord.Location = new System.Drawing.Point(30, 249);
+            this.lblEmployeePassord.Location = new System.Drawing.Point(71, 217);
             this.lblEmployeePassord.Name = "lblEmployeePassord";
-            this.lblEmployeePassord.Size = new System.Drawing.Size(69, 17);
+            this.lblEmployeePassord.Size = new System.Drawing.Size(67, 16);
             this.lblEmployeePassord.TabIndex = 4;
             this.lblEmployeePassord.Text = "Password";
             // 
             // txtEmployeeName
             // 
-            this.txtEmployeeName.Location = new System.Drawing.Point(208, 96);
+            this.txtEmployeeName.Location = new System.Drawing.Point(249, 64);
             this.txtEmployeeName.Name = "txtEmployeeName";
             this.txtEmployeeName.Size = new System.Drawing.Size(123, 22);
-            this.txtEmployeeName.TabIndex = 5;
+            this.txtEmployeeName.TabIndex = 1;
             // 
             // txtEmployeePassword
             // 
-            this.txtEmployeePassword.Location = new System.Drawing.Point(208, 244);
+            this.txtEmployeePassword.Location = new System.Drawing.Point(249, 212);
             this.txtEmployeePassword.Name = "txtEmployeePassword";
             this.txtEmployeePassword.Size = new System.Drawing.Size(123, 22);
-            this.txtEmployeePassword.TabIndex = 6;
+            this.txtEmployeePassword.TabIndex = 5;
             // 
             // txtEmployeeMobileNumber
             // 
-            this.txtEmployeeMobileNumber.Location = new System.Drawing.Point(208, 195);
+            this.txtEmployeeMobileNumber.Location = new System.Drawing.Point(249, 163);
             this.txtEmployeeMobileNumber.Name = "txtEmployeeMobileNumber";
             this.txtEmployeeMobileNumber.Size = new System.Drawing.Size(123, 22);
-            this.txtEmployeeMobileNumber.TabIndex = 7;
+            this.txtEmployeeMobileNumber.TabIndex = 4;
             // 
             // txtEmployeeEmail
             // 
-            this.txtEmployeeEmail.Location = new System.Drawing.Point(208, 145);
+            this.txtEmployeeEmail.Location = new System.Drawing.Point(249, 113);
             this.txtEmployeeEmail.Name = "txtEmployeeEmail";
             this.txtEmployeeEmail.Size = new System.Drawing.Size(123, 22);
-            this.txtEmployeeEmail.TabIndex = 8;
+            this.txtEmployeeEmail.TabIndex = 3;
             // 
             // txtEmployeeId
             // 
-            this.txtEmployeeId.Location = new System.Drawing.Point(208, 47);
+            this.txtEmployeeId.Location = new System.Drawing.Point(249, 15);
             this.txtEmployeeId.Name = "txtEmployeeId";
             this.txtEmployeeId.Size = new System.Drawing.Size(123, 22);
-            this.txtEmployeeId.TabIndex = 12;
+            this.txtEmployeeId.TabIndex = 0;
             // 
             // btnSubmit
             // 
-            this.btnSubmit.Location = new System.Drawing.Point(275, 353);
+            this.btnSubmit.Location = new System.Drawing.Point(728, 159);
             this.btnSubmit.Name = "btnSubmit";
-            this.btnSubmit.Size = new System.Drawing.Size(82, 41);
-            this.btnSubmit.TabIndex = 13;
+            this.btnSubmit.Size = new System.Drawing.Size(121, 75);
+            this.btnSubmit.TabIndex = 7;
             this.btnSubmit.Text = "Submit";
             this.btnSubmit.UseVisualStyleBackColor = true;
             this.btnSubmit.Click += new System.EventHandler(this.btnSubmit_Click);
@@ -148,19 +154,19 @@
             // checkBoxAdminPrivilege
             // 
             this.checkBoxAdminPrivilege.AutoSize = true;
-            this.checkBoxAdminPrivilege.Location = new System.Drawing.Point(208, 295);
+            this.checkBoxAdminPrivilege.Location = new System.Drawing.Point(249, 253);
             this.checkBoxAdminPrivilege.Name = "checkBoxAdminPrivilege";
-            this.checkBoxAdminPrivilege.Size = new System.Drawing.Size(127, 21);
-            this.checkBoxAdminPrivilege.TabIndex = 15;
+            this.checkBoxAdminPrivilege.Size = new System.Drawing.Size(123, 20);
+            this.checkBoxAdminPrivilege.TabIndex = 6;
             this.checkBoxAdminPrivilege.Text = "Admin Privilege";
             this.checkBoxAdminPrivilege.UseVisualStyleBackColor = true;
             // 
             // btnClear
             // 
-            this.btnClear.Location = new System.Drawing.Point(11, 353);
+            this.btnClear.Location = new System.Drawing.Point(578, 159);
             this.btnClear.Name = "btnClear";
-            this.btnClear.Size = new System.Drawing.Size(82, 41);
-            this.btnClear.TabIndex = 16;
+            this.btnClear.Size = new System.Drawing.Size(121, 75);
+            this.btnClear.TabIndex = 8;
             this.btnClear.Text = "Clear";
             this.btnClear.UseVisualStyleBackColor = true;
             this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
@@ -172,7 +178,7 @@
             this.fileToolStripMenuItem});
             this.menuStripEmployeeDetails.Location = new System.Drawing.Point(0, 0);
             this.menuStripEmployeeDetails.Name = "menuStripEmployeeDetails";
-            this.menuStripEmployeeDetails.Size = new System.Drawing.Size(800, 28);
+            this.menuStripEmployeeDetails.Size = new System.Drawing.Size(953, 28);
             this.menuStripEmployeeDetails.TabIndex = 17;
             this.menuStripEmployeeDetails.Text = "menuStrip1";
             // 
@@ -183,27 +189,29 @@
             this.exitToolStripMenuItem});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
             this.fileToolStripMenuItem.Size = new System.Drawing.Size(46, 24);
-            this.fileToolStripMenuItem.Text = "File";
+            this.fileToolStripMenuItem.Text = "&File";
             // 
             // closeToolStripMenuItem
             // 
             this.closeToolStripMenuItem.Name = "closeToolStripMenuItem";
+            this.closeToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.C)));
             this.closeToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.closeToolStripMenuItem.Text = "Close";
+            this.closeToolStripMenuItem.Text = "&Close";
             this.closeToolStripMenuItem.Click += new System.EventHandler(this.closeToolStripMenuItem_Click_1);
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
+            this.exitToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.E)));
             this.exitToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.exitToolStripMenuItem.Text = "Exit";
+            this.exitToolStripMenuItem.Text = "&Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
             // btnSearch
             // 
-            this.btnSearch.Location = new System.Drawing.Point(99, 353);
+            this.btnSearch.Location = new System.Drawing.Point(728, 60);
             this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(82, 41);
+            this.btnSearch.Size = new System.Drawing.Size(121, 75);
             this.btnSearch.TabIndex = 18;
             this.btnSearch.Text = "Search";
             this.btnSearch.UseVisualStyleBackColor = true;
@@ -228,15 +236,15 @@
             this.groupBoxEmployeeDetails.Controls.Add(this.txtEmployeeMobileNumber);
             this.groupBoxEmployeeDetails.Location = new System.Drawing.Point(12, 42);
             this.groupBoxEmployeeDetails.Name = "groupBoxEmployeeDetails";
-            this.groupBoxEmployeeDetails.Size = new System.Drawing.Size(366, 431);
+            this.groupBoxEmployeeDetails.Size = new System.Drawing.Size(929, 289);
             this.groupBoxEmployeeDetails.TabIndex = 19;
             this.groupBoxEmployeeDetails.TabStop = false;
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(187, 353);
+            this.btnDelete.Location = new System.Drawing.Point(578, 60);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(82, 41);
+            this.btnDelete.Size = new System.Drawing.Size(121, 75);
             this.btnDelete.TabIndex = 19;
             this.btnDelete.Text = "Delete";
             this.btnDelete.UseVisualStyleBackColor = true;
@@ -246,12 +254,67 @@
             // 
             this.dataGridViewEmployeeDetails.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
             this.dataGridViewEmployeeDetails.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewEmployeeDetails.Location = new System.Drawing.Point(384, 42);
+            this.dataGridViewEmployeeDetails.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.EmployeeId,
+            this.name,
+            this.email,
+            this.mobile,
+            this.password,
+            this.adminPrivilege});
+            this.dataGridViewEmployeeDetails.Location = new System.Drawing.Point(12, 337);
             this.dataGridViewEmployeeDetails.Name = "dataGridViewEmployeeDetails";
             this.dataGridViewEmployeeDetails.RowHeadersWidth = 51;
             this.dataGridViewEmployeeDetails.RowTemplate.Height = 24;
-            this.dataGridViewEmployeeDetails.Size = new System.Drawing.Size(404, 431);
+            this.dataGridViewEmployeeDetails.Size = new System.Drawing.Size(929, 217);
             this.dataGridViewEmployeeDetails.TabIndex = 20;
+            // 
+            // EmployeeId
+            // 
+            this.EmployeeId.Frozen = true;
+            this.EmployeeId.HeaderText = "ID";
+            this.EmployeeId.MinimumWidth = 6;
+            this.EmployeeId.Name = "EmployeeId";
+            this.EmployeeId.Width = 125;
+            // 
+            // name
+            // 
+            this.name.Frozen = true;
+            this.name.HeaderText = "Name";
+            this.name.MinimumWidth = 6;
+            this.name.Name = "name";
+            this.name.Width = 125;
+            // 
+            // email
+            // 
+            this.email.Frozen = true;
+            this.email.HeaderText = "Email";
+            this.email.MinimumWidth = 6;
+            this.email.Name = "email";
+            this.email.Width = 125;
+            // 
+            // mobile
+            // 
+            this.mobile.Frozen = true;
+            this.mobile.HeaderText = "Mobile";
+            this.mobile.MinimumWidth = 6;
+            this.mobile.Name = "mobile";
+            this.mobile.Width = 125;
+            // 
+            // password
+            // 
+            this.password.Frozen = true;
+            this.password.HeaderText = "Password";
+            this.password.MinimumWidth = 6;
+            this.password.Name = "password";
+            this.password.Width = 125;
+            // 
+            // adminPrivilege
+            // 
+            this.adminPrivilege.Frozen = true;
+            this.adminPrivilege.HeaderText = "Admin Privilege";
+            this.adminPrivilege.MinimumWidth = 6;
+            this.adminPrivilege.Name = "adminPrivilege";
+            this.adminPrivilege.Width = 125;
             // 
             // frmEmployeeDetails
             // 
@@ -259,7 +322,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::TollBoothManagementSystem.Properties.Resources.bg_Planae;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(800, 485);
+            this.ClientSize = new System.Drawing.Size(953, 566);
             this.Controls.Add(this.dataGridViewEmployeeDetails);
             this.Controls.Add(this.groupBoxEmployeeDetails);
             this.Controls.Add(this.menuStripEmployeeDetails);
@@ -270,6 +333,7 @@
             this.Name = "frmEmployeeDetails";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Employee Details";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmEmployeeDetails_FormClosed);
             this.Load += new System.EventHandler(this.frmEmployeeDetails_Load);
             this.menuStripEmployeeDetails.ResumeLayout(false);
             this.menuStripEmployeeDetails.PerformLayout();
@@ -304,5 +368,11 @@
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem closeToolStripMenuItem;
         private System.Windows.Forms.Button btnDelete;
+        private System.Windows.Forms.DataGridViewTextBoxColumn EmployeeId;
+        private System.Windows.Forms.DataGridViewTextBoxColumn name;
+        private System.Windows.Forms.DataGridViewTextBoxColumn email;
+        private System.Windows.Forms.DataGridViewTextBoxColumn mobile;
+        private System.Windows.Forms.DataGridViewTextBoxColumn password;
+        private System.Windows.Forms.DataGridViewTextBoxColumn adminPrivilege;
     }
 }

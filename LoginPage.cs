@@ -14,7 +14,11 @@ namespace TollBoothManagementSystem
     public partial class frmLoginPage : Form
     {
         private readonly EmployeeServices _service;
+
         public static string loggedUser = "";
+
+        public static frmAdminPage frmAdminPageObj;
+        public static frmDashboardPage frmDashboardPageObj;
         public frmLoginPage()
         {
             InitializeComponent();
@@ -46,16 +50,23 @@ namespace TollBoothManagementSystem
             if (employeeLog.EmpAdminPrivelege == 1)
             {
                 loggedUser = employeeLog.EmpName;
-                new frmAdminPage().Show();
-                Hide();
+                frmAdminPageObj = new frmAdminPage();
+                frmAdminPageObj.Show();
+                frmSplashScreen.frmLoginPageObj.Hide();
             }
             else if (employeeLog.EmpAdminPrivelege == 0)
             {
                 loggedUser = employeeLog.EmpName;
-                new frmDashboardPage().Show();
-                Hide();
+                frmDashboardPageObj = new frmDashboardPage();
+                frmDashboardPageObj.Show();
+                frmSplashScreen.frmLoginPageObj.Hide();
             }
 
+        }
+
+        private void frmLoginPage_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Environment.Exit(0);
         }
     }
 }
