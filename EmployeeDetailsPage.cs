@@ -74,7 +74,7 @@ namespace TollBoothManagementSystem
         {
             if (txtEmployeeId.Text == "")
             {
-                Clear();
+                MessageBox.Show("Enter id to search", "Enter id", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
             var id = Convert.ToInt32(txtEmployeeId.Text);
@@ -82,7 +82,7 @@ namespace TollBoothManagementSystem
 
             if (employee == null)
             {
-                MessageBox.Show("No result found");
+                MessageBox.Show("No result found", "No result", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
 
@@ -100,13 +100,13 @@ namespace TollBoothManagementSystem
         {
             if (txtEmployeeName.Text == "" || txtEmployeeEmail.Text == "" || txtEmployeeMobileNumber.Text == "" || txtEmployeePassword.Text == "")
             {
-                MessageBox.Show("All field requred");
+                MessageBox.Show("All details are required", "Fill all required details", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
             var passwordLength = txtEmployeePassword.Text.Length;
             if (passwordLength < 4)
             {
-                MessageBox.Show("The password must have atleast 4 characters long.");
+                MessageBox.Show("The password must have atleast 4 characters long.", "Retype password", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
             var email = txtEmployeeEmail.Text;
@@ -117,7 +117,7 @@ namespace TollBoothManagementSystem
             {
                 if (checkEmployeeExist != null)
                 {
-                    MessageBox.Show("Email and Password alredy exist");
+                    MessageBox.Show("Email and Password alredy exist", "Already exist", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
                 var EmpAdminPrivelegeResult = 0;
@@ -136,7 +136,7 @@ namespace TollBoothManagementSystem
                 };
                 var res = _service.AddOneEmployee(employee);
                 if (res > 0)
-                    MessageBox.Show("Employee details added");
+                    MessageBox.Show("Employee details added", "Added", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 GridViewEmployeeDetailsClear();
                 EmployeeGridDisplay();
             }
@@ -147,7 +147,7 @@ namespace TollBoothManagementSystem
 
                 if (employeeIdCheck != null)
                 {
-                    DialogResult dialogResult = MessageBox.Show("Do you want to update ?","Please Confirm", MessageBoxButtons.YesNo);
+                    DialogResult dialogResult = MessageBox.Show("Do you want to update ?","Please Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
                     if (dialogResult == DialogResult.No)
                         return;
@@ -170,14 +170,14 @@ namespace TollBoothManagementSystem
                         };
                         var res = _service.UpdateEmployee(id, employee);
                         if (res > 0)
-                            MessageBox.Show("Employee details updated");
+                            MessageBox.Show("Employee details updated","Updated", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
                         GridViewEmployeeDetailsClear();
                         EmployeeGridDisplay();
                     }
                 }
                 else
                 {
-                    MessageBox.Show("Clear Id to add new employee details");
+                    MessageBox.Show("Clear Id to add new employee details", "Clear id", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
             }
@@ -187,10 +187,18 @@ namespace TollBoothManagementSystem
         {
             if (txtEmployeeId.Text == "")
             {
-                Clear();
+                MessageBox.Show("Enter id to delete", "Enter id", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            DialogResult dialogResult = MessageBox.Show("Do you want to delete ?", "Please Confirm", MessageBoxButtons.YesNo);
+            var id = Convert.ToInt32(txtEmployeeId.Text);
+            var employeeCheck = _service.DeleteEmployee(id);
+            if (employeeCheck == 0)
+            {
+                MessageBox.Show("Employee details not found", "Not found", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            DialogResult dialogResult = MessageBox.Show("Do you want to delete ?", "Please Confirm", MessageBoxButtons.YesNo,MessageBoxIcon.Question);
 
             if (dialogResult == DialogResult.No)
                 return;
@@ -198,15 +206,8 @@ namespace TollBoothManagementSystem
                 return;
             if (dialogResult == DialogResult.Yes)
             {
-                var id = Convert.ToInt32(txtEmployeeId.Text);
-                var employeeCheck = _service.DeleteEmployee(id);
-
-                if (employeeCheck == 0)
-                {
-                    MessageBox.Show("Employee details not found");
-                }
-
-                MessageBox.Show("Employee details Deleted");
+                var employeeDeleteCheck = _service.DeleteEmployee(id);
+                MessageBox.Show("Employee details Deleted", "Deleted", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 GridViewEmployeeDetailsClear();
                 EmployeeGridDisplay();
             }   

@@ -34,7 +34,7 @@ namespace TollBoothManagementSystem
             //checking user enterd or not username and password 
             if (username == ""|| password == "")
             {
-                MessageBox.Show("Please enter username and password");
+                MessageBox.Show("Please enter username and password", "Enter password", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
             var employeeLog = _service.EmployeeLogin(username, password);
@@ -42,7 +42,7 @@ namespace TollBoothManagementSystem
             //checking user enterd username and password exist in the employee database 
             if (employeeLog == null)
             {
-                MessageBox.Show("Incorrect username or passowrd");
+                MessageBox.Show("Incorrect username or passowrd", "Not valid ", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 

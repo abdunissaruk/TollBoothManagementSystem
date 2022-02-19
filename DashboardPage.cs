@@ -95,7 +95,7 @@ namespace TollBoothManagementSystem
                 };
                 var addOneEntry = _connection.AddOneEntry(vehicleDetails);
                 if (addOneEntry > 0)
-                    MessageBox.Show("Vehicle details added");
+                    MessageBox.Show("Vehicle details added", "Added",MessageBoxButtons.OK,MessageBoxIcon.Information);
             }
             else//Returned vehicle
             {
@@ -122,7 +122,7 @@ namespace TollBoothManagementSystem
                 };
                 var addOneEntry = _connection.AddOneEntry(vehicleDetails);
                 if (addOneEntry > 0)
-                    MessageBox.Show("Vehicle details added");
+                    MessageBox.Show("Vehicle details added", "Added", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             comboBoxVehicleClass.Enabled = true;
             comboBoxTripType.Enabled = true;

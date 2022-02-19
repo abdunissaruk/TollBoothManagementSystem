@@ -88,7 +88,7 @@ namespace TollBoothManagementSystem
 
             if (vehicleDetails == null)
             {
-                MessageBox.Show("No result found");
+                MessageBox.Show("No result found", "Not found", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
 
@@ -105,7 +105,7 @@ namespace TollBoothManagementSystem
 
             if (vehicleDetails == null)
             {
-                MessageBox.Show("No result found");
+                MessageBox.Show("No result found", "Not found", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
 
@@ -123,7 +123,7 @@ namespace TollBoothManagementSystem
 
             if (vehicleDetails == null)
             {
-                MessageBox.Show("No result found");
+                MessageBox.Show("No result found", "Not found", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
 
@@ -142,7 +142,7 @@ namespace TollBoothManagementSystem
 
             if (vehicleDetails == null)
             {
-                MessageBox.Show("No result found");
+                MessageBox.Show("No result found", "Not found", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
 
@@ -160,7 +160,7 @@ namespace TollBoothManagementSystem
 
             if (vehicleDetails == null)
             {
-                MessageBox.Show("No result found");
+                MessageBox.Show("No result found", "Not found", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
 
@@ -176,7 +176,7 @@ namespace TollBoothManagementSystem
 
             if (vehicleDetails == null)
             {
-                MessageBox.Show("No result found");
+                MessageBox.Show("No result found","Not found", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
 
@@ -200,7 +200,7 @@ namespace TollBoothManagementSystem
                     writer.Write(result);
                 }
             }
-            MessageBox.Show("Daily Report Printed");
+            MessageBox.Show("Daily Report Printed","Printed", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void weeklyToolStripMenuItem_Click(object sender, EventArgs e)
@@ -211,7 +211,7 @@ namespace TollBoothManagementSystem
 
             if (vehicleDetails == null)
             {
-                MessageBox.Show("No result found");
+                MessageBox.Show("No result found", "Not found", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
 
@@ -235,7 +235,7 @@ namespace TollBoothManagementSystem
                     writer.Write(result);
                 }
             }
-            MessageBox.Show("Weekly Report Printed");
+            MessageBox.Show("Weekly Report Printed", "Printed", MessageBoxButtons.OK, MessageBoxIcon.Information));
         }
 
         private void monthlyToolStripMenuItem_Click(object sender, EventArgs e)
@@ -246,7 +246,7 @@ namespace TollBoothManagementSystem
             var vehicleDetails = _service.ViewVehicleDetails(startDate, endDate);
             if (vehicleDetails == null)
             {
-                MessageBox.Show("No result found");
+                MessageBox.Show("No result found","Not found", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
             SaveFileDialog saveFileDialog = new SaveFileDialog();
@@ -269,7 +269,7 @@ namespace TollBoothManagementSystem
                     writer.Write(result);
                 }
             }
-            MessageBox.Show("Monthly Report Printed");
+            MessageBox.Show("Monthly Report Printed", "Printed", MessageBoxButtons.OK, MessageBoxIcon.Information));
         }
 
         private void customToolStripMenuItem_Click(object sender, EventArgs e)
@@ -279,7 +279,7 @@ namespace TollBoothManagementSystem
             var vehicleDetails = _service.ViewVehicleDetails(startDate, endDate);
             if (vehicleDetails == null)
             {
-                MessageBox.Show("No result found");
+                MessageBox.Show("No result found", "Not found", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
             SaveFileDialog saveFileDialog = new SaveFileDialog();
@@ -302,7 +302,7 @@ namespace TollBoothManagementSystem
                     writer.Write(result);
                 }
             }
-            MessageBox.Show("Custom Report Printed");
+            MessageBox.Show("Custom Report Printed", "Printed", MessageBoxButtons.OK, MessageBoxIcon.Information));
         }
 
         private void frmAdminPage_FormClosed(object sender, FormClosedEventArgs e)
