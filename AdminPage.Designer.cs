@@ -68,12 +68,13 @@
             this.lblViewReport = new System.Windows.Forms.Label();
             this.lblWelcome = new System.Windows.Forms.Label();
             this.btnClearAll = new System.Windows.Forms.Button();
-            this.panelClearAll = new System.Windows.Forms.Panel();
+            this.groupBoxClearAll = new System.Windows.Forms.GroupBox();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.menuStripAdminPage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDisplay)).BeginInit();
             this.groupBoxVehicleSearch.SuspendLayout();
             this.groupBoxViewReport.SuspendLayout();
-            this.panelClearAll.SuspendLayout();
+            this.groupBoxClearAll.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStripAdminPage
@@ -499,22 +500,23 @@
             // btnClearAll
             // 
             this.btnClearAll.BackColor = System.Drawing.Color.Aquamarine;
-            this.btnClearAll.Location = new System.Drawing.Point(3, 2);
+            this.btnClearAll.Location = new System.Drawing.Point(6, 12);
             this.btnClearAll.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnClearAll.Name = "btnClearAll";
-            this.btnClearAll.Size = new System.Drawing.Size(146, 165);
+            this.btnClearAll.Size = new System.Drawing.Size(141, 152);
             this.btnClearAll.TabIndex = 7;
             this.btnClearAll.Text = "Clear All";
             this.btnClearAll.UseVisualStyleBackColor = false;
             this.btnClearAll.Click += new System.EventHandler(this.btnClearAll_Click);
             // 
-            // panelClearAll
+            // groupBoxClearAll
             // 
-            this.panelClearAll.Controls.Add(this.btnClearAll);
-            this.panelClearAll.Location = new System.Drawing.Point(405, 39);
-            this.panelClearAll.Name = "panelClearAll";
-            this.panelClearAll.Size = new System.Drawing.Size(152, 169);
-            this.panelClearAll.TabIndex = 33;
+            this.groupBoxClearAll.Controls.Add(this.btnClearAll);
+            this.groupBoxClearAll.Location = new System.Drawing.Point(404, 39);
+            this.groupBoxClearAll.Name = "groupBoxClearAll";
+            this.groupBoxClearAll.Size = new System.Drawing.Size(153, 169);
+            this.groupBoxClearAll.TabIndex = 34;
+            this.groupBoxClearAll.TabStop = false;
             // 
             // frmAdminPage
             // 
@@ -523,7 +525,7 @@
             this.BackgroundImage = global::TollBoothManagementSystem.Properties.Resources.bg_Planae;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(953, 566);
-            this.Controls.Add(this.panelClearAll);
+            this.Controls.Add(this.groupBoxClearAll);
             this.Controls.Add(this.lblWelcome);
             this.Controls.Add(this.groupBoxViewReport);
             this.Controls.Add(this.groupBoxVehicleSearch);
@@ -547,7 +549,7 @@
             this.groupBoxVehicleSearch.PerformLayout();
             this.groupBoxViewReport.ResumeLayout(false);
             this.groupBoxViewReport.PerformLayout();
-            this.panelClearAll.ResumeLayout(false);
+            this.groupBoxClearAll.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -594,6 +596,7 @@
         private System.Windows.Forms.ToolStripMenuItem customToolStripMenuItem;
         private System.Windows.Forms.Button btnCustom;
         private System.Windows.Forms.Button btnClearAll;
-        private System.Windows.Forms.Panel panelClearAll;
+        private System.Windows.Forms.GroupBox groupBoxClearAll;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
     }
 }
