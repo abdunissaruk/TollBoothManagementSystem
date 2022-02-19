@@ -57,6 +57,7 @@ namespace TollBoothManagementSystem
             txtDigits.Text = "";
             comboBoxTripType.Text = "";
             comboBoxVehicleClass.Text = "";
+            rtxtAmountDisplay.Text = "";
         }
 
         private void btnProceed_Click(object sender, EventArgs e)
