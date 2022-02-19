@@ -235,7 +235,7 @@ namespace TollBoothManagementSystem
                     writer.Write(result);
                 }
             }
-            MessageBox.Show("Weekly Report Printed", "Printed", MessageBoxButtons.OK, MessageBoxIcon.Information));
+            MessageBox.Show("Weekly Report Printed", "Printed", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void monthlyToolStripMenuItem_Click(object sender, EventArgs e)
@@ -269,7 +269,7 @@ namespace TollBoothManagementSystem
                     writer.Write(result);
                 }
             }
-            MessageBox.Show("Monthly Report Printed", "Printed", MessageBoxButtons.OK, MessageBoxIcon.Information));
+            MessageBox.Show("Monthly Report Printed", "Printed", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void customToolStripMenuItem_Click(object sender, EventArgs e)
@@ -302,7 +302,7 @@ namespace TollBoothManagementSystem
                     writer.Write(result);
                 }
             }
-            MessageBox.Show("Custom Report Printed", "Printed", MessageBoxButtons.OK, MessageBoxIcon.Information));
+            MessageBox.Show("Custom Report Printed", "Printed", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void frmAdminPage_FormClosed(object sender, FormClosedEventArgs e)
