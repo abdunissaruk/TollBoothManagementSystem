@@ -3,8 +3,10 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using TollBoothManagementSystem.Model;
@@ -98,18 +100,33 @@ namespace TollBoothManagementSystem
 
         private void btnSubmit_Click(object sender, EventArgs e)
         {
+            string email = txtEmployeeEmail.Text;
+            if (IsNotValidEmail(email))//Email validation
+            {
+                MessageBox.Show("Email format is not valid", "Email id not valid", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            string mobile = txtEmployeeMobileNumber.Text;
+            if (IsNotValidMobile(mobile))//Mobile number validation
+            {
+                MessageBox.Show("Mobile number format is not valid", "Mobile number not valid", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
             if (txtEmployeeName.Text == "" || txtEmployeeEmail.Text == "" || txtEmployeeMobileNumber.Text == "" || txtEmployeePassword.Text == "")
             {
                 MessageBox.Show("All details are required", "Fill all required details", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
+
             var passwordLength = txtEmployeePassword.Text.Length;
             if (passwordLength < 4)
             {
                 MessageBox.Show("The password must have atleast 4 characters long.", "Retype password", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            var email = txtEmployeeEmail.Text;
+
+            
             var password = txtEmployeePassword.Text;
             var checkEmployeeExist = _service.CheckEmployeeExist(email, password);
 
@@ -170,7 +187,7 @@ namespace TollBoothManagementSystem
                         };
                         var res = _service.UpdateEmployee(id, employee);
                         if (res > 0)
-                            MessageBox.Show("Employee details updated","Updated", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+                            MessageBox.Show("Employee details updated","Updated", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         GridViewEmployeeDetailsClear();
                         EmployeeGridDisplay();
                     }
@@ -216,6 +233,31 @@ namespace TollBoothManagementSystem
         private void frmEmployeeDetails_FormClosed(object sender, FormClosedEventArgs e)
         {
             frmLoginPage.frmAdminPageObj.Show();
+        }
+        public static bool IsNotValidEmail(string email)
+        {
+            if (string.IsNullOrWhiteSpace(email))
+                return true;
+
+            Regex regex = new Regex(@"^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$");
+            Match match = regex.Match(email);
+            if (match.Success)
+                return false;
+            else
+                return true;
+        }
+
+        public static bool IsNotValidMobile(string mobile)
+        {
+            if (string.IsNullOrWhiteSpace(mobile))
+                return true;
+
+            Regex regex = new Regex(@"^[0-9]{10}$");
+            Match match = regex.Match(mobile);
+            if (match.Success)
+                return false;
+            else
+                return true;
         }
     }
 }

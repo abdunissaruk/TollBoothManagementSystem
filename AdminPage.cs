@@ -154,6 +154,16 @@ namespace TollBoothManagementSystem
         {
             var startDate = dateTimePickerFrom.Value;
             var endDate = dateTimePickerTo.Value;
+            if (startDate>=endDate)
+            {
+                MessageBox.Show("Start date should be less than end date", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            if (startDate > DateTime.Now || endDate > DateTime.Now)
+            {
+                MessageBox.Show("Can't select future date", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
             var vehicleDetails = _service.ViewVehicleDetails(startDate, endDate);
            
             ClearGridViewDisplay();
@@ -276,6 +286,17 @@ namespace TollBoothManagementSystem
         {
             var startDate = dateTimePickerFrom.Value;
             var endDate = dateTimePickerTo.Value;
+            if (startDate >= endDate)
+            {
+                MessageBox.Show("Start date should be less than end date", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            if (startDate > DateTime.Now || endDate > DateTime.Now)
+            {
+                MessageBox.Show("Can't select future date", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
             var vehicleDetails = _service.ViewVehicleDetails(startDate, endDate);
             if (vehicleDetails == null)
             {
