@@ -10,23 +10,23 @@ using System.Windows.Forms;
 
 namespace TollBoothManagementSystem
 {
-    public partial class frmSplashScreen : Form
+    public partial class FrmSplashScreen : Form
     {
-        public static frmLoginPage frmLoginPageObj;
-        public frmSplashScreen()
+        public static FrmLoginPage frmLoginPageObj;
+        public FrmSplashScreen()
         {
             InitializeComponent();
         }
 
-        private void frmSplashScreen_Load(object sender, EventArgs e)
+        private void FrmSplashScreen_Load(object sender, EventArgs e)
         {
             TransparencyKey = BackColor;
         }
 
-        private void timerSplashScreen_Tick(object sender, EventArgs e)
+        private void TimerSplashScreen_Tick(object sender, EventArgs e)//run after 3 seconds
         {
             timerSplashScreen.Stop();
-            frmLoginPageObj = new frmLoginPage();
+            frmLoginPageObj = new FrmLoginPage();
             frmLoginPageObj.Show();
             this.Hide();
         }

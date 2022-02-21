@@ -1,6 +1,6 @@
 ﻿namespace TollBoothManagementSystem
 {
-    partial class frmAdminPage
+    partial class FrmAdminPage
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAdminPage));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmAdminPage));
             this.menuStripAdminPage = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.logoutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -538,8 +538,8 @@
             this.Name = "frmAdminPage";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Admin Dashboard";
-            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmAdminPage_FormClosed);
-            this.Load += new System.EventHandler(this.frmAdminPage_Load);
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FrmAdminPage_FormClosed);
+            this.Load += new System.EventHandler(this.FrmAdminPage_Load);
             this.menuStripAdminPage.ResumeLayout(false);
             this.menuStripAdminPage.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDisplay)).EndInit();

@@ -14,41 +14,89 @@ using TollBoothManagementSystem.Services;
 
 namespace TollBoothManagementSystem
 {
-    public partial class frmDashboardPage : Form
+    public partial class FrmDashboardPage : Form
     {
+        //Connnection
         private readonly VehicleDetailsServices _connection;
         private int _amountToBeCollected = 0;
-        private bool _isVehicleClass = false;
-        private bool _isTripType = false;
 
-        private bool _isStatetypeComboBoxChanged = false;
+        //To check class ant trip type combo box index changed
+        private bool _isVehicleClassComboBoxIndexChanged = false;
+        private bool _isTripTypeComboBoxIndexChanged = false;
+        //To check state list combo box index changed
+        private bool _isStateComboBoxIndexChanged = false;
 
-        
-        public bool returnVehicle = false;
-        public bool isReturned = false;
-        public frmDashboardPage()
+        private bool _isViewClicked = false;
+
+        //To identify returning vehicle or not
+        private bool _returningVehicle = false;
+        //To identify vehicle returned or not
+        private bool _isReturned = false;
+
+        private bool _isVehicleExist = false;
+
+        private string _vehicleClass = "";
+
+
+        public FrmDashboardPage()
         {
             InitializeComponent();
             _connection = new VehicleDetailsServices();
         }
 
-        private void frmDashboardPage_Load(object sender, EventArgs e)
+        private void FrmDashboardPage_Load(object sender, EventArgs e)
         {
-            lblNameDisplayEmployee.Text = frmLoginPage.loggedUser;
+            //Display current logged user name
+            lblNameDisplayEmployee.Text = FrmLoginPage.loggedUser;
         }
 
-
+        //Logout tool strip menu
         private void logoutToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmSplashScreen.frmLoginPageObj.Show();
-            frmLoginPage.frmDashboardPageObj.Dispose();
+            FrmSplashScreen.frmLoginPageObj.Show();
+            FrmLoginPage.frmDashboardPageObj.Dispose();
         }
 
+        //Exit tool strip menu
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Environment.Exit(0);
         }
 
+        //Form close event
+        private void FrmDashboardPage_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Environment.Exit(0);
+        }
+
+        //State combo box index value change event
+        private void comboBoxStateOrTerritory_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            _isStateComboBoxIndexChanged = true;
+        }
+
+        //VehicleClass combo box index value change event
+        private void comboBoxVehicleClass_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            _isVehicleClassComboBoxIndexChanged = true;//true if index changed
+            amountCalculatorForNotExisting();
+            rtxtAmountDisplay.Text = "  Pay \n  " + _amountToBeCollected.ToString();
+        }
+
+        //TripType combo box index value change event
+        private void comboBoxTripType_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            _isTripTypeComboBoxIndexChanged = true;// true if index changed
+            amountCalculatorForNotExisting();
+
+            if (_isVehicleExist)
+                amountCalculatorForExisting(_vehicleClass);
+
+            rtxtAmountDisplay.Text = "  Pay \n  " + _amountToBeCollected.ToString();
+
+        }
+
+        //reset all fields
         private void btnReset_Click(object sender, EventArgs e)
         {
             comboBoxStateOrTerritory.Text = "";
@@ -60,35 +108,170 @@ namespace TollBoothManagementSystem
             rtxtAmountDisplay.Text = "";
         }
 
-        private void btnProceed_Click(object sender, EventArgs e)
+        //To calculate total amount based on selected vehicle class and trip type
+        private void amountCalculatorForNotExisting()
         {
-            if (!_isStatetypeComboBoxChanged || !_isVehicleClass || !_isTripType ||
-                txtRegionalTransportAuthority.Text == "" || txtLetters.Text == "" || txtDigits.Text == "")
+            //Return if both vehicle class and trip type combo box index changed
+            if (!_isVehicleClassComboBoxIndexChanged || !_isTripTypeComboBoxIndexChanged)
+                return; 
+
+            //Trip type combo box value checking
+            if (comboBoxVehicleClass.SelectedItem.ToString() == "Three Wheeler")
+                _amountToBeCollected = 50;
+            else if (comboBoxVehicleClass.SelectedItem.ToString() == "Four Wheeler")
+                _amountToBeCollected = 80;
+            else if (comboBoxVehicleClass.SelectedItem.ToString() == "Six Wheeler")
+                _amountToBeCollected = 100;
+
+            //Trip type combo box value checking
+            if (comboBoxTripType.SelectedItem.ToString() == "One Way")
+                _amountToBeCollected *= 1;
+            else if (comboBoxTripType.SelectedItem.ToString() == "Two Way")
+                _amountToBeCollected *= 2;
+
+            //Display Amount in text box
+            rtxtAmountDisplay.Text = "  Pay \n  " + _amountToBeCollected.ToString();
+        }
+
+        private void amountCalculatorForExisting(string vehicleClass)
+        {
+            //Return if both vehicle class and trip type combo box index changed
+            if (!_isTripTypeComboBoxIndexChanged)
                 return;
+
+            //Trip type combo box value checking
+            if (vehicleClass == "Three Wheeler")
+                _amountToBeCollected = 50;
+            else if (vehicleClass == "Four Wheeler")
+                _amountToBeCollected = 80;
+            else if (vehicleClass == "Six Wheeler")
+                _amountToBeCollected = 100;
+
+            //Trip type combo box value checking
+            if (comboBoxTripType.SelectedItem.ToString() == "One Way")
+                _amountToBeCollected *= 1;
+            else if (comboBoxTripType.SelectedItem.ToString() == "Two Way")
+                _amountToBeCollected *= 2;
+
+            //if (_returningVehicle)
+            //    _amountToBeCollected = 0;
+            //Display Amount in text box
+            rtxtAmountDisplay.Text = "  Pay \n  " + _amountToBeCollected.ToString();
+        }
+
+        private void btnView_Click(object sender, EventArgs e)
+        {
+            _isViewClicked = true;
+            _returningVehicle = false;
+
+            //return if state combo box index not changed
+            if (!_isStateComboBoxIndexChanged)
+                return;
+
             var vehicleReg = comboBoxStateOrTerritory.SelectedItem.ToString() + "-" + txtRegionalTransportAuthority.Text + "-" + txtLetters.Text + "-" + txtDigits.Text;
-            if (!returnVehicle)
+            var vehicleDetails = _connection.VehicleSearch(vehicleReg);
+
+            comboBoxVehicleClass.Enabled = true;
+            comboBoxTripType.Enabled = true;
+
+            //To enable both vehicle class and trip type combo box for new vehicle
+            if (vehicleDetails == null)
             {
-                //Checking the vehicle already details available in database
-                var vehicleClass = "";
-                var tripType = "";
-                var vehicleRegToSearch = comboBoxStateOrTerritory.SelectedItem.ToString() + "-" + txtRegionalTransportAuthority.Text + "-" + txtLetters.Text + "-" + txtDigits.Text;
-                var vehicleDetailsSearched = _connection.VehicleSearch(vehicleRegToSearch);
-                if (vehicleDetailsSearched != null)
+                comboBoxVehicleClass.Enabled = true;
+                comboBoxTripType.Enabled = true;
+                return;
+            }
+
+            
+            var tripType = "";
+            var returnedOrNot = 0;
+
+            //if vehicle details exist in database
+            if (vehicleDetails != null)
+            {
+                _isVehicleExist = true;
+                //To disable vehicle class and enable trip type combo box
+                comboBoxVehicleClass.Enabled = false;
+                comboBoxTripType.Enabled = true;
+
+                //Accesing latest vehicle deatils
+                for (int i = 0; i < 1; i++)
                 {
-                    foreach (var vehicle in vehicleDetailsSearched)
-                    {
-                        vehicleClass = vehicle.VehicleClass.ToString();
-                        tripType = vehicle.TripType.ToString();
-                    }
+                    _vehicleClass = vehicleDetails.ElementAt(i).VehicleClass;
+                    tripType = vehicleDetails.ElementAt(i).TripType;
+                    returnedOrNot = vehicleDetails.ElementAt(i).Returned;
                 }
 
-                vehicleClass = comboBoxVehicleClass.SelectedItem.ToString();
+                if (tripType == "Two Way" && returnedOrNot == 0)
+                {
+                    //To desable both vehicle class and trip type combo box
+                    comboBoxVehicleClass.Enabled = false;
+                    comboBoxTripType.Enabled = false;
+                    _amountToBeCollected = 0;//Returning vehicle
+                    _returningVehicle = true;
+                }
+                else if (tripType == "Two Way" && returnedOrNot == 1)
+                    _returningVehicle = false;
+                rtxtAmountDisplay.Text = "  Pay \n  " + _amountToBeCollected.ToString();
+            }
+            
+        }
+
+        private void btnProceed_Click(object sender, EventArgs e)
+        {
+            //return if state combo box, vehicle class and trip type index not changed and empty fields
+            if (!_isStateComboBoxIndexChanged)
+                return;
+
+            if (!_isViewClicked)
+            {
+                MessageBox.Show("Click view to submit", "Click", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+                
+
+            //|| !_isVehicleClassComboBoxIndexChanged || !_isTripTypeComboBoxIndexChanged ||
+            //    txtRegionalTransportAuthority.Text == "" || txtLetters.Text == "" || txtDigits.Text == ""
+            var vehicleReg = comboBoxStateOrTerritory.SelectedItem.ToString() + "-" + txtRegionalTransportAuthority.Text + "-" + txtLetters.Text + "-" + txtDigits.Text;
+            var vehicleDetailsSearched = _connection.VehicleSearch(vehicleReg);
+
+            
+            string tripType = "";
+
+            
+            if (vehicleDetailsSearched != null)
+            {
+                if (txtRegionalTransportAuthority.Text == "" || txtLetters.Text == "" || txtDigits.Text == "")
+                    return;
+
+                _isVehicleExist = true;
+                foreach (var vehicle in vehicleDetailsSearched)
+                {
+                    _vehicleClass = vehicle.VehicleClass.ToString();
+                }
+            }
+
+            if (vehicleDetailsSearched == null)
+            {
+                if (!_isVehicleClassComboBoxIndexChanged || !_isTripTypeComboBoxIndexChanged ||
+                txtRegionalTransportAuthority.Text == "" || txtLetters.Text == "" || txtDigits.Text == "")
+                    return;
+
+                _vehicleClass = comboBoxVehicleClass.SelectedItem.ToString();
+            }
+                
+            if (!_returningVehicle)//if not a returning vehicle
+            {
+                if (_isVehicleExist)
+                    amountCalculatorForExisting(_vehicleClass);
+
                 tripType = comboBoxTripType.SelectedItem.ToString();
+
                 var vehicleDetails = new VehicleDetails()
                 {
                     VehicleReg = vehicleReg.ToUpper(),
                     VehicleDateTime = DateTime.Now,
-                    VehicleClass = vehicleClass,
+                    VehicleClass = _vehicleClass,
                     TripType = tripType,
                     Amount = _amountToBeCollected,
                     Returned = 0
@@ -97,25 +280,18 @@ namespace TollBoothManagementSystem
                 if (addOneEntry > 0)
                     MessageBox.Show("Vehicle details added", "Added",MessageBoxButtons.OK,MessageBoxIcon.Information);
             }
-            else//Returned vehicle
+            else//Returning vehicle
             {
-                var vehicleClass = "";
-                var tripType = "";
-                var vehicleRegToSearch = comboBoxStateOrTerritory.SelectedItem.ToString() + "-" + txtRegionalTransportAuthority.Text + "-" + txtLetters.Text + "-" + txtDigits.Text;
-                var vehicleDetailsSearched = _connection.VehicleSearch(vehicleRegToSearch);
-                if (vehicleDetailsSearched == null)
-                    return;
-                foreach (var vehicle in vehicleDetailsSearched)
+                for (int i = 0; i < 1; i++)
                 {
-                    vehicleClass = vehicle.VehicleClass.ToString();
-                    tripType = vehicle.TripType.ToString();
+                    tripType = vehicleDetailsSearched.ElementAt(i).TripType;
                 }
 
                 var vehicleDetails = new VehicleDetails()
                 {
                     VehicleReg = vehicleReg.ToUpper(),
                     VehicleDateTime = DateTime.Now,
-                    VehicleClass = vehicleClass,
+                    VehicleClass = _vehicleClass,
                     TripType = tripType,
                     Amount = 0,
                     Returned = 1
@@ -124,92 +300,14 @@ namespace TollBoothManagementSystem
                 if (addOneEntry > 0)
                     MessageBox.Show("Vehicle details added", "Added", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-            comboBoxVehicleClass.Enabled = true;
-            comboBoxTripType.Enabled = true;
-        }
-
-        private void comboBoxVehicleClass_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            _isVehicleClass = true;
-            amount();
-        }
-
-        private void comboBoxTripType_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            _isTripType = true;
-            amount();
-        }
-        private void amount()
-        {
-            if (_isVehicleClass == true && _isTripType == true)
-            {
-                if (comboBoxVehicleClass.SelectedItem.ToString() == "Three Wheeler")
-                    _amountToBeCollected = 50;
-                else if (comboBoxVehicleClass.SelectedItem.ToString() == "Four Wheeler")
-                    _amountToBeCollected = 80;
-                else if (comboBoxVehicleClass.SelectedItem.ToString() == "Six Wheeler")
-                    _amountToBeCollected = 100;
-
-                if (comboBoxTripType.SelectedItem.ToString() == "One Way")
-                    _amountToBeCollected *= 1;
-                else if (comboBoxTripType.SelectedItem.ToString() == "Two Way")
-                    _amountToBeCollected *= 2;
-                rtxtAmountDisplay.Text = "  Pay \n  " + _amountToBeCollected.ToString();
-            }
-        }
-
-        private void btnView_Click(object sender, EventArgs e)
-        {
-            if (!_isStatetypeComboBoxChanged)
-                return;
-
-            var vehicleReg = comboBoxStateOrTerritory.SelectedItem.ToString() + "-" + txtRegionalTransportAuthority.Text + "-" + txtLetters.Text + "-" + txtDigits.Text;
-            var vehicleDetails = _connection.VehicleSearch(vehicleReg);
-
-            if(vehicleDetails == null)
-            {
-                comboBoxVehicleClass.Enabled = true;
-                comboBoxTripType.Enabled = true;
-                return;
-            }
-            if (vehicleDetails != null)
-            {
-                comboBoxVehicleClass.Enabled = false;
-                comboBoxTripType.Enabled = true;
-            }
-
-            var tripType = "";
-            var returnedOrNot = 0;
-            for (int i = 0; i < 1; i++)
-            {
-                tripType = vehicleDetails.ElementAt(i).TripType;
-                returnedOrNot = vehicleDetails.ElementAt(i).Returned;
-            }
-
-            if (tripType == "Two Way" && returnedOrNot == 0)
-            {
-                comboBoxVehicleClass.Enabled = false;
-                comboBoxTripType.Enabled = false;
-                rtxtAmountDisplay.Text = "  Pay \n  0";
-                returnVehicle = true;
-            }
-            else if (tripType == "Two Way" && returnedOrNot == 1)
-            {
-                comboBoxVehicleClass.Enabled = false;
-                comboBoxTripType.Enabled = true;
-                returnVehicle = false;
-            }
-        }
-
-        private void comboBoxStateOrTerritory_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            _isStatetypeComboBoxChanged = true;
-        }
-
-        private void frmDashboardPage_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            Environment.Exit(0);
-        }
+            comboBoxVehicleClass.Enabled = false;
+            comboBoxTripType.Enabled = false;
+            _isVehicleExist = false;
+            _returningVehicle = false;
+            _amountToBeCollected = 0;
+            _isViewClicked = false;
+            _vehicleClass = "";
+    }
     }   
 }
 

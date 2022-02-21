@@ -11,19 +11,18 @@ using TollBoothManagementSystem.Services;
 
 namespace TollBoothManagementSystem
 {
-    public partial class frmLoginPage : Form
+    public partial class FrmLoginPage : Form
     {
         private readonly EmployeeServices _service;
 
         public static string loggedUser = "";
 
-        public static frmAdminPage frmAdminPageObj;
-        public static frmDashboardPage frmDashboardPageObj;
-        public frmLoginPage()
+        public static FrmAdminPage frmAdminPageObj;
+        public static FrmDashboardPage frmDashboardPageObj;
+        public FrmLoginPage()
         {
             InitializeComponent();
             _service = new EmployeeServices();
-
         }
 
         private void btnSubmit_Click(object sender, EventArgs e)
@@ -32,11 +31,23 @@ namespace TollBoothManagementSystem
             var password = txtPassword.Text;
 
             //checking user enterd or not username and password 
-            if (username == ""|| password == "")
+            if (username == "" || password == "")
             {
                 MessageBox.Show("Please enter username and password", "Enter password", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
+           
+            if (FrmEmployeeDetails.IsNotValidEmail(username))//Email validation
+            {
+                MessageBox.Show("Email format is not valid", "Email id not valid", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            if (password.Length < 4)//Password length validation
+            {
+                MessageBox.Show("The password must have atleast 4 characters long.", "Retype password", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
             var employeeLog = _service.EmployeeLogin(username, password);
 
             //checking user enterd username and password exist in the employee database 
@@ -47,24 +58,28 @@ namespace TollBoothManagementSystem
             }
 
             //providing admin privelege
-            if (employeeLog.EmpAdminPrivelege == 1)
+            if (employeeLog.EmpAdminPrivelege == 1)//Navigate to admin page if have admin privilege
             {
-                loggedUser = employeeLog.EmpName;
-                frmAdminPageObj = new frmAdminPage();
+                loggedUser = employeeLog.EmpName;//for name of current logged user
+                frmAdminPageObj = new FrmAdminPage();
                 frmAdminPageObj.Show();
-                frmSplashScreen.frmLoginPageObj.Hide();
-            }
-            else if (employeeLog.EmpAdminPrivelege == 0)
-            {
-                loggedUser = employeeLog.EmpName;
-                frmDashboardPageObj = new frmDashboardPage();
-                frmDashboardPageObj.Show();
-                frmSplashScreen.frmLoginPageObj.Hide();
-            }
+                FrmSplashScreen.frmLoginPageObj.Hide();
 
+            }
+            else if (employeeLog.EmpAdminPrivelege == 0)//Navigate to dashboard page if doesn't have admin privilege
+            {
+                loggedUser = employeeLog.EmpName;//for name of current logged user
+                frmDashboardPageObj = new FrmDashboardPage();
+                frmDashboardPageObj.Show();
+                FrmSplashScreen.frmLoginPageObj.Hide();
+
+            }
+            //clearing username and password field after login
+            txtLoginId.Text = "";
+            txtPassword.Text = "";
         }
 
-        private void frmLoginPage_FormClosed(object sender, FormClosedEventArgs e)
+        private void FrmLoginPage_FormClosed(object sender, FormClosedEventArgs e)
         {
             Environment.Exit(0);
         }

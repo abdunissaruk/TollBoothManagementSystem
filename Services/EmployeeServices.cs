@@ -20,18 +20,20 @@ namespace TollBoothManagementSystem.Services
         public IEnumerable<Employee> DisplayEmployee()
         {
             ConnectionManager.EnsureConnectionIsActive();
-            var sql = $"SELECT { nameof(Employee.EmpId)}, { nameof(Employee.EmpName)}, { nameof(Employee.EmpEmail)}, { nameof(Employee.EmpMobile)}, { nameof(Employee.EmpPassword)}, { nameof(Employee.EmpAdminPrivelege)} FROM {nameof(Employee)}";
+            var sql = $"SELECT { nameof(Employee.EmpId)}, { nameof(Employee.EmpName)}, { nameof(Employee.EmpEmail)}, " +
+                $"{ nameof(Employee.EmpMobile)}, { nameof(Employee.EmpPassword)}, { nameof(Employee.EmpAdminPrivelege)} FROM " +
+                $"{nameof(Employee)}";
             var cmd = new SqlCommand(sql, _connection);
             var reader = cmd.ExecuteReader();
 
-            //stop exicution if reader returns false that means no row exist
+            //stop execution if reader returns false that means no row exist
             if (!reader.Read())
             {
                 reader.Close();
                 return null;
             }
 
-            var employeeList = new List<Employee>();
+            var employeeList = new List<Employee>();//object list of Employee
             do
             {
                 var employee = new Employee()
@@ -47,13 +49,14 @@ namespace TollBoothManagementSystem.Services
             }
             while (reader.Read());
             reader.Close();
-            return employeeList;
+            return employeeList;//return object list
         }
 
         public int AddOneEmployee(Employee employee)
         {
             ConnectionManager.EnsureConnectionIsActive();
-            var sql = $"INSERT INTO {nameof(Employee)} ({ nameof(Employee.EmpName)}, { nameof(Employee.EmpEmail)}, { nameof(Employee.EmpMobile)}, { nameof(Employee.EmpPassword)}, { nameof(Employee.EmpAdminPrivelege)}) VALUES" +
+            var sql = $"INSERT INTO {nameof(Employee)} ({ nameof(Employee.EmpName)}, { nameof(Employee.EmpEmail)}, " +
+                $"{ nameof(Employee.EmpMobile)}, { nameof(Employee.EmpPassword)}, { nameof(Employee.EmpAdminPrivelege)}) VALUES" +
                 "(@name,@email,@mobile,@password,@adminPrivelage)";
             var cmd = new SqlCommand(sql, _connection);
             cmd.Parameters.AddWithValue("@name", employee.EmpName);
@@ -61,24 +64,25 @@ namespace TollBoothManagementSystem.Services
             cmd.Parameters.AddWithValue("@mobile", employee.EmpMobile);
             cmd.Parameters.AddWithValue("@password", employee.EmpPassword);
             cmd.Parameters.AddWithValue("@adminPrivelage", employee.EmpAdminPrivelege);
-            return cmd.ExecuteNonQuery();
+            return cmd.ExecuteNonQuery();//return no of rows affected
         }
 
         public Employee SearchEmployee(int id)
         {
             ConnectionManager.EnsureConnectionIsActive();
-            var sql = $"SELECT { nameof(Employee.EmpName)}, { nameof(Employee.EmpEmail)}, { nameof(Employee.EmpMobile)}, { nameof(Employee.EmpPassword)}, { nameof(Employee.EmpAdminPrivelege)} FROM {nameof(Employee)} WHERE EmpId=@id";
+            var sql = $"SELECT { nameof(Employee.EmpName)}, { nameof(Employee.EmpEmail)}, " +
+                $"{ nameof(Employee.EmpMobile)}, { nameof(Employee.EmpPassword)}, " +
+                $"{ nameof(Employee.EmpAdminPrivelege)} FROM {nameof(Employee)} WHERE EmpId=@id";
             var cmd = new SqlCommand(sql, _connection);
             cmd.Parameters.AddWithValue("@id", id);
             var reader = cmd.ExecuteReader();
 
-            //stop exicution if reader returns false that means no row exist
+            //stop execution if reader returns false that means no row exist
             if (!reader.Read())
             {
                 reader.Close();
                 return null;
             }
-
 
             var employee = new Employee()
             {
@@ -89,13 +93,16 @@ namespace TollBoothManagementSystem.Services
                 EmpAdminPrivelege = reader.GetByte(4)
             };
             reader.Close();
-            return employee;
+            return employee;//return object
         }
 
         public int UpdateEmployee(int id, Employee employee)
         {
             ConnectionManager.EnsureConnectionIsActive();
-            var sql = $"UPDATE {nameof(Employee)} SET {nameof(Employee.EmpName)} = @name, {nameof(Employee.EmpEmail)} = @email, {nameof(Employee.EmpMobile)} = @mobile, {nameof(Employee.EmpPassword)} = @password, {nameof(Employee.EmpAdminPrivelege)} = @adminPrivelage WHERE {nameof(Employee.EmpId)} = @id";
+            var sql = $"UPDATE {nameof(Employee)} SET {nameof(Employee.EmpName)} = @name, " +
+                $"{nameof(Employee.EmpEmail)} = @email, {nameof(Employee.EmpMobile)} = @mobile, " +
+                $"{nameof(Employee.EmpPassword)} = @password, {nameof(Employee.EmpAdminPrivelege)} = @adminPrivelage " +
+                $"WHERE {nameof(Employee.EmpId)} = @id";
             var cmd = new SqlCommand(sql, _connection);
             cmd.Parameters.AddWithValue("@id", id);
             cmd.Parameters.AddWithValue("@name", employee.EmpName);
@@ -103,7 +110,7 @@ namespace TollBoothManagementSystem.Services
             cmd.Parameters.AddWithValue("@mobile", employee.EmpMobile);
             cmd.Parameters.AddWithValue("@password", employee.EmpPassword);
             cmd.Parameters.AddWithValue("@adminPrivelage", employee.EmpAdminPrivelege);
-            return cmd.ExecuteNonQuery();
+            return cmd.ExecuteNonQuery();//return no of rows affected
 
         }
 
@@ -113,19 +120,20 @@ namespace TollBoothManagementSystem.Services
             var sql = $"DELETE FROM {nameof(Employee)} WHERE EmpId=@id";
             var cmd = new SqlCommand(sql, _connection);
             cmd.Parameters.AddWithValue("@id", id);
-            return cmd.ExecuteNonQuery();
+            return cmd.ExecuteNonQuery();//return no of rows affected
         }
 
         public Employee EmployeeLogin(String username, String password)
         {
             ConnectionManager.EnsureConnectionIsActive();
-            var sql = $"SELECT  { nameof(Employee.EmpName)}, { nameof(Employee.EmpAdminPrivelege)} FROM {nameof(Employee)} WHERE EmpEmail=@email and EmpPassword=@password";
+            var sql = $"SELECT  { nameof(Employee.EmpName)}, { nameof(Employee.EmpAdminPrivelege)} FROM " +
+                $"{nameof(Employee)} WHERE EmpEmail=@email and EmpPassword=@password";
             var cmd = new SqlCommand(sql, _connection);
             cmd.Parameters.AddWithValue("@email", username);
             cmd.Parameters.AddWithValue("@password", password);
             var reader = cmd.ExecuteReader();
 
-            //stop exicution if reader returns false that means no row exist
+            //stop execution if reader returns false that means no row exist
             if (!reader.Read())
             {
                 reader.Close();
@@ -138,7 +146,7 @@ namespace TollBoothManagementSystem.Services
                 EmpAdminPrivelege = reader.GetByte(1),
             };
             reader.Close();
-            return employee;
+            return employee;//return object
 
         }
 
@@ -151,7 +159,7 @@ namespace TollBoothManagementSystem.Services
             cmd.Parameters.AddWithValue("@password", password);
             var reader = cmd.ExecuteReader();
 
-            //stop exicution if reader returns false that means no row exist
+            //stop execution if reader returns false that means no row exist
             //
             if (!reader.Read())
             {
@@ -168,7 +176,7 @@ namespace TollBoothManagementSystem.Services
                 EmpAdminPrivelege = reader.GetByte(5)
             };
             reader.Close();
-            return employee;
+            return employee;//return object
         }
     }
 }

@@ -1,6 +1,6 @@
 ﻿namespace TollBoothManagementSystem
 {
-    partial class frmSplashScreen
+    partial class FrmSplashScreen
     {
         /// <summary>
         /// Required designer variable.
@@ -36,7 +36,7 @@
             // 
             this.timerSplashScreen.Enabled = true;
             this.timerSplashScreen.Interval = 3000;
-            this.timerSplashScreen.Tick += new System.EventHandler(this.timerSplashScreen_Tick);
+            this.timerSplashScreen.Tick += new System.EventHandler(this.TimerSplashScreen_Tick);
             // 
             // frmSplashScreen
             // 
@@ -48,7 +48,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmSplashScreen";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Load += new System.EventHandler(this.frmSplashScreen_Load);
+            this.Load += new System.EventHandler(this.FrmSplashScreen_Load);
             this.ResumeLayout(false);
 
         }

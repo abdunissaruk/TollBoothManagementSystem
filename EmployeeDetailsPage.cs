@@ -15,10 +15,10 @@ using TollBoothManagementSystem.Services;
 
 namespace TollBoothManagementSystem
 {
-    public partial class frmEmployeeDetails : Form
+    public partial class FrmEmployeeDetails : Form
     {
         private readonly EmployeeServices _service;
-        public frmEmployeeDetails()
+        public FrmEmployeeDetails()
         {
             InitializeComponent();
             _service = new EmployeeServices();
@@ -35,7 +35,7 @@ namespace TollBoothManagementSystem
             }
         }
 
-        private void frmEmployeeDetails_Load(object sender, EventArgs e)
+        private void FrmEmployeeDetails_Load(object sender, EventArgs e)
         {
             EmployeeGridDisplay();
         }
@@ -57,8 +57,8 @@ namespace TollBoothManagementSystem
 
         private void closeToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
-            frmLoginPage.frmAdminPageObj.Show();
-            frmAdminPage.frmEmployeeDetailsObj.Dispose();
+            FrmLoginPage.frmAdminPageObj.Show();
+            FrmAdminPage.frmEmployeeDetailsObj.Dispose();
         }
 
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
@@ -113,24 +113,25 @@ namespace TollBoothManagementSystem
                 return;
             }
 
+            //Checking all fileds are empty
             if (txtEmployeeName.Text == "" || txtEmployeeEmail.Text == "" || txtEmployeeMobileNumber.Text == "" || txtEmployeePassword.Text == "")
             {
                 MessageBox.Show("All details are required", "Fill all required details", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
-            var passwordLength = txtEmployeePassword.Text.Length;
-            if (passwordLength < 4)
+            //Checking password length
+            var password = txtEmployeePassword.Text;
+            if (password.Length < 4)
             {
                 MessageBox.Show("The password must have atleast 4 characters long.", "Retype password", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
             
-            var password = txtEmployeePassword.Text;
             var checkEmployeeExist = _service.CheckEmployeeExist(email, password);
 
-            if (txtEmployeeId.Text == "")
+            if (txtEmployeeId.Text == "")//checking id field empty or not
             {
                 if (checkEmployeeExist != null)
                 {
@@ -162,7 +163,7 @@ namespace TollBoothManagementSystem
                 var id = Convert.ToInt32(txtEmployeeId.Text);
                 var employeeIdCheck = _service.SearchEmployee(id);
 
-                if (employeeIdCheck != null)
+                if (employeeIdCheck != null)//execute if id exist in database. Then updating 
                 {
                     DialogResult dialogResult = MessageBox.Show("Do you want to update ?","Please Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
@@ -230,11 +231,11 @@ namespace TollBoothManagementSystem
             }   
         }
 
-        private void frmEmployeeDetails_FormClosed(object sender, FormClosedEventArgs e)
+        private void FrmEmployeeDetails_FormClosed(object sender, FormClosedEventArgs e)
         {
-            frmLoginPage.frmAdminPageObj.Show();
+            FrmLoginPage.frmAdminPageObj.Show();
         }
-        public static bool IsNotValidEmail(string email)
+        public static bool IsNotValidEmail(string email)//checking email format
         {
             if (string.IsNullOrWhiteSpace(email))
                 return true;
@@ -247,7 +248,7 @@ namespace TollBoothManagementSystem
                 return true;
         }
 
-        public static bool IsNotValidMobile(string mobile)
+        public static bool IsNotValidMobile(string mobile)//checking mobile number format
         {
             if (string.IsNullOrWhiteSpace(mobile))
                 return true;

@@ -1,6 +1,6 @@
 ﻿namespace TollBoothManagementSystem
 {
-    partial class frmLoginPage
+    partial class FrmLoginPage
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmLoginPage));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmLoginPage));
             this.lblTollBooth = new System.Windows.Forms.Label();
             this.lblLoginId = new System.Windows.Forms.Label();
             this.lblPassword = new System.Windows.Forms.Label();
@@ -135,7 +135,7 @@
             this.Name = "frmLoginPage";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
-            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmLoginPage_FormClosed);
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FrmLoginPage_FormClosed);
             this.groupBoxLoginPage.ResumeLayout(false);
             this.groupBoxLoginPage.PerformLayout();
             this.ResumeLayout(false);

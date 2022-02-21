@@ -1,6 +1,6 @@
 ﻿namespace TollBoothManagementSystem
 {
-    partial class frmEmployeeDetails
+    partial class FrmEmployeeDetails
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmEmployeeDetails));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmEmployeeDetails));
             this.lblEmployeeName = new System.Windows.Forms.Label();
             this.lblEmployeeEmail = new System.Windows.Forms.Label();
             this.lblEmployeeMobileNumber = new System.Windows.Forms.Label();
@@ -178,7 +178,7 @@
             this.fileToolStripMenuItem});
             this.menuStripEmployeeDetails.Location = new System.Drawing.Point(0, 0);
             this.menuStripEmployeeDetails.Name = "menuStripEmployeeDetails";
-            this.menuStripEmployeeDetails.Size = new System.Drawing.Size(953, 28);
+            this.menuStripEmployeeDetails.Size = new System.Drawing.Size(953, 30);
             this.menuStripEmployeeDetails.TabIndex = 17;
             this.menuStripEmployeeDetails.Text = "menuStrip1";
             // 
@@ -188,7 +188,7 @@
             this.closeToolStripMenuItem,
             this.exitToolStripMenuItem});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            this.fileToolStripMenuItem.Size = new System.Drawing.Size(46, 24);
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(46, 26);
             this.fileToolStripMenuItem.Text = "&File";
             // 
             // closeToolStripMenuItem
@@ -333,8 +333,8 @@
             this.Name = "frmEmployeeDetails";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Employee Details";
-            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmEmployeeDetails_FormClosed);
-            this.Load += new System.EventHandler(this.frmEmployeeDetails_Load);
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FrmEmployeeDetails_FormClosed);
+            this.Load += new System.EventHandler(this.FrmEmployeeDetails_Load);
             this.menuStripEmployeeDetails.ResumeLayout(false);
             this.menuStripEmployeeDetails.PerformLayout();
             this.groupBoxEmployeeDetails.ResumeLayout(false);

@@ -12,23 +12,23 @@ using TollBoothManagementSystem.Services;
 
 namespace TollBoothManagementSystem
 {
-    public partial class frmAdminPage : Form
+    public partial class FrmAdminPage : Form
     {
         private readonly VehicleDetailsServices _service;
 
         private bool _isStatetypeComboBoxChanged = false;
 
-        public static frmEmployeeDetails frmEmployeeDetailsObj;
+        public static FrmEmployeeDetails frmEmployeeDetailsObj;
 
-        public frmAdminPage()
+        public FrmAdminPage()
         {
             InitializeComponent();
             _service = new VehicleDetailsServices();
         }
 
-        private void frmAdminPage_Load(object sender, EventArgs e)
+        private void FrmAdminPage_Load(object sender, EventArgs e)
         {
-            lblNameDisplayAdmin.Text = frmLoginPage.loggedUser;
+            lblNameDisplayAdmin.Text = FrmLoginPage.loggedUser;
         }
 
         private void Clear()
@@ -46,8 +46,8 @@ namespace TollBoothManagementSystem
 
         private void logoutToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmSplashScreen.frmLoginPageObj.Show();
-            frmLoginPage.frmAdminPageObj.Dispose();
+            FrmSplashScreen.frmLoginPageObj.Show();
+            FrmLoginPage.frmAdminPageObj.Dispose();
         }
 
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
@@ -57,9 +57,9 @@ namespace TollBoothManagementSystem
 
         private void employeeDetailsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmEmployeeDetailsObj = new frmEmployeeDetails();
+            frmEmployeeDetailsObj = new FrmEmployeeDetails();
             frmEmployeeDetailsObj.Show();
-            Hide();
+            FrmLoginPage.frmAdminPageObj.Hide();
         }
 
         private void btnClear_Click(object sender, EventArgs e)
@@ -326,7 +326,7 @@ namespace TollBoothManagementSystem
             MessageBox.Show("Custom Report Printed", "Printed", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
-        private void frmAdminPage_FormClosed(object sender, FormClosedEventArgs e)
+        private void FrmAdminPage_FormClosed(object sender, FormClosedEventArgs e)
         {
             Environment.Exit(0);
         }

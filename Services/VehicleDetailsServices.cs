@@ -19,7 +19,10 @@ namespace TollBoothManagementSystem.Services
         public int AddOneEntry(VehicleDetails vehicleDetails)
         {
             ConnectionManager.EnsureConnectionIsActive();
-            var sql = $"INSERT INTO {nameof(VehicleDetails)} ({nameof(VehicleDetails.VehicleReg)},{nameof(VehicleDetails.VehicleDateTime)}, {nameof(VehicleDetails.TripType)}, {nameof(VehicleDetails.VehicleClass)},  {nameof(VehicleDetails.Amount)}, { nameof(VehicleDetails.Returned)}) VALUES" +
+            var sql = $"INSERT INTO {nameof(VehicleDetails)} ({nameof(VehicleDetails.VehicleReg)}," +
+                $"{nameof(VehicleDetails.VehicleDateTime)}, {nameof(VehicleDetails.TripType)}, " +
+                $"{nameof(VehicleDetails.VehicleClass)},  {nameof(VehicleDetails.Amount)}, " +
+                $"{ nameof(VehicleDetails.Returned)}) VALUES" +
                 "(@vehicleReg,@vehicleDateTime,@tripType, @vehicleClass, @amount, @returned)";
             var cmd = new SqlCommand(sql, _connection);
             cmd.Parameters.AddWithValue("@vehicleReg", vehicleDetails.VehicleReg);
@@ -33,8 +36,10 @@ namespace TollBoothManagementSystem.Services
         public IEnumerable<VehicleDetails> VehicleSearch(string vehicleReg)
         {
             ConnectionManager.EnsureConnectionIsActive();
-            var sql = $"SELECT {nameof(VehicleDetails.VehicleReg)}, {nameof(VehicleDetails.VehicleDateTime)}, {nameof(VehicleDetails.TripType)}, {nameof(VehicleDetails.VehicleClass)}, {nameof(VehicleDetails.Amount)}, {nameof(VehicleDetails.Returned)} FROM " +
-                $"{nameof(VehicleDetails)} WHERE {nameof(VehicleDetails.VehicleReg)}=@vehicleReg ORDER BY {nameof(VehicleDetails.VehicleDateTime)} DESC";
+            var sql = $"SELECT {nameof(VehicleDetails.VehicleReg)}, {nameof(VehicleDetails.VehicleDateTime)}, " +
+                $"{nameof(VehicleDetails.TripType)}, {nameof(VehicleDetails.VehicleClass)}, {nameof(VehicleDetails.Amount)}, " +
+                $"{nameof(VehicleDetails.Returned)} FROM {nameof(VehicleDetails)} WHERE " +
+                $"{nameof(VehicleDetails.VehicleReg)}=@vehicleReg ORDER BY {nameof(VehicleDetails.VehicleDateTime)} DESC";
             var cmd = new SqlCommand(sql, _connection);
             cmd.Parameters.AddWithValue("@vehicleReg", vehicleReg);
             var reader = cmd.ExecuteReader();
@@ -46,7 +51,7 @@ namespace TollBoothManagementSystem.Services
                 return null;
             }
 
-            var vehicleD = new List<VehicleDetails>();
+            var vehicleD = new List<VehicleDetails>();//List object
             do
             {
                 var vehicleDetails = new VehicleDetails()
@@ -58,16 +63,18 @@ namespace TollBoothManagementSystem.Services
                     Amount = reader.GetInt32(4),
                     Returned = reader.GetByte(5)
                 };
-                vehicleD.Add(vehicleDetails);
+                vehicleD.Add(vehicleDetails);//adding obj to list
             } while (reader.Read());
             reader.Close();
-            return vehicleD;
+            return vehicleD;//return object list
         }
         public IEnumerable<VehicleDetails> ViewVehicleDetails(DateTime startDate, DateTime endTime )
         {
             ConnectionManager.EnsureConnectionIsActive();
-            var sql = $"SELECT {nameof(VehicleDetails.VehicleReg)}, {nameof(VehicleDetails.VehicleDateTime)}, {nameof(VehicleDetails.TripType)}, {nameof(VehicleDetails.VehicleClass)}, {nameof(VehicleDetails.Amount)}, {nameof(VehicleDetails.Returned)} " +
-                $"FROM {nameof(VehicleDetails)} WHERE {nameof(VehicleDetails.VehicleDateTime)} BETWEEN @startDate AND @endTime ORDER BY {nameof(VehicleDetails.VehicleDateTime)} DESC";
+            var sql = $"SELECT {nameof(VehicleDetails.VehicleReg)}, {nameof(VehicleDetails.VehicleDateTime)}, " +
+                $"{nameof(VehicleDetails.TripType)}, {nameof(VehicleDetails.VehicleClass)}, {nameof(VehicleDetails.Amount)}, " +
+                $"{nameof(VehicleDetails.Returned)} FROM {nameof(VehicleDetails)} WHERE {nameof(VehicleDetails.VehicleDateTime)} " +
+                $"BETWEEN @startDate AND @endTime ORDER BY {nameof(VehicleDetails.VehicleDateTime)} DESC";
             var cmd = new SqlCommand(sql, _connection);
 
             cmd.Parameters.AddWithValue("@startDate", startDate);
@@ -81,7 +88,7 @@ namespace TollBoothManagementSystem.Services
                 return null;
             }
 
-            var vehicles = new List<VehicleDetails>();
+            var vehicles = new List<VehicleDetails>();//object list
             do
             {
                 var vehicleDetails = new VehicleDetails()
@@ -93,10 +100,10 @@ namespace TollBoothManagementSystem.Services
                     Amount = reader.GetInt32(4),
                     Returned = reader.GetByte(5)
                 };
-                vehicles.Add(vehicleDetails);
+                vehicles.Add(vehicleDetails);//adding object to list
             } while (reader.Read());
             reader.Close();
-            return vehicles;
+            return vehicles;//return object list
         }
     }
 }
