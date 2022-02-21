@@ -44,7 +44,7 @@ namespace TollBoothManagementSystem.Services
             cmd.Parameters.AddWithValue("@vehicleReg", vehicleReg);
             var reader = cmd.ExecuteReader();
 
-            //stop exicution if reader returns false that means no row exist
+            //Stop execution if reader returns false that means no row exist
             if (reader.Read() == false)
             {
                 reader.Close();
@@ -63,10 +63,10 @@ namespace TollBoothManagementSystem.Services
                     Amount = reader.GetInt32(4),
                     Returned = reader.GetByte(5)
                 };
-                vehicleD.Add(vehicleDetails);//adding obj to list
+                vehicleD.Add(vehicleDetails);//Adding obj to list
             } while (reader.Read());
             reader.Close();
-            return vehicleD;//return object list
+            return vehicleD;//Return object list
         }
         public IEnumerable<VehicleDetails> ViewVehicleDetails(DateTime startDate, DateTime endTime )
         {
@@ -81,14 +81,14 @@ namespace TollBoothManagementSystem.Services
             cmd.Parameters.AddWithValue("@endTime", endTime);
             var reader = cmd.ExecuteReader();
 
-            //stop exicution if reader returns false that means no row exist
+            //Stop execution if reader returns false that means no row exist
             if (reader.Read() == false)
             {
                 reader.Close();
                 return null;
             }
 
-            var vehicles = new List<VehicleDetails>();//object list
+            var vehicles = new List<VehicleDetails>();//Object list
             do
             {
                 var vehicleDetails = new VehicleDetails()
@@ -100,10 +100,10 @@ namespace TollBoothManagementSystem.Services
                     Amount = reader.GetInt32(4),
                     Returned = reader.GetByte(5)
                 };
-                vehicles.Add(vehicleDetails);//adding object to list
+                vehicles.Add(vehicleDetails);//Adding object to list
             } while (reader.Read());
             reader.Close();
-            return vehicles;//return object list
+            return vehicles;//Return object list
         }
     }
 }

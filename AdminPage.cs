@@ -202,6 +202,8 @@ namespace TollBoothManagementSystem
                 fileName = saveFileDialog.FileName;
             using (StreamWriter writer = new StreamWriter(fileName))
             {
+                var heading = "Date and Time,Vehicle Registration No,Vehicle Class,Trip Type,Amount,Returned\n";
+                writer.Write(heading);
                 foreach (var vehicle in vehicleDetails)
                 {
                     var result = vehicle.VehicleDateTime.ToString() + "," + vehicle.VehicleReg.ToString() + "," 
@@ -239,6 +241,8 @@ namespace TollBoothManagementSystem
             {
                 foreach (var vehicle in vehicleDetails)
                 {
+                    var heading = "Date and Time,Vehicle Registration No,Vehicle Class,Trip Type,Amount,Returned\n";
+                    writer.Write(heading);
                     var result = vehicle.VehicleDateTime.ToString() + "," + vehicle.VehicleReg.ToString() + "," 
                         + vehicle.VehicleClass.ToString() + "," + vehicle.TripType.ToString() + "," 
                         + vehicle.Amount.ToString() + "," + vehicle.Returned.ToString() + "\n";
@@ -271,6 +275,8 @@ namespace TollBoothManagementSystem
                 fileName = saveFileDialog.FileName;
             using (StreamWriter writer = new StreamWriter(fileName))
             {
+                var heading = "Date and Time,Vehicle Registration No,Vehicle Class,Trip Type,Amount,Returned\n";
+                writer.Write(heading);
                 foreach (var vehicle in vehicleDetails)
                 {
                     var result = vehicle.VehicleDateTime.ToString() + "," + vehicle.VehicleReg.ToString() + "," 
@@ -315,8 +321,11 @@ namespace TollBoothManagementSystem
                 fileName = saveFileDialog.FileName;
             using (StreamWriter writer = new StreamWriter(fileName))
             {
+                var heading = "Date and Time,Vehicle Registration No,Vehicle Class,Trip Type,Amount,Returned\n";
+                writer.Write(heading);
                 foreach (var vehicle in vehicleDetails)
                 {
+
                     var result = vehicle.VehicleDateTime.ToString() + "," + vehicle.VehicleReg.ToString() + "," 
                         + vehicle.VehicleClass.ToString() + "," + vehicle.TripType.ToString() + "," 
                         + vehicle.Amount.ToString() + "," + vehicle.Returned.ToString() + "\n";

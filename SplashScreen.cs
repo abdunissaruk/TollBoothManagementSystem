@@ -23,7 +23,7 @@ namespace TollBoothManagementSystem
             TransparencyKey = BackColor;
         }
 
-        private void TimerSplashScreen_Tick(object sender, EventArgs e)//run after 3 seconds
+        private void TimerSplashScreen_Tick(object sender, EventArgs e)//Run after 3 seconds
         {
             timerSplashScreen.Stop();
             frmLoginPageObj = new FrmLoginPage();

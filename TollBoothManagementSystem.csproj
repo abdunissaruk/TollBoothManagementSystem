@@ -155,12 +155,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\WhatsApp Image 2022-02-11 at 9.56.10 PM.jpeg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\WhatsApp Image 2022-02-11 at 10.33.55 PM.jpeg" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\Splash Screen Design 2.jpg" />
   </ItemGroup>
   <ItemGroup>

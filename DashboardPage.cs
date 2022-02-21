@@ -153,9 +153,6 @@ namespace TollBoothManagementSystem
             else if (comboBoxTripType.SelectedItem.ToString() == "Two Way")
                 _amountToBeCollected *= 2;
 
-            //if (_returningVehicle)
-            //    _amountToBeCollected = 0;
-            //Display Amount in text box
             rtxtAmountDisplay.Text = "  Pay \n  " + _amountToBeCollected.ToString();
         }
 
@@ -164,7 +161,7 @@ namespace TollBoothManagementSystem
             _isViewClicked = true;
             _returningVehicle = false;
 
-            //return if state combo box index not changed
+            //Return if state combo box index not changed
             if (!_isStateComboBoxIndexChanged)
                 return;
 
@@ -186,7 +183,7 @@ namespace TollBoothManagementSystem
             var tripType = "";
             var returnedOrNot = 0;
 
-            //if vehicle details exist in database
+            //If vehicle details exist in database
             if (vehicleDetails != null)
             {
                 _isVehicleExist = true;
@@ -219,7 +216,7 @@ namespace TollBoothManagementSystem
 
         private void btnProceed_Click(object sender, EventArgs e)
         {
-            //return if state combo box, vehicle class and trip type index not changed and empty fields
+            //Return if state combo box, vehicle class and trip type index not changed and empty fields
             if (!_isStateComboBoxIndexChanged)
                 return;
 
@@ -230,8 +227,6 @@ namespace TollBoothManagementSystem
             }
                 
 
-            //|| !_isVehicleClassComboBoxIndexChanged || !_isTripTypeComboBoxIndexChanged ||
-            //    txtRegionalTransportAuthority.Text == "" || txtLetters.Text == "" || txtDigits.Text == ""
             var vehicleReg = comboBoxStateOrTerritory.SelectedItem.ToString() + "-" + txtRegionalTransportAuthority.Text + "-" + txtLetters.Text + "-" + txtDigits.Text;
             var vehicleDetailsSearched = _connection.VehicleSearch(vehicleReg);
 
@@ -260,7 +255,7 @@ namespace TollBoothManagementSystem
                 _vehicleClass = comboBoxVehicleClass.SelectedItem.ToString();
             }
                 
-            if (!_returningVehicle)//if not a returning vehicle
+            if (!_returningVehicle)//If not a returning vehicle
             {
                 if (_isVehicleExist)
                     amountCalculatorForExisting(_vehicleClass);

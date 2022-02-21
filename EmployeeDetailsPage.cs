@@ -131,7 +131,7 @@ namespace TollBoothManagementSystem
             
             var checkEmployeeExist = _service.CheckEmployeeExist(email);
 
-            if (txtEmployeeId.Text == "")//checking id field empty or not
+            if (txtEmployeeId.Text == "")//Checking id field empty or not
             {
                 if (checkEmployeeExist != null)
                 {
@@ -163,7 +163,7 @@ namespace TollBoothManagementSystem
                 var id = Convert.ToInt32(txtEmployeeId.Text);
                 var employeeIdCheck = _service.SearchEmployee(id);
 
-                if (employeeIdCheck != null)//execute if id exist in database. Then updating 
+                if (employeeIdCheck != null)//Execute if id exist in database. Then updating 
                 {
                     DialogResult dialogResult = MessageBox.Show("Do you want to update ?","Please Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
@@ -235,7 +235,7 @@ namespace TollBoothManagementSystem
         {
             FrmLoginPage.frmAdminPageObj.Show();
         }
-        public static bool IsNotValidEmail(string email)//checking email format
+        public static bool IsNotValidEmail(string email)//Checking email format
         {
             if (string.IsNullOrWhiteSpace(email))
                 return true;
@@ -248,7 +248,7 @@ namespace TollBoothManagementSystem
                 return true;
         }
 
-        public static bool IsNotValidMobile(string mobile)//checking mobile number format
+        public static bool IsNotValidMobile(string mobile)//Checking mobile number format
         {
             if (string.IsNullOrWhiteSpace(mobile))
                 return true;

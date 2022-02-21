@@ -26,14 +26,14 @@ namespace TollBoothManagementSystem.Services
             var cmd = new SqlCommand(sql, _connection);
             var reader = cmd.ExecuteReader();
 
-            //stop execution if reader returns false that means no row exist
+            //Stop execution if reader returns false that means no row exist
             if (!reader.Read())
             {
                 reader.Close();
                 return null;
             }
 
-            var employeeList = new List<Employee>();//object list of Employee
+            var employeeList = new List<Employee>();//Object list of Employee
             do
             {
                 var employee = new Employee()
@@ -49,7 +49,7 @@ namespace TollBoothManagementSystem.Services
             }
             while (reader.Read());
             reader.Close();
-            return employeeList;//return object list
+            return employeeList;//Return object list
         }
 
         public int AddOneEmployee(Employee employee)
@@ -64,7 +64,7 @@ namespace TollBoothManagementSystem.Services
             cmd.Parameters.AddWithValue("@mobile", employee.EmpMobile);
             cmd.Parameters.AddWithValue("@password", employee.EmpPassword);
             cmd.Parameters.AddWithValue("@adminPrivelage", employee.EmpAdminPrivelege);
-            return cmd.ExecuteNonQuery();//return no of rows affected
+            return cmd.ExecuteNonQuery();//Return no of rows affected
         }
 
         public Employee SearchEmployee(int id)
@@ -77,7 +77,7 @@ namespace TollBoothManagementSystem.Services
             cmd.Parameters.AddWithValue("@id", id);
             var reader = cmd.ExecuteReader();
 
-            //stop execution if reader returns false that means no row exist
+            //Stop execution if reader returns false that means no row exist
             if (!reader.Read())
             {
                 reader.Close();
@@ -93,7 +93,7 @@ namespace TollBoothManagementSystem.Services
                 EmpAdminPrivelege = reader.GetByte(4)
             };
             reader.Close();
-            return employee;//return object
+            return employee;//Return object
         }
 
         public int UpdateEmployee(int id, Employee employee)
@@ -110,7 +110,7 @@ namespace TollBoothManagementSystem.Services
             cmd.Parameters.AddWithValue("@mobile", employee.EmpMobile);
             cmd.Parameters.AddWithValue("@password", employee.EmpPassword);
             cmd.Parameters.AddWithValue("@adminPrivelage", employee.EmpAdminPrivelege);
-            return cmd.ExecuteNonQuery();//return no of rows affected
+            return cmd.ExecuteNonQuery();//Return no of rows affected
 
         }
 
@@ -120,7 +120,7 @@ namespace TollBoothManagementSystem.Services
             var sql = $"DELETE FROM {nameof(Employee)} WHERE EmpId=@id";
             var cmd = new SqlCommand(sql, _connection);
             cmd.Parameters.AddWithValue("@id", id);
-            return cmd.ExecuteNonQuery();//return no of rows affected
+            return cmd.ExecuteNonQuery();//Return no of rows affected
         }
 
         public Employee EmployeeLogin(String username, String password)
@@ -133,7 +133,7 @@ namespace TollBoothManagementSystem.Services
             cmd.Parameters.AddWithValue("@password", password);
             var reader = cmd.ExecuteReader();
 
-            //stop execution if reader returns false that means no row exist
+            //Stop execution if reader returns false that means no row exist
             if (!reader.Read())
             {
                 reader.Close();
@@ -146,7 +146,7 @@ namespace TollBoothManagementSystem.Services
                 EmpAdminPrivelege = reader.GetByte(1),
             };
             reader.Close();
-            return employee;//return object
+            return employee;//Return object
 
         }
 
@@ -158,7 +158,7 @@ namespace TollBoothManagementSystem.Services
             cmd.Parameters.AddWithValue("@email", email);
             var reader = cmd.ExecuteReader();
 
-            //stop execution if reader returns false that means no row exist
+            //Stop execution if reader returns false that means no row exist
             //
             if (!reader.Read())
             {
@@ -175,7 +175,7 @@ namespace TollBoothManagementSystem.Services
                 EmpAdminPrivelege = reader.GetByte(5)
             };
             reader.Close();
-            return employee;//return object
+            return employee;//Return object
         }
     }
 }

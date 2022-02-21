@@ -30,7 +30,7 @@ namespace TollBoothManagementSystem
             var username = txtLoginId.Text;
             var password = txtPassword.Text;
 
-            //checking user enterd or not username and password 
+            //Checking user enterd or not username and password 
             if (username == "" || password == "")
             {
                 MessageBox.Show("Please enter username and password", "Enter password", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -50,17 +50,17 @@ namespace TollBoothManagementSystem
 
             var employeeLog = _service.EmployeeLogin(username, password);
 
-            //checking user enterd username and password exist in the employee database 
+            //Checking user enterd username and password exist in the employee database 
             if (employeeLog == null)
             {
                 MessageBox.Show("Incorrect username or passowrd", "Not valid ", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
-            //providing admin privelege
+            //Providing admin privelege
             if (employeeLog.EmpAdminPrivelege == 1)//Navigate to admin page if have admin privilege
             {
-                loggedUser = employeeLog.EmpName;//for name of current logged user
+                loggedUser = employeeLog.EmpName;//For name of current logged user
                 frmAdminPageObj = new FrmAdminPage();
                 frmAdminPageObj.Show();
                 FrmSplashScreen.frmLoginPageObj.Hide();
@@ -68,13 +68,13 @@ namespace TollBoothManagementSystem
             }
             else if (employeeLog.EmpAdminPrivelege == 0)//Navigate to dashboard page if doesn't have admin privilege
             {
-                loggedUser = employeeLog.EmpName;//for name of current logged user
+                loggedUser = employeeLog.EmpName;//For name of current logged user
                 frmDashboardPageObj = new FrmDashboardPage();
                 frmDashboardPageObj.Show();
                 FrmSplashScreen.frmLoginPageObj.Hide();
 
             }
-            //clearing username and password field after login
+            //Clearing username and password field after login
             txtLoginId.Text = "";
             txtPassword.Text = "";
         }
