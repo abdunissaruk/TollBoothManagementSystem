@@ -150,13 +150,12 @@ namespace TollBoothManagementSystem.Services
 
         }
 
-        public Employee CheckEmployeeExist(String email, String password)
+        public Employee CheckEmployeeExist(String email)
         {
             ConnectionManager.EnsureConnectionIsActive();
-            var sql = $"SELECT  * FROM {nameof(Employee)} WHERE EmpEmail=@email and EmpPassword=@password";
+            var sql = $"SELECT  * FROM {nameof(Employee)} WHERE EmpEmail=@email";
             var cmd = new SqlCommand(sql, _connection);
             cmd.Parameters.AddWithValue("@email", email);
-            cmd.Parameters.AddWithValue("@password", password);
             var reader = cmd.ExecuteReader();
 
             //stop execution if reader returns false that means no row exist

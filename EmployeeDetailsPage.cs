@@ -129,13 +129,13 @@ namespace TollBoothManagementSystem
             }
 
             
-            var checkEmployeeExist = _service.CheckEmployeeExist(email, password);
+            var checkEmployeeExist = _service.CheckEmployeeExist(email);
 
             if (txtEmployeeId.Text == "")//checking id field empty or not
             {
                 if (checkEmployeeExist != null)
                 {
-                    MessageBox.Show("Email and Password alredy exist", "Already exist", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Email alredy exist", "Already exist", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
                 var EmpAdminPrivelegeResult = 0;
